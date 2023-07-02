@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -32,6 +34,8 @@ void addPiece(const char& piece, int index,
               uint64_t& bitboard6, uint64_t& bitboard7, uint64_t& bitboard8,
               uint64_t& bitboard9, uint64_t& bitboard10,
               uint64_t& bitboard11);
+
+int couldGo(char pieceFrom, int indexFrom, int indexTo);
 
 int main()
 {
@@ -78,104 +82,125 @@ int main()
             else {
                 char pieceFrom;
                 char pieceTo;
+                int indexFrom = coordinateIndex(from);
+                int indexTo   = coordinateIndex(to);
 
-                pieceFrom = pieceSearch(    coordinateIndex(from),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
-
-                if (pieceFrom == 'E') {
-                    cout << from << " is empty" << endl << endl;
+                if (indexFrom == 333 || indexTo == 333) {
+                    cout << "Command must be in the form" << endl
+                         << "mv <a-h><1-8> <a-h><1-8>" << endl << endl;
                 }
                 else {
-                    cout << "Moving " << from << " to " << to
-                         << endl << endl;
+                    pieceFrom = pieceSearch(    indexFrom,
+                                                black_pawn,
+                                                black_night,
+                                                black_bishop,
+                                                black_rook,
+                                                black_queen,
+                                                black_king,
+                                                white_Pawn,
+                                                white_Night,
+                                                white_Bishop,
+                                                white_Rook,
+                                                white_Queen,
+                                                white_King);
 
-                    removePiece(            pieceFrom,
-                                            coordinateIndex(from),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
-
-                    pieceTo = pieceSearch(  coordinateIndex(to),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
-
-                    if (pieceTo == 'E') {
-                        addPiece(           pieceFrom,
-                                            coordinateIndex(to),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
+                    if (pieceFrom == 'E') {
+                        cout << from << " is empty" << endl << endl;
                     }
                     else {
-                        removePiece(        pieceTo,
-                                            coordinateIndex(to),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
 
-                        addPiece(           pieceFrom,
-                                            coordinateIndex(to),
-                                            black_pawn,
-                                            black_night,
-                                            black_bishop,
-                                            black_rook,
-                                            black_queen,
-                                            black_king,
-                                            white_Pawn,
-                                            white_Night,
-                                            white_Bishop,
-                                            white_Rook,
-                                            white_Queen,
-                                            white_King);
+                        int couldGoHere;
 
+                        couldGoHere = couldGo(pieceFrom,indexFrom,indexTo);
+
+                        if (!(couldGoHere)) {
+                            cout << "Invalid move command";
+                            cout << endl << endl;
+
+                        }
+                        else {
+
+                            cout << "Moving " << from << " to " << to
+                                 << endl << endl;
+
+                            removePiece(            pieceFrom,
+                                                    indexFrom,
+                                                    black_pawn,
+                                                    black_night,
+                                                    black_bishop,
+                                                    black_rook,
+                                                    black_queen,
+                                                    black_king,
+                                                    white_Pawn,
+                                                    white_Night,
+                                                    white_Bishop,
+                                                    white_Rook,
+                                                    white_Queen,
+                                                    white_King);
+
+                            pieceTo = pieceSearch(  indexTo,
+                                                    black_pawn,
+                                                    black_night,
+                                                    black_bishop,
+                                                    black_rook,
+                                                    black_queen,
+                                                    black_king,
+                                                    white_Pawn,
+                                                    white_Night,
+                                                    white_Bishop,
+                                                    white_Rook,
+                                                    white_Queen,
+                                                    white_King);
+
+                            if (pieceTo == 'E') {
+                                addPiece(           pieceFrom,
+                                                    indexTo,
+                                                    black_pawn,
+                                                    black_night,
+                                                    black_bishop,
+                                                    black_rook,
+                                                    black_queen,
+                                                    black_king,
+                                                    white_Pawn,
+                                                    white_Night,
+                                                    white_Bishop,
+                                                    white_Rook,
+                                                    white_Queen,
+                                                    white_King);
+                            }
+                            else {
+                                removePiece(        pieceTo,
+                                                    indexTo,
+                                                    black_pawn,
+                                                    black_night,
+                                                    black_bishop,
+                                                    black_rook,
+                                                    black_queen,
+                                                    black_king,
+                                                    white_Pawn,
+                                                    white_Night,
+                                                    white_Bishop,
+                                                    white_Rook,
+                                                    white_Queen,
+                                                    white_King);
+
+                                addPiece(           pieceFrom,
+                                                    indexTo,
+                                                    black_pawn,
+                                                    black_night,
+                                                    black_bishop,
+                                                    black_rook,
+                                                    black_queen,
+                                                    black_king,
+                                                    white_Pawn,
+                                                    white_Night,
+                                                    white_Bishop,
+                                                    white_Rook,
+                                                    white_Queen,
+                                                    white_King);
+
+                            }
+                        }
                     }
                 }
             }
