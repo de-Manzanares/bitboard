@@ -1,24 +1,23 @@
 #include <cstdint>
+#include "bitBoards.h"
 
-void addPiece(const char& piece, int index,
-                 uint64_t& bitboard0, uint64_t& bitboard1, uint64_t& bitboard2,  uint64_t& bitboard3,
-                 uint64_t& bitboard4, uint64_t& bitboard5, uint64_t& bitboard6,  uint64_t& bitboard7,
-                 uint64_t& bitboard8, uint64_t& bitboard9, uint64_t& bitboard10, uint64_t& bitboard11)
+void addPiece(const char& piece, int index, ChessBoard& board)
+              
 {
     uint64_t mask = static_cast<uint64_t>(1) << index;
 
-    if (piece == 'p') {bitboard0  = bitboard0  + mask;}
-    if (piece == 'n') {bitboard1  = bitboard1  + mask;}
-    if (piece == 'b') {bitboard2  = bitboard2  + mask;}
-    if (piece == 'r') {bitboard3  = bitboard3  + mask;}
-    if (piece == 'q') {bitboard4  = bitboard4  + mask;}
-    if (piece == 'k') {bitboard5  = bitboard5  + mask;}
-    if (piece == 'P') {bitboard6  = bitboard6  + mask;}
-    if (piece == 'N') {bitboard7  = bitboard7  + mask;}
-    if (piece == 'B') {bitboard8  = bitboard8  + mask;}
-    if (piece == 'R') {bitboard9  = bitboard9  + mask;}
-    if (piece == 'Q') {bitboard10 = bitboard10 + mask;}
-    if (piece == 'K') {bitboard11 = bitboard11 + mask;}
+    if (piece == 'p') {board.black_pawn   = board.black_pawn   + mask;}
+    if (piece == 'n') {board.black_night  = board.black_night  + mask;}
+    if (piece == 'b') {board.black_bishop = board.black_bishop + mask;}
+    if (piece == 'r') {board.black_rook   = board.black_rook   + mask;}
+    if (piece == 'q') {board.black_queen  = board.black_queen  + mask;}
+    if (piece == 'k') {board.black_king   = board.black_king   + mask;}
+    if (piece == 'P') {board.white_Pawn   = board.white_Pawn   + mask;}
+    if (piece == 'N') {board.white_Night  = board.white_Night  + mask;}
+    if (piece == 'B') {board.white_Bishop = board.white_Bishop + mask;}
+    if (piece == 'R') {board.white_Rook   = board.white_Rook   + mask;}
+    if (piece == 'Q') {board.white_Queen  = board.white_Queen  + mask;}
+    if (piece == 'K') {board.white_King   = board.white_King   + mask;}
 
 }
 
