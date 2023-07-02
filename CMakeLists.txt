@@ -3,5 +3,6 @@ project(bitboard)
 
 set(CMAKE_CXX_STANDARD 17)
 
+include_directories(.)
 file(GLOB_RECURSE FUNCTIONS "./functions/*.cpp")
 add_executable(bitboard main.cpp ${FUNCTIONS})
