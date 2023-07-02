@@ -32,7 +32,6 @@ int     coordinateIndex (const string& coordinate);
 char    pieceSearch     (int index, const ChessBoard& board);
 void    removePiece     (const char& piece, int index, ChessBoard& board);
 void    addPiece        (const char& piece, int index, ChessBoard& board);
-int     couldGo         (char pieceFrom, int indexFrom, int indexTo);
 
 #endif // BITBOARDS_H
 
