@@ -46,27 +46,18 @@ int main()
                         cout << from << " is empty" << endl << endl;
                     }
                     else {
-                        int couldGoHere;
-                        couldGoHere = couldGo(pieceFrom,indexFrom,indexTo);
+                        cout << "Moving " << from << " to " << to
+                             << endl << endl;
+                        removePiece(pieceFrom, indexFrom, board);
+                        pieceTo = pieceSearch(indexTo, board);
 
-                        if (!(couldGoHere)) {
-                            cout << "Invalid move command";
-                            cout << endl << endl;
+                        if (pieceTo == 'E') {
+                            addPiece(pieceFrom, indexTo, board);
                         }
                         else {
-                            cout << "Moving " << from << " to " << to
-                                 << endl << endl;
-                            removePiece(pieceFrom, indexFrom, board);
-                            pieceTo = pieceSearch(indexTo, board);
+                            removePiece(pieceTo, indexTo, board);
+                            addPiece(pieceFrom, indexTo, board);
 
-                            if (pieceTo == 'E') {
-                                addPiece(pieceFrom, indexTo, board);
-                            }
-                            else {
-                                removePiece(pieceTo, indexTo, board);
-                                addPiece(pieceFrom, indexTo, board);
-
-                            }
                         }
                     }
                 }
@@ -75,3 +66,4 @@ int main()
     }
     return 0;
 }
+
