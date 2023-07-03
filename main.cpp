@@ -16,6 +16,37 @@ int main()
         string command;
         ss >> command;
 
+        if (command == "add") {
+            char pieceAdd;
+            string to;
+
+            if (!(ss >> pieceAdd >> to)) {
+                cout << endl;
+                cout << "Invalid add command"
+                     << endl << endl;
+            }
+            else {
+                int indexAdd = coordinateIndex(to);
+                string validPieces = "KQRBNPkqrbnp";
+
+                if (indexAdd == 333 || validPieces.find(pieceAdd) == string::npos) {
+                    cout << "Command must be in the form" << endl
+                         << "add <K|Q|R|B|N|P|k|q|r|b|n|p> <a-h><1-8>" << endl
+                         << "for example: add Q f8" << endl << endl;
+                }
+                else {
+                    char remove = pieceSearch(indexAdd, board);
+                    if (remove == 'E') {
+                        addPiece(pieceAdd, indexAdd, board);
+                    }
+                    else {
+                        removePiece(remove, indexAdd, board);
+                        addPiece(pieceAdd, indexAdd, board);
+                    }
+                }
+            }
+        }
+
         if (command == "d") {
             printBitBoard(board);
         }
