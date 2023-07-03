@@ -1,3 +1,16 @@
+### 2023.07.03
+
+Added
+
+* Added option to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion. 
+
+Changed
+
+* Rewrote ``coordinateIndex()`` to fix issue with invalid input handling. The function now verifies the input string length, limiting valid input to two characters. 
+
+
+---
+
 ### 2023.07.02 
 
 Added
@@ -22,3 +35,4 @@ Added
 * Started writing rules for pawns in `couldGo` function.
 
 
+---
