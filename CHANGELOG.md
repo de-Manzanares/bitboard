@@ -11,6 +11,8 @@ Changed
 * Refactored all pre-existing functions to utilize the new `ChessBoard` structure. This change has significantly improved the organization and readability of the code. 
 
 
+---
+
 ### 2023.07.01
 
 Added
