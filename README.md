@@ -7,7 +7,7 @@ Using the command line interface (CLI) we can interact with the bitboard to move
 and to display the state of the board. Currently, there are no rules. Any piece can be moved to any square at any time. 
 Capital letters stand for white pieces, lower case stand for black pieces.
 
-```shell
+```angular2html
 $ ./bitboard 
 mv e2 e4
 Moving e2 to e4
