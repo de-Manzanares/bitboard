@@ -38,6 +38,31 @@ d
 
 ## Installation
 
+### Automated Installation Using CMake
+Clone the repository
+```angular2html
+git clone https://github.com/de-Manzanares/bitboard.git
+```
+
+Move into the bitboard directory, then create and move into the build directory
+```angular2html
+cd bitboard
+mkdir build
+cd build
+```
+
+Run CMake, then compile
+```angular2html
+cmake ..
+make
+```
+
+Launch the program
+```angular2html
+./bitboard
+```
+
+### Manual Installation Using g++
 Clone the repository 
 ```angular2html
 git clone https://github.com/de-Manzanares/bitboard.git
@@ -46,7 +71,7 @@ git clone https://github.com/de-Manzanares/bitboard.git
 Move into the directory, then compile
 ```angular2html
 cd bitboard
-g++ -I . bitBoards.h main.cpp functions/*.cpp -o bitboard
+g++ -I include source/*.cpp -o bitboard
 ```
 
 Launch the program 
@@ -61,6 +86,8 @@ Launch the program
 ``d`` **d**isplay the board
 
 ``mv <FROM> <TO>`` **m**o**v**e a piece using [algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))
+
+``add <PIECE> <TO>`` **add** a piece to a square
 
 ``quit`` **quit** the program
 
@@ -104,20 +131,20 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 
 ## To-do
 
-### Short-term
+### Priority
+* Add Forsyth–Edwards notation (FEN) string decoder and encoder.
+* Record moves using portable game notation (PGN).
+* Implement the full set of chess rules.
+
+### Looking ahead
+* Implement basic evaluation and decision-making.
+* Implement UCI compatability.
+
+### Little things
 * Add pawn promotion.
 * Add an option to flip the board.
 * Add an option to undo moves.
 * Add an option to automatically display the board after each move.
-
-### Longer-than-short-term
-* Record moves using portable game notation (PGN). 
-* Implement full set of chess rules. 
-* Add Forsyth–Edwards notation (FEN) string decoder and encoder.
-
-### Hopefully sooner than never 
-* Implement basic evaluation and decision-making.
-* Implement UCI compatability.
 
 ---
 
