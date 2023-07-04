@@ -3,6 +3,13 @@ project(bitboard)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(.)
-file(GLOB_RECURSE FUNCTIONS "./functions/*.cpp")
-add_executable(bitboard main.cpp ${FUNCTIONS})
+include_directories(include)
+
+add_executable(bitboard source/addPiece.cpp
+                        source/addReplaceCommand.cpp
+                        source/coordinateIndex.cpp
+                        source/main.cpp
+                        source/moveCommand.cpp
+                        source/pieceSearch.cpp
+                        source/printBitBoard.cpp
+                        source/subtractPiece.cpp)
