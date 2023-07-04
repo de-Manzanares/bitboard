@@ -26,12 +26,12 @@ struct ChessBoard {
     uint64_t white_King   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00001000;    
 };
 
-
-void    printBitBoard   (ChessBoard& board);
-int     coordinateIndex (const string& coordinate);
-char    pieceSearch     (int index, const ChessBoard& board);
-void    removePiece     (const char& piece, int index, ChessBoard& board);
-void    addPiece        (const char& piece, int index, ChessBoard& board);
+void    addPiece            (char piece, int index, ChessBoard& board);
+void    addReplaceCommand   (stringstream& ss, ChessBoard& board);
+int     coordinateIndex     (const string& coordinate);
+void    moveCommand         (stringstream& ss, ChessBoard& board);
+char    pieceSearch         (int index, const ChessBoard& board);
+void    printBitBoard       (ChessBoard& board);
+void    subtractPiece       (char piece, int index, ChessBoard& board);
 
 #endif // BITBOARDS_H
-
