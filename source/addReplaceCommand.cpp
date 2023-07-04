@@ -27,7 +27,7 @@ void addReplaceCommand(stringstream& ss, ChessBoard& board)
 
     char pieceRemove = pieceSearch(index, board);
 
-    cout << "Adding" << pieceAdd << " to " << to
+    cout << "Adding " << pieceAdd << " to " << to
          << endl << endl;
 
     if (pieceRemove == 'E') {
