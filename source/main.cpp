@@ -26,6 +26,10 @@ int main()
         if (command == "mv") {
             moveCommand(ss, board);
         }
+
+        if (command == "fen") {
+            fenCommand(ss,board);
+        }
     }
     return 0;
 }
