@@ -82,14 +82,13 @@ Launch the program
 ---
 
 ## Commands
-
-``d`` **d**isplay the board
-
-``mv <FROM> <TO>`` **m**o**v**e a piece using [algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))
-
-``add <PIECE> <TO>`` **add** a piece to a square
-
-``quit`` **quit** the program
+|Syntax | Description |
+|-------|-------------|
+|``d`` | **d**isplay the board |
+|``mv <FROM> <TO>`` | **m**o**v**e a piece using [algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))| 
+|``add <PIECE> <TO>`` | **add** a piece to a square |
+|``fen out`` | print the current state of the board to the console in [Forsyth-Edwards Notation](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) (FEN) |
+|``quit`` | **quit** the program |
 
 ---
 
@@ -119,7 +118,7 @@ Lichess: [Learn chess - by playing!](https://lichess.org/learn#/)
 
 ## Contributions
 
-If you have something to contribute, please do so! 
+If you have something to contribute, please do so! Feel free to email me at [git.in.touch@dmanz.org](git.in.touch@dmanz.org)
 
 ### Reporting Bugs
 If you've found a bug, please open an issue on GitHub describing the problem. 
