@@ -118,7 +118,7 @@ Lichess: [Learn chess - by playing!](https://lichess.org/learn#/)
 
 ## Contributions
 
-If you have something to contribute, please do so! Feel free to email me at [git.in.touch@dmanz.org](git.in.touch@dmanz.org)
+If you have something to contribute, please do so! Feel free to email me at <git.in.touch@dmanz.org>
 
 ### Reporting Bugs
 If you've found a bug, please open an issue on GitHub describing the problem. 
