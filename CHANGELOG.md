@@ -6,7 +6,10 @@ Added
 
 * Created header file ``bitBoards.h`` to improve organization and readability.
 
-* Added option to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion. 
+* Added command to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion. 
+
+* New function ``fenEncode`` encodes the state of the board into a FEN string. 
+  * This function is incomplete - it does not encode side to move, castling ability, en passant, or move count. 
 
 Changed
 
