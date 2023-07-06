@@ -45,7 +45,7 @@ void moveCommand(stringstream& ss, ChessBoard& board)
     }
     else
     {
-        subtractPiece(pieceFrom, indexFrom, board);
+        subtractPiece(pieceTo, indexTo, board);
         addPiece(pieceFrom, indexTo, board);
     }
 }
