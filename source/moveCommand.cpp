@@ -34,7 +34,7 @@ void moveCommand(stringstream& ss, ChessBoard& board)
     }
 
     if (pieceFrom == 'P') {
-        if (!movePawn(pieceFrom, indexFrom, indexTo)) {
+        if (!movePawn(pieceFrom, indexFrom, indexTo, board)) {
             cout << "Illegal move" << endl << endl;
             return;
         }
