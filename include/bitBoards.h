@@ -33,6 +33,7 @@ void    fenCommand          (stringstream& ss, ChessBoard& board);
 void    fenDecode           (string& fenIn, ChessBoard& board);
 void    fenEncode           (ChessBoard& board);
 void    moveCommand         (stringstream& ss, ChessBoard& board);
+int     movePawn            (char piece, int from, int to);
 char    pieceSearch         (int index, const ChessBoard& board);
 void    printBitBoard       (ChessBoard& board);
 void    subtractPiece       (char piece, int index, ChessBoard& board);

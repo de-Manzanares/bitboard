@@ -13,6 +13,7 @@ add_executable(bitboard source/addPiece.cpp
                         source/fenEncode.cpp
                         source/main.cpp
                         source/moveCommand.cpp
+                        source/movePawn.cpp
                         source/pieceSearch.cpp
                         source/printBitBoard.cpp
                         source/subtractPiece.cpp)
