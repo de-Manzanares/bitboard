@@ -4,8 +4,8 @@ My goal, be it feasible or fantasy, is to write a chess engine from scratch. Thi
 first step. So, here we go! 
 
 Using the command line interface (CLI) we can interact with the bitboard to move pieces 
-and to display the state of the board. Currently, there are no rules. Any piece can be moved to any square at any time. 
-Capital letters stand for white pieces, lower case stand for black pieces.
+and to display the state of the board. We can also import and export FEN strings. Currently, I am working on 
+implementing rules. 
 
 ```angular2html
 $ ./bitboard 
@@ -144,12 +144,17 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ## To-do
 
 ### Priority
-* Implement the full set of chess rules.
-* Finish FEN implementation. 
-  * side to move
-  * move counter
-  * castling ability
-  * en passant targets
+* Implement rules
+  * Currently, there are partial rules for:
+    * Pawn movement - need to add en passant and pawn promotion
+  * Currently, there are no rules for:
+    * Rook
+    * Bishop
+    * Knight
+    * King 
+    * Queen
+* Finish FEN implementation by adding:
+  * side to move, move counter, castling ability, en passant targets
 * Implement portable game notation (PGN).
 
 ### Looking ahead
@@ -157,7 +162,6 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Implement UCI compatability.
 
 ### Little things
-* Add pawn promotion.
 * Add an option to flip the board.
 * Add an option to undo moves.
 * Add an option to automatically display the board after each move.
@@ -165,7 +169,6 @@ If you have an idea for a new feature, please open an issue on GitHub describing
  
 ### Specific Stuff
 * Divide ``ChessBoard`` structure into two colors. 
-* Fix pawn capturing so that they can't capture by wrapping around the board; a sneaky side effect of indexing the squares 0:63. 
 
 
 ---

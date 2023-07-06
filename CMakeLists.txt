@@ -16,4 +16,5 @@ add_executable(bitboard source/addPiece.cpp
                         source/movePawn.cpp
                         source/pieceSearch.cpp
                         source/printBitBoard.cpp
+                        source/rank_and_file.cpp
                         source/subtractPiece.cpp)

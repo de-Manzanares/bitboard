@@ -32,10 +32,15 @@ int     coordinateIndex     (const string& coordinate);
 void    fenCommand          (stringstream& ss, ChessBoard& board);
 void    fenDecode           (string& fenIn, ChessBoard& board);
 void    fenEncode           (ChessBoard& board);
+bool    isInFile_A          (int indexFrom);
+bool    isInFile_H          (int indexFrom);
+bool    isInRank_2          (int indexFrom);
+bool    isInRank_7          (int indexFrom);
 void    moveCommand         (stringstream& ss, ChessBoard& board);
 bool    movePawn            (char piece, int from, int to, ChessBoard& board);
 char    pieceSearch         (int index, const ChessBoard& board);
 void    printBitBoard       (ChessBoard& board);
+bool    rangeValidation     (std::vector<int> range, int indexTo);
 void    subtractPiece       (char piece, int index, ChessBoard& board);
 
 #endif // BITBOARDS_H
