@@ -1,8 +1,6 @@
-#include <cstdint>
 #include "bitBoards.h"
 
-void removePiece(const char& piece, int index, ChessBoard& board)                 
-                 
+void subtractPiece(char piece, int index, ChessBoard& board)
 {
     uint64_t mask = static_cast<uint64_t>(1) << index;
 
@@ -18,6 +16,5 @@ void removePiece(const char& piece, int index, ChessBoard& board)
     if (piece == 'R') {board.white_Rook   = board.white_Rook   - mask;}
     if (piece == 'Q') {board.white_Queen  = board.white_Queen  - mask;}
     if (piece == 'K') {board.white_King   = board.white_King   - mask;}
-
 }
 
