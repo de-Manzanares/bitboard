@@ -163,6 +163,10 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Add an option to automatically display the board after each move.
 * Change move function so that moving a piece to the square it currently occupies does not count as a move.
  
+### Specific Stuff
+* Divide ``ChessBoard`` structure into two colors. 
+* Fix pawn capturing so that they can't capture by wrapping around the board; a sneaky side effect of indexing the squares 0:63. 
+
 
 ---
 
