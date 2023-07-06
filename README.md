@@ -82,13 +82,26 @@ Launch the program
 ---
 
 ## Commands
-|Syntax | Description |
-|-------|-------------|
-|``d`` | **d**isplay the board |
-|``mv <FROM> <TO>`` | **m**o**v**e a piece using [algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))| 
-|``add <PIECE> <TO>`` | **add** a piece to a square |
-|``fen out`` | print the current state of the board to the console in [Forsyth-Edwards Notation](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) (FEN) |
-|``quit`` | **quit** the program |
+| Syntax                             | Description                    |
+|------------------------------------|--------------------------------|
+| ``d``                              | **d**isplay the board          |
+| ``mv <FROM> <TO>``<sup>1</sup>     | **m**o**v**e a piece           |
+| ``add <PIECE> <TO>``<sup>1</sup>   | **add** a piece to the board   |
+| ``fen in <FEN>``<sup>2, 3, 4</sup> | set the state of the board     |
+| ``fen out``<sup>2, 3</sup>         | display the state of the board |
+| ``quit``                           | **quit** the program           |
+<br>
+
+<sup>1</sup> ``<FROM>`` and ``<TO>`` use [algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)). For example: ``mv e2 e4`` , ``add Q f8``
+
+<sup>2</sup> [Forsyth-Edwards Notation](https://www.chess.com/terms/fen-chess) (FEN) is a line of text that contains all the 
+necessary information to completely describe a game of chess. It describes where the pieces are, castling ability,
+en passant targets, and half and full move count.  
+
+<sup>3</sup> Currently, FEN implementation is incomplete. This program can interpret FEN strings insofar as piece placement, but does not consider side to move, 
+castling ability, en passant, or move count. 
+
+<sup>4</sup> For example: ``fen in 8/pp4pp/2pn1k2/3p1p2/3P1K2/6PP/PPP1B1P1/8``.
 
 ---
 
@@ -131,9 +144,13 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ## To-do
 
 ### Priority
-* Add Forsyth–Edwards notation (FEN) string decoder and encoder.
-* Record moves using portable game notation (PGN).
 * Implement the full set of chess rules.
+* Finish FEN implementation. 
+  * side to move
+  * move counter
+  * castling ability
+  * en passant targets
+* Implement portable game notation (PGN).
 
 ### Looking ahead
 * Implement basic evaluation and decision-making.
@@ -144,6 +161,8 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Add an option to flip the board.
 * Add an option to undo moves.
 * Add an option to automatically display the board after each move.
+* Change move function so that moving a piece to the square it currently occupies does not count as a move.
+ 
 
 ---
 

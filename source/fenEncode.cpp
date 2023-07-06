@@ -1,4 +1,3 @@
-
 #include "bitBoards.h"
 
 void fenEncode(ChessBoard& board)

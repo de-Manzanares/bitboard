@@ -11,6 +11,10 @@ Added
 * New function ``fenEncode`` encodes the state of the board into a FEN string. 
   * This function is incomplete - it does not encode side to move, castling ability, en passant, or move count. 
 
+* New function ``fenDecode`` decodes FEN string to set the state of the board.
+  * This function is incomplete - it does not decode side to move, castling ability, en passant, or move count.
+
+
 Changed
 
 * Refactored all pre-existing functions to utilize the new `ChessBoard` structure. This change has significantly improved the organization and readability of the code. 

@@ -30,6 +30,7 @@ void    addPiece            (char piece, int index, ChessBoard& board);
 void    addReplaceCommand   (stringstream& ss, ChessBoard& board);
 int     coordinateIndex     (const string& coordinate);
 void    fenCommand          (stringstream& ss, ChessBoard& board);
+void    fenDecode           (string& fenIn, ChessBoard& board);
 void    fenEncode           (ChessBoard& board);
 void    moveCommand         (stringstream& ss, ChessBoard& board);
 char    pieceSearch         (int index, const ChessBoard& board);

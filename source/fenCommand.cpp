@@ -20,8 +20,8 @@ void fenCommand(stringstream& ss, ChessBoard& board) {
     if (validDirection.find(direction) != validDirection.end()) {
 
         if (direction == "in") {
-            cout << "not yet implemented"
-                 << endl << endl;
+            ss >> fenIn;
+            fenDecode(fenIn, board);
         } else {
             fenEncode(board);
         }

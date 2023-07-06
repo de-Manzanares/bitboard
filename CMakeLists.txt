@@ -9,6 +9,7 @@ add_executable(bitboard source/addPiece.cpp
                         source/addReplaceCommand.cpp
                         source/coordinateIndex.cpp
                         source/fenCommand.cpp
+                        source/fenDecode.cpp
                         source/fenEncode.cpp
                         source/main.cpp
                         source/moveCommand.cpp
