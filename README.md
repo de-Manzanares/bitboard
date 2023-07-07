@@ -151,10 +151,17 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ---
 
 ## License
+Copyright (C) 2023 de-Manzanares
 
 Without a license, this work would be under exclusive copyright by default. Express permission would be required 
 in order to use, modify, or share this work. That's ridiculous! So, here ya go. 
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-You may use, modify, or distribute this work freely as it is licenced under the [GNU General Public License Version 3](./COPYING.txt) 
-(GPLv3). If you choose to distribute or modify this work, the distributions and modifications must be made available under GPLv3.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
