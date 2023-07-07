@@ -39,6 +39,12 @@ void moveCommand(stringstream& ss, ChessBoard& board)
             return;
         }
     }
+    if (pieceFrom == 'R' || pieceFrom == 'r') {
+        if (!moveRook(pieceFrom, indexFrom, indexTo, board)) {
+            cout << "Illegal move" << endl << endl;
+            return;
+        }
+    }
 
     subtractPiece(pieceFrom, indexFrom, board);
 

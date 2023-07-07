@@ -1,9 +1,9 @@
 #include <vector>
 #include "bitBoards.h"
 
-bool movePawn(char piece, int indexFrom, int indexTo, ChessBoard& board) {
+bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board) {
 
-    if (piece == 'p') {
+    if (pieceFrom == 'p') {
         const int F_ONE = indexFrom - 8;
         const int F_TWO = indexFrom - 16;
         const int D_LEFT_ONE = indexFrom - 9;
@@ -71,7 +71,7 @@ bool movePawn(char piece, int indexFrom, int indexTo, ChessBoard& board) {
         return false;
     }
 
-    if (piece == 'P') {
+    if (pieceFrom == 'P') {
         const int F_ONE = indexFrom + 8;
         const int F_TWO = indexFrom + 16;
         const int D_LEFT_ONE = indexFrom + 9;

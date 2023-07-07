@@ -5,34 +5,11 @@ first step. So, here we go!
 
 Using the command line interface (CLI) we can interact with the bitboard to move pieces 
 and to display the state of the board. We can also import and export FEN strings. Currently, I am working on 
-implementing rules. 
+implementing rules.
 
-```angular2html
-$ ./bitboard 
-mv e2 e4
-Moving e2 to e4
+If you'd like to play with the program without partial rules implemented, checkout the ``anarchy_chess`` branch.
 
-d
-
-    +---+---+---+---+---+---+---+---+
-    | r | n | b | q | k | b | n | r |
-    +---+---+---+---+---+---+---+---+
-    | p | p | p | p | p | p | p | p |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   | P |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    |   |   |   |   |   |   |   |   |
-    +---+---+---+---+---+---+---+---+
-    | P | P | P | P |   | P | P | P |
-    +---+---+---+---+---+---+---+---+
-    | R | N | B | Q | K | B | N | R |
-    +---+---+---+---+---+---+---+---+
-    
-```
+![overview.gif](gif%2Foverview.gif)
 
 ---
 
