@@ -1,3 +1,26 @@
+/* 
+    
+    Copyright (C) 2023 de-Manzanares
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    Contact:
+    If you have any questions, comments, or suggestions, 
+    you can reach me at <git.in.touch@dmanz.org>
+
+*/
+
 // include guard
 #ifndef BITBOARDS_H
 #define BITBOARDS_H
@@ -40,11 +63,17 @@ bool    isInFile_E          (int indexFrom);
 bool    isInFile_F          (int indexFrom);
 bool    isInFile_G          (int indexFrom);
 bool    isInFile_H          (int indexFrom);
+bool    isInRank_1          (int indexFrom);
 bool    isInRank_2          (int indexFrom);
 bool    isInRank_7          (int indexFrom);
+bool    isInRank_8          (int indexFrom);
 void    moveCommand         (stringstream& ss, ChessBoard& board);
 bool    movePawn            (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveBishop          (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
 bool    moveRook            (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveQueen           (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveKing            (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveKnight          (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
 char    pieceSearch         (int index, const ChessBoard& board);
 void    printBitBoard       (ChessBoard& board);
 bool    rangeValidation     (std::vector<int> range, int indexTo);

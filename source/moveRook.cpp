@@ -1,3 +1,26 @@
+/* 
+    
+    Copyright (C) 2023 de-Manzanares
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    Contact:
+    If you have any questions, comments, or suggestions, 
+    you can reach me at <git.in.touch@dmanz.org>
+
+*/
+
 #include "bitBoards.h"
 
 bool moveRook (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
@@ -124,37 +147,37 @@ bool moveRook (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
             result = squareSearch(pieceFrom, flag, canMove, L_ONE, board);
             canMoveL_ONE = result[1];
             if (canMoveL_ONE)   {range.push_back(L_ONE);}
-        }
+
         if (!(isInFile_B(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, L_TWO, board);
             canMoveL_TWO = result[1];
             if (canMoveL_TWO)   {range.push_back(L_TWO);}
-        }
+
         if (!(isInFile_C(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, L_THREE, board);
             canMoveL_THREE = result[1];
             if (canMoveL_THREE) {range.push_back(L_THREE);}
-        }
+
         if (!(isInFile_D)(indexFrom)) {
             result = squareSearch(pieceFrom, flag, canMove, L_FOUR, board);
             canMoveL_FOUR = result[1];
             if (canMoveL_FOUR)  {range.push_back(L_FOUR);}
-        }
+
         if (!(isInFile_E)(indexFrom)) {
             result = squareSearch(pieceFrom, flag, canMove, L_FIVE, board);
             canMoveL_FIVE = result[1];
             if (canMoveL_FIVE)  {range.push_back(L_FIVE);}
-        }
+
         if (!(isInFile_F(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, L_SIX, board);
             canMoveL_SIX = result[1];
             if (canMoveL_SIX)   {range.push_back(L_SIX);}
-        }
+
         if (!(isInFile_G(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, L_SEVEN, board);
             canMoveL_SEVEN = result[1];
             if (canMoveL_SEVEN) {range.push_back(L_SEVEN);}
-        }
+        }}}}}}}
 
         flag = 1;
         canMove = 1;
@@ -163,37 +186,37 @@ bool moveRook (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
             result = squareSearch(pieceFrom, flag, canMove, R_ONE, board);
             canMoveR_ONE = result[1];
             if (canMoveR_ONE)   {range.push_back(R_ONE);}
-        }
+
         if (!(isInFile_G(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_TWO, board);
             canMoveR_TWO = result[1];
             if (canMoveR_TWO)   {range.push_back(R_TWO);}
-        }
+
         if (!(isInFile_F(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_THREE, board);
             canMoveR_THREE = result[1];
             if (canMoveR_THREE) {range.push_back(R_THREE);}
-        }
+
         if (!(isInFile_E(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_FOUR, board);
             canMoveR_FOUR = result[1];
             if (canMoveR_FOUR)  {range.push_back(R_FOUR);}
-        }
+
         if (!(isInFile_D(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_FIVE, board);
             canMoveR_FIVE = result[1];
             if (canMoveR_FIVE)  {range.push_back(R_FIVE);}
-        }
+
         if (!(isInFile_C(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_SIX, board);
             canMoveR_SIX = result[1];
             if (canMoveR_SIX)   {range.push_back(R_SIX);}
-        }
+
         if (!(isInFile_B(indexFrom))) {
             result = squareSearch(pieceFrom, flag, canMove, R_SEVEN, board);
             canMoveR_SEVEN = result[1];
             if (canMoveR_SEVEN) {range.push_back(R_SEVEN);}
-        }
+        }}}}}}}
 
         if (rangeValidation(range, indexTo))
             return true;

@@ -5,9 +5,11 @@ first step. So, here we go!
 
 Using the command line interface (CLI) we can interact with the bitboard to move pieces 
 and to display the state of the board. We can also import and export FEN strings. Currently, I am working on 
-implementing rules.
+implementing the rules of the game. There are movement rules for the king, queen, rook, bishop, and pawn; none yet 
+for the knight. The movement rules do not yet consider en passant, pawn promotion, castling, check, or checkmate. 
 
-If you'd like to play with the program without partial rules implemented, checkout the ``anarchy_chess`` branch.
+
+If you'd like the program without any rules at all, checkout the Anarchist BitBoard release.
 
 ![overview.gif](gif%2Foverview.gif)
 
@@ -34,11 +36,6 @@ cmake ..
 make
 ```
 
-Launch the program
-```angular2html
-./bitboard
-```
-
 ### Manual Installation Using g++
 Clone the repository 
 ```angular2html
@@ -49,11 +46,6 @@ Move into the directory, then compile
 ```angular2html
 cd bitboard
 g++ -I include source/*.cpp -o bitboard
-```
-
-Launch the program 
-```angular2html
-./bitboard
 ```
 
 ---
@@ -76,9 +68,10 @@ necessary information to completely describe a game of chess. It describes where
 en passant targets, and half and full move count.  
 
 <sup>3</sup> Currently, FEN implementation is incomplete. This program can interpret FEN strings insofar as piece placement, but does not consider side to move, 
-castling ability, en passant, or move count. 
+castling ability, en passant, or move count.  
 
-<sup>4</sup> For example: ``fen in 8/pp4pp/2pn1k2/3p1p2/3P1K2/6PP/PPP1B1P1/8``.
+<sup>4</sup> For example: ``fen in 8/pp4pp/2pn1k2/3p1p2/3P1K2/6PP/PPP1B1P1/8 w - - 9 24``
+
 
 ---
 
@@ -108,7 +101,11 @@ Lichess: [Learn chess - by playing!](https://lichess.org/learn#/)
 
 ## Contributions
 
-If you have something to contribute, please do so! Feel free to email me at <git.in.touch@dmanz.org>
+If you have something to contribute, please do so! 
+
+### Questions, Comments, or Suggestions
+
+Please feel free to email me at <git.in.touch@dmanz.org>
 
 ### Reporting Bugs
 If you've found a bug, please open an issue on GitHub describing the problem. 
@@ -116,22 +113,24 @@ If you've found a bug, please open an issue on GitHub describing the problem.
 ### Suggesting Features
 If you have an idea for a new feature, please open an issue on GitHub describing your idea.
 
+### 
+
 ---
 
 ## To-do
 
 ### Priority
-* Implement rules
-  * Currently, there are partial rules for:
-    * Pawn movement - need to add en passant and pawn promotion
-  * Currently, there are no rules for:
-    * Rook
-    * Bishop
-    * Knight
-    * King 
-    * Queen
+
+* Need to add rules for
+  * en passant, pawn promotion
+  * castling
+  * check, checkmate 
+
+
 * Finish FEN implementation by adding:
   * side to move, move counter, castling ability, en passant targets
+  
+
 * Implement portable game notation (PGN).
 
 ### Looking ahead
@@ -142,11 +141,11 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Add an option to flip the board.
 * Add an option to undo moves.
 * Add an option to automatically display the board after each move.
+* Add an option to display rank and file labels 
 * Change move function so that moving a piece to the square it currently occupies does not count as a move.
  
 ### Specific Stuff
-* Divide ``ChessBoard`` structure into two colors. 
-
+* Simplify ``move<PIECE>`` functions
 
 ---
 
@@ -165,3 +164,6 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.

@@ -13,8 +13,12 @@ add_executable(bitboard source/addPiece.cpp
                         source/fenEncode.cpp
                         source/main.cpp
                         source/moveCommand.cpp
+                        source/moveBishop.cpp
+                        source/moveKing.cpp
+                        source/moveKnight.cpp
                         source/movePawn.cpp
                         source/moveRook.cpp
+                        source/moveQueen.cpp
                         source/pieceSearch.cpp
                         source/printBitBoard.cpp
                         source/rank_and_file.cpp

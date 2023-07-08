@@ -1,3 +1,26 @@
+/* 
+    
+    Copyright (C) 2023 de-Manzanares
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    Contact:
+    If you have any questions, comments, or suggestions, 
+    you can reach me at <git.in.touch@dmanz.org>
+
+*/
+
 #include <vector>
 #include <algorithm>
 
@@ -99,6 +122,16 @@ bool isInFile_H (int indexFrom)
     }
 }
 
+bool isInRank_1 (int indexFrom)
+{
+    if (7 >= indexFrom && indexFrom >= 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
 bool isInRank_2 (int indexFrom)
 {
     if (15 >= indexFrom && indexFrom >= 8) {
@@ -112,6 +145,16 @@ bool isInRank_2 (int indexFrom)
 bool isInRank_7 (int indexFrom)
 {
     if (55 >= indexFrom && indexFrom >= 48) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool isInRank_8 (int indexFrom)
+{
+    if (63 >= indexFrom && indexFrom >= 56) {
         return true;
     }
     else {
