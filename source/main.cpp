@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,10 +15,13 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   main.cpp
+/// @author de-Manzanares
+/// @brief  Main file for the bitboard.
 
 #include <iostream>
 #include <string>
@@ -33,25 +35,25 @@ int main()
     string commandLine;
     ChessBoard board;
 
-    while (getline(cin, commandLine) && commandLine != "quit") {
+    while (getline(cin, commandLine) && commandLine!="quit") {
         stringstream ss(commandLine);
         string command;
         ss >> command;
 
-        if (command == "add") {
+        if (command=="add") {
             addReplaceCommand(ss, board);
         }
 
-        if (command == "d") {
+        if (command=="d") {
             printBitBoard(board);
         }
 
-        if (command == "mv") {
+        if (command=="mv") {
             moveCommand(ss, board);
         }
 
-        if (command == "fen") {
-            fenCommand(ss,board);
+        if (command=="fen") {
+            fenCommand(ss, board);
         }
     }
     return 0;

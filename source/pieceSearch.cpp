@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,19 +15,23 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   pieceSearch.cpp
+/// @author de-Manzanares
+/// @brief  Searches the bitboard at a given index.
 
 #include "bitBoards.h"
 
 char pieceSearch(int index, const ChessBoard& board)
-
 {
-    char piece = 'E';
+    char piece = 'E';   // E for empty
+    // The `mask` is used to check if the bit at the given index is set.
     uint64_t mask = static_cast<uint64_t>(1) << index;
 
+    // If the bit is set, then the piece is found.
     if (board.black_pawn   & mask) { piece = 'p' ; return piece ;}
     if (board.black_night  & mask) { piece = 'n' ; return piece ;}
     if (board.black_bishop & mask) { piece = 'b' ; return piece ;}

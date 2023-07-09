@@ -1,5 +1,4 @@
 /* 
-    
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,19 +15,23 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   fenDecode.cpp
+/// @author de-Manzanares
+/// @brief  Decodes a FEN string and updates the board.
 
 #include "bitBoards.h"
 #include <string>
 
 void fenDecode(string& fenIn, ChessBoard& board)
 {
-    int i = 0;
-    int j = 63;
+    int fenIndex = 0;       // The index of the fen string.
+    int coordIndex = 63;    // The index of the square.
 
+    // Clear the bitboards.
     board.black_pawn   = 0;
     board.black_night  = 0;
     board.black_bishop = 0;
@@ -42,13 +45,19 @@ void fenDecode(string& fenIn, ChessBoard& board)
     board.white_Queen  = 0;
     board.white_King   = 0;
 
-    while (i < fenIn.size()) {
-        if (fenIn[i] >= '1' && fenIn[i] <= '8') {
-            j -= fenIn[i] - '0';
-        } else if (fenIn[i] != '/') {
-            addPiece(fenIn[i], j, board);
-            j--;
+    // While there are still characters in the fen string
+    while (fenIndex<fenIn.size()) {
+        // If the character is a number, skip that many squares.
+        if (fenIn[fenIndex]>='1' && fenIn[fenIndex]<='8') {
+            coordIndex -= fenIn[fenIndex]-'0';
+            // If the character is a '/', ignore it.
         }
-        i++;
+        else if (fenIn[fenIndex]!='/') {
+            // If the character is a piece, add it to the board and move to the next square.
+            addPiece(fenIn[fenIndex], coordIndex, board);
+            coordIndex--;
+        }
+        // Move to the next character in the fen string.
+        fenIndex++;
     }
 }

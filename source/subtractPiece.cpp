@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,17 +15,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   subtractPiece.cpp
+/// @author de-Manzanares
+/// @brief  Removes a piece from the board.
 
 #include "bitBoards.h"
 
 void subtractPiece(char piece, int index, ChessBoard& board)
 {
+    // The `mask` is used to perform bitwise operations on specific bits.
     uint64_t mask = static_cast<uint64_t>(1) << index;
 
+    // On the specified bitboard, and at the specified bit, set the bit to 0.
     if (piece == 'p') {board.black_pawn   = board.black_pawn   - mask;}
     if (piece == 'n') {board.black_night  = board.black_night  - mask;}
     if (piece == 'b') {board.black_bishop = board.black_bishop - mask;}

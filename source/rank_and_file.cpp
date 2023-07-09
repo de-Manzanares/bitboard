@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,17 +15,20 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   rank_and_file.cpp
+/// @author de-Manzanares
+/// @brief  Contains helper functions to check rank and file of a given index.
 
 #include <vector>
 #include <algorithm>
 
 bool rangeValidation(std::vector<int> range, int indexTo)
 {
-    if(find(range.begin(), range.end(), indexTo) != range.end()) {
+    if (find(range.begin(), range.end(), indexTo)!=range.end()) {
         return true;
     }
     else {
@@ -34,10 +36,10 @@ bool rangeValidation(std::vector<int> range, int indexTo)
     }
 }
 
-bool isInFile_A (int indexFrom)
+bool isInFile_A(int indexFrom)
 {
     std::vector<int> file_A = {7, 15, 23, 31, 39, 47, 55, 63};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -45,10 +47,10 @@ bool isInFile_A (int indexFrom)
     }
 }
 
-bool isInFile_B (int indexFrom)
+bool isInFile_B(int indexFrom)
 {
     std::vector<int> file_A = {6, 14, 22, 30, 38, 46, 54, 62};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -56,10 +58,10 @@ bool isInFile_B (int indexFrom)
     }
 }
 
-bool isInFile_C (int indexFrom)
+bool isInFile_C(int indexFrom)
 {
     std::vector<int> file_A = {5, 13, 21, 29, 37, 45, 53, 61};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -67,10 +69,10 @@ bool isInFile_C (int indexFrom)
     }
 }
 
-bool isInFile_D (int indexFrom)
+bool isInFile_D(int indexFrom)
 {
     std::vector<int> file_A = {4, 12, 20, 28, 36, 44, 52, 60};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -78,10 +80,10 @@ bool isInFile_D (int indexFrom)
     }
 }
 
-bool isInFile_E (int indexFrom)
+bool isInFile_E(int indexFrom)
 {
     std::vector<int> file_A = {3, 11, 19, 27, 35, 43, 51, 59};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -89,10 +91,10 @@ bool isInFile_E (int indexFrom)
     }
 }
 
-bool isInFile_F (int indexFrom)
+bool isInFile_F(int indexFrom)
 {
     std::vector<int> file_A = {2, 10, 18, 26, 34, 42, 50, 58};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -100,10 +102,10 @@ bool isInFile_F (int indexFrom)
     }
 }
 
-bool isInFile_G (int indexFrom)
+bool isInFile_G(int indexFrom)
 {
     std::vector<int> file_A = {1, 9, 17, 25, 33, 41, 49, 57};
-    if(find(file_A.begin(), file_A.end(), indexFrom) != file_A.end()) {
+    if (find(file_A.begin(), file_A.end(), indexFrom)!=file_A.end()) {
         return true;
     }
     else {
@@ -111,10 +113,10 @@ bool isInFile_G (int indexFrom)
     }
 }
 
-bool isInFile_H (int indexFrom)
+bool isInFile_H(int indexFrom)
 {
     std::vector<int> file_H = {0, 8, 16, 24, 32, 40, 48, 56};
-    if(find(file_H.begin(), file_H.end(), indexFrom) != file_H.end()) {
+    if (find(file_H.begin(), file_H.end(), indexFrom)!=file_H.end()) {
         return true;
     }
     else {
@@ -122,9 +124,9 @@ bool isInFile_H (int indexFrom)
     }
 }
 
-bool isInRank_1 (int indexFrom)
+bool isInRank_1(int indexFrom)
 {
-    if (7 >= indexFrom && indexFrom >= 0) {
+    if (7>=indexFrom && indexFrom>=0) {
         return true;
     }
     else {
@@ -132,9 +134,9 @@ bool isInRank_1 (int indexFrom)
     }
 }
 
-bool isInRank_2 (int indexFrom)
+bool isInRank_2(int indexFrom)
 {
-    if (15 >= indexFrom && indexFrom >= 8) {
+    if (15>=indexFrom && indexFrom>=8) {
         return true;
     }
     else {
@@ -142,9 +144,9 @@ bool isInRank_2 (int indexFrom)
     }
 }
 
-bool isInRank_7 (int indexFrom)
+bool isInRank_7(int indexFrom)
 {
-    if (55 >= indexFrom && indexFrom >= 48) {
+    if (55>=indexFrom && indexFrom>=48) {
         return true;
     }
     else {
@@ -152,9 +154,9 @@ bool isInRank_7 (int indexFrom)
     }
 }
 
-bool isInRank_8 (int indexFrom)
+bool isInRank_8(int indexFrom)
 {
-    if (63 >= indexFrom && indexFrom >= 56) {
+    if (63>=indexFrom && indexFrom>=56) {
         return true;
     }
     else {

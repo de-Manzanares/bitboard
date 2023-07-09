@@ -1,5 +1,4 @@
 /* 
-    
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,10 +15,13 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   bitBoards.h
+/// @author de-Manzanares
+/// @brief  Header file for bitBoards
 
 // include guard
 #ifndef BITBOARDS_H
@@ -30,7 +32,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-
 
 using namespace std;
 
