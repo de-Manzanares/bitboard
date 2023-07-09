@@ -25,7 +25,7 @@
 
 #include <string>
 
-// h1 through a8 is 0 through 63.
+// Converts chess algebraic notation to an integer. h1 through a8 is 0 through 63.
 int coordinateIndex(const std::string& coordinate)
 {
     int index;  // The index of the square.
