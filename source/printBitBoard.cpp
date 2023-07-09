@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,49 +15,40 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
+
+/// @file   printBitBoard.cpp
+/// @author de-Manzanares
+/// @brief  Prints an ASCII representation of the chess board to the console.
 
 #include <iostream>
 #include <string>
 #include "bitBoards.h"
 
-using namespace std;
-
 void printBitBoard(ChessBoard& board)
 {
-    int counter = 0;
-    bool piecePrinted;
+    int countSquares = 0;   // Every 8th square, a new rank is started.
     string line = "    +---+---+---+---+---+---+---+---+";
+    char piece;             // The piece to be printed.
 
     cout << endl << line << endl << "    ";
 
-    for (int i = 63; i >= 0; i--)
-    {
-        uint64_t mask = static_cast<uint64_t>(1) << i;
-
+    // Starting at the index 63 (square a8) and going to 0 (square h1).
+    for (int coordIndex = 63; coordIndex>=0; coordIndex--) {
         cout << "| ";
-        if (board.black_pawn   & mask) { cout << "p" ; piecePrinted = true;}
-        if (board.black_night  & mask) { cout << "n" ; piecePrinted = true;}
-        if (board.black_bishop & mask) { cout << "b" ; piecePrinted = true;}
-        if (board.black_rook   & mask) { cout << "r" ; piecePrinted = true;}
-        if (board.black_queen  & mask) { cout << "q" ; piecePrinted = true;}
-        if (board.black_king   & mask) { cout << "k" ; piecePrinted = true;}
-        if (board.white_Pawn   & mask) { cout << "P" ; piecePrinted = true;}
-        if (board.white_Night  & mask) { cout << "N" ; piecePrinted = true;}
-        if (board.white_Bishop & mask) { cout << "B" ; piecePrinted = true;}
-        if (board.white_Rook   & mask) { cout << "R" ; piecePrinted = true;}
-        if (board.white_Queen  & mask) { cout << "Q" ; piecePrinted = true;}
-        if (board.white_King   & mask) { cout << "K" ; piecePrinted = true;}
+        piece = pieceSearch(coordIndex, board);     // Search the square for a piece.
+        if (piece=='E') {                           // If there was no piece, print a space.
+            cout << " ";
+        }
+        else {
+            cout << piece;                          // If there was a piece, print it.
+        }
         cout << " ";
 
-        if (!piecePrinted) { cout << " ";}
-        piecePrinted = false;
-
-        counter++;
-        if (counter % 8 == 0) { cout << "|" << endl << line << endl << "    "; }
+        countSquares++;  // Increment the counter and check if a new rank is started.
+        if (countSquares%8==0) { cout << "|" << endl << line << endl << "    "; }
     }
     cout << endl;
 }
