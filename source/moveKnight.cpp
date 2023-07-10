@@ -1,5 +1,4 @@
-/* 
-    
+/*
     Copyright (C) 2023 de-Manzanares
 
     This program is free software: you can redistribute it and/or modify
@@ -16,12 +15,20 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     Contact:
-    If you have any questions, comments, or suggestions, 
+    If you have any questions, comments, or suggestions,
     you can reach me at <git.in.touch@dmanz.org>
-
 */
 
+/// @file   moveKnight.cpp
+/// @author de-Manzanares
+/// @brief  Calculates all possible moves for a given knight,
+///         and checks if the target square is in the range.
+
 #include "bitBoards.h"
+
+void calculateMovesKnightHelper
+        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
+                ChessBoard& board);
 
 bool moveKnight (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
@@ -34,112 +41,92 @@ bool moveKnight (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
     const int BackLeft      = indexFrom - 15;
     const int BackRight     = indexFrom - 17;
 
-    bool RANK_8 = isInRank_8(indexFrom);
-    bool RANK_7 = isInRank_7(indexFrom);
-    bool RANK_2 = isInRank_2(indexFrom);
-    bool RANK_1 = isInRank_1(indexFrom);
-    bool FILE_A = isInFile_A(indexFrom);
-    bool FILE_B = isInFile_B(indexFrom);
-    bool FILE_G = isInFile_G(indexFrom);
-    bool FILE_H = isInFile_H(indexFrom);
-
-    bool canMoveForwardLeft;
-    bool canMoveForwardRight;
-    bool canMoveLeftForward;
-    bool canMoveRightForward;
-    bool canMoveLeftBack;
-    bool canMoveRightBack;
-    bool canMoveBackLeft;
-    bool canMoveBackRight;
+    std::vector<int> result;
+    std::vector<int> range;
 
     int flag = 1;
     int canMove = 1;
+    int limit = 2;
+    vector<int> moves;
 
-    std::vector<int> result;
-    std::vector<int> range = {};
+    // For reference
+    // a8 through h1 is 63 through 0
+    // {a8, b8, g8, h8, a7, b7, g7, h7, a2, b2, g2, h2, a1, b1, g1, h1}
+    // {63, 62, 57, 56, 55, 54, 49, 48, 15, 14,  9,  8,  7,  6,  1,  0}
 
-    bool isIn4x4Center = (!FILE_A && !FILE_B && !FILE_H && !FILE_G
-            && !RANK_8 && !RANK_7 && !RANK_2 && !RANK_1);
-    bool isIn4x4CenterViolate_B = (!FILE_A && !FILE_H && !FILE_G
-            && !RANK_8 && !RANK_7 && !RANK_2 && !RANK_1);
-
-    if (isIn4x4Center) {
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, ForwardLeft, board);
-        canMoveForwardLeft = result[1];
-        if (canMoveForwardLeft)   {range.push_back(ForwardLeft);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, ForwardRight, board);
-        canMoveForwardRight = result[1];
-        if (canMoveForwardRight)   {range.push_back(ForwardRight);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, LeftForward, board);
-        canMoveLeftForward = result[1];
-        if (canMoveLeftForward)   {range.push_back(LeftForward);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, RightForward, board);
-        canMoveRightForward = result[1];
-        if (canMoveRightForward)   {range.push_back(RightForward);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, LeftBack, board);
-        canMoveLeftBack = result[1];
-        if (canMoveLeftBack)   {range.push_back(LeftBack);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, RightBack, board);
-        canMoveRightBack = result[1];
-        if (canMoveRightBack)   {range.push_back(RightBack);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, BackLeft, board);
-        canMoveBackLeft = result[1];
-        if (canMoveBackLeft)   {range.push_back(BackLeft);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, BackRight, board);
-        canMoveBackRight = result[1];
-        if (canMoveBackRight)   {range.push_back(BackRight);}
+    switch (indexFrom) {
+    case 63:
+        moves = {BackRight, RightBack};
+        break;
+    case 62:
+        moves = {BackRight, RightBack, BackLeft};
+        break;
+    case 57:
+        moves = {BackRight, BackLeft, LeftBack};
+        break;
+    case 56:
+        moves = {BackLeft, LeftBack};
+        break;
+    case 55:
+        moves = {BackRight, RightBack, RightForward};
+        break;
+    case 54:
+        moves = {BackRight, RightBack, RightForward, BackLeft};
+        break;
+    case 49:
+        moves = {BackRight, BackLeft, LeftBack, LeftForward};
+        break;
+    case 48:
+        moves = {BackLeft, LeftBack, LeftForward};
+        break;
+    case 15:
+        moves = {RightBack, RightForward, ForwardRight};
+        break;
+    case 14:
+        moves = {RightBack, RightForward, ForwardRight, ForwardLeft};
+        break;
+    case 9:
+        moves = {LeftBack, LeftForward, ForwardLeft, ForwardRight};
+        break;
+    case 8:
+        moves = {LeftBack, LeftForward, ForwardLeft};
+        break;
+    case 7:
+        moves = {RightForward, ForwardRight};
+        break;
+    case 6:
+        moves = {RightForward, ForwardRight, ForwardLeft};
+        break;
+    case 1:
+        moves = {LeftForward, ForwardLeft};
+        break;
+    case 0:
+        moves = {LeftForward, ForwardLeft, ForwardRight};
+        break;
+    default:
+        moves = {BackRight, RightBack, BackLeft, LeftBack, RightForward, ForwardRight, LeftForward, ForwardLeft};
     }
 
-    if (isIn4x4CenterViolate_B) {
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, ForwardLeft, board);
-        canMoveForwardLeft = result[1];
-        if (canMoveForwardLeft)   {range.push_back(ForwardLeft);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, ForwardRight, board);
-        canMoveForwardRight = result[1];
-        if (canMoveForwardRight)   {range.push_back(ForwardRight);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, RightForward, board);
-        canMoveRightForward = result[1];
-        if (canMoveRightForward)   {range.push_back(RightForward);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, RightBack, board);
-        canMoveRightBack = result[1];
-        if (canMoveRightBack)   {range.push_back(RightBack);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, BackLeft, board);
-        canMoveBackLeft = result[1];
-        if (canMoveBackLeft)   {range.push_back(BackLeft);}
-        flag = 1;
-        canMove = 1;
-        result = squareSearch(pieceFrom, flag, canMove, BackRight, board);
-        canMoveBackRight = result[1];
-        if (canMoveBackRight)   {range.push_back(BackRight);}
-    }
+    calculateMovesKnightHelper(pieceFrom, range, flag, canMove, moves, limit, board);
+
+    printVector(range);
 
     if (rangeValidation(range, indexTo))
         return true;
     return false;
+}
+
+void calculateMovesKnightHelper
+        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
+                ChessBoard& board)
+{
+    std::vector<int> result;
+    flag = 1;
+    limit = moves.size();
+    for (int i = 0; i<limit; i++) {
+        canMove = 1;
+        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
+        if (result[1])
+            range.push_back(moves[i]);
+    }
 }
