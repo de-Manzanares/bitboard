@@ -24,7 +24,6 @@
 /// @brief  Calculates all available diagonal moves from a given square.
 
 #include "bitBoards.h"
-#include <vector>
 
 void calculateMovesDiagonalHelper
         (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,

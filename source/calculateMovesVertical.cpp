@@ -21,7 +21,7 @@
 
 /// @file   calculateMovesVertical.cpp
 /// @author de-Manzanares
-/// @brief  Calculates all available vertical from a given square.
+/// @brief  Calculates all available vertical moves from a given square.
 
 #include "bitBoards.h"
 

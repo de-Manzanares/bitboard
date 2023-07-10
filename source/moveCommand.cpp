@@ -23,8 +23,6 @@
 /// @author de-Manzanares
 /// @brief  Handles the move command.
 
-#include <iostream>
-#include <string>
 #include <sstream>
 #include "bitBoards.h"
 

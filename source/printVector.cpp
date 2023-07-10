@@ -19,27 +19,18 @@
     you can reach me at <git.in.touch@dmanz.org>
 */
 
-/// @file   moveBishop.cpp
+/// @file   printVector.cpp
 /// @author de-Manzanares
-/// @brief  Calculates all possible moves for a given bishop,
-///         and checks if the target square is in the range.
+/// @brief  Prints a vector.
 
 #include "bitBoards.h"
 
-bool moveBishop(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
+void printVector(vector<int>& range)
 {
-    if (pieceFrom=='B' || pieceFrom=='b') {
-
-        vector<int> range;
-
-        calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
-
-        printVector(range);
-
-        if (rangeValidation(range, indexTo))
-            return true;
-        return false;
+    int printIndex = 0;
+    while(printIndex<range.size()) {
+        cout << range[printIndex] << " ";
+        printIndex++;
     }
-
-    return false;
+    cout << endl;
 }

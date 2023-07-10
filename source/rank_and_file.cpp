@@ -26,6 +26,8 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 bool rangeValidation(std::vector<int> range, int indexTo)
 {
     if (find(range.begin(), range.end(), indexTo)!=range.end()) {
@@ -33,6 +35,74 @@ bool rangeValidation(std::vector<int> range, int indexTo)
     }
     else {
         return false;
+    }
+}
+
+bool isInFile(char file, int index)
+{
+    vector<int> indicesInFile;    // List of indexes in the file.
+
+    // Define the indices that comprise the given file.
+    switch (file) {
+        case 'A':
+            indicesInFile = {7, 15, 23, 31, 39, 47, 55, 63};
+            break;
+        case 'B':
+            indicesInFile = {6, 14, 22, 30, 38, 46, 54, 62};
+            break;
+        case 'C':
+            indicesInFile = {5, 13, 21, 29, 37, 45, 53, 61};
+            break;
+        case 'D':
+            indicesInFile = {4, 12, 20, 28, 36, 44, 52, 60};
+            break;
+        case 'E':
+            indicesInFile = {3, 11, 19, 27, 35, 43, 51, 59};
+            break;
+        case 'F':
+            indicesInFile = {2, 10, 18, 26, 34, 42, 50, 58};
+            break;
+        case 'G':
+            indicesInFile = {1, 9, 17, 25, 33, 41, 49, 57};
+            break;
+        case 'H':
+            indicesInFile = {0, 8, 16, 24, 32, 40, 48, 56};
+            break;
+        default:
+            return false;
+    }
+
+    // If the target index is in the given file, return true.
+    if (find(indicesInFile.begin(), indicesInFile.end(), index)!=indicesInFile.end()) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+char getFile(int index)
+{
+    int modulo = index % 8;
+    switch (modulo) {
+        case 0:
+            return 'h';
+        case 1:
+            return 'g';
+        case 2:
+            return 'f';
+        case 3:
+            return 'e';
+        case 4:
+            return 'd';
+        case 5:
+            return 'c';
+        case 6:
+            return 'b';
+        case 7:
+            return 'a';
+        default:
+            return 'x';
     }
 }
 

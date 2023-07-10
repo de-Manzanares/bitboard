@@ -32,9 +32,9 @@ bool moveQueen(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
         vector<int> range;
 
-        calculateMovesVertical(pieceFrom, indexFrom, range, board);
-        calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
+        calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
+        calculateMovesVertical(pieceFrom, indexFrom, range, board);
 
         printVector(range);
 
