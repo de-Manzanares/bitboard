@@ -31,36 +31,67 @@ void calculateMovesHorizontalHelper
 
 void calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
-    const int L_ONE = indexFrom+1;
-    const int L_TWO = indexFrom+2;
-    const int L_THREE = indexFrom+3;
-    const int L_FOUR = indexFrom+4;
-    const int L_FIVE = indexFrom+5;
-    const int L_SIX = indexFrom+6;
-    const int L_SEVEN = indexFrom+7;
-    const int R_ONE = indexFrom-1;
-    const int R_TWO = indexFrom-2;
-    const int R_THREE = indexFrom-3;
-    const int R_FOUR = indexFrom-4;
-    const int R_FIVE = indexFrom-5;
-    const int R_SIX = indexFrom-6;
-    const int R_SEVEN = indexFrom-7;
+    if (pieceFrom!='K' && pieceFrom!='k') {
+        const int L_ONE = indexFrom+1;
+        const int L_TWO = indexFrom+2;
+        const int L_THREE = indexFrom+3;
+        const int L_FOUR = indexFrom+4;
+        const int L_FIVE = indexFrom+5;
+        const int L_SIX = indexFrom+6;
+        const int L_SEVEN = indexFrom+7;
+        const int R_ONE = indexFrom-1;
+        const int R_TWO = indexFrom-2;
+        const int R_THREE = indexFrom-3;
+        const int R_FOUR = indexFrom-4;
+        const int R_FIVE = indexFrom-5;
+        const int R_SIX = indexFrom-6;
+        const int R_SEVEN = indexFrom-7;
 
-    int leftLimit;
-    int rightLimit;
-    char fileFrom;
-    int flag = 1;
-    int canMove = 1;
-    vector<int> result;
+        int leftLimit;
+        int rightLimit;
+        char fileFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
 
-    fileFrom = getFile(indexFrom);
-    leftLimit = fileFrom-'a';
-    rightLimit = 'h'-fileFrom;
+        fileFrom = getFile(indexFrom);
+        leftLimit = fileFrom-'a';
+        rightLimit = 'h'-fileFrom;
 
-    calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
-            {L_ONE, L_TWO, L_THREE, L_FOUR, L_FIVE, L_SIX, L_SEVEN}, leftLimit, board);
-    calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
-            {R_ONE, R_TWO, R_THREE, R_FOUR, R_FIVE, R_SIX, R_SEVEN}, rightLimit, board);
+        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
+                {L_ONE, L_TWO, L_THREE, L_FOUR, L_FIVE, L_SIX, L_SEVEN}, leftLimit, board);
+        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
+                {R_ONE, R_TWO, R_THREE, R_FOUR, R_FIVE, R_SIX, R_SEVEN}, rightLimit, board);
+    }
+
+    else {
+        const int L_ONE = indexFrom+1;
+        const int R_ONE = indexFrom-1;
+
+        int leftLimit;
+        int rightLimit;
+        char fileFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
+
+        fileFrom = getFile(indexFrom);
+        if (fileFrom-'a'>0) {
+            leftLimit = 1;
+        }
+        else {
+            leftLimit = 0;
+        }
+        if ('h'-fileFrom>0) {
+            rightLimit = 1;
+        }
+        else {
+            rightLimit = 0;
+        }
+
+        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove, {L_ONE}, leftLimit, board);
+        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove, {R_ONE}, rightLimit, board);
+    }
 }
 
 void calculateMovesHorizontalHelper

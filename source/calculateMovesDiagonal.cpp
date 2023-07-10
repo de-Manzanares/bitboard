@@ -32,57 +32,92 @@ void calculateMovesDiagonalHelper
 
 void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
-    const int FDL_ONE = indexFrom+9*1;
-    const int FDL_TWO = indexFrom+9*2;
-    const int FDL_THREE = indexFrom+9*3;
-    const int FDL_FOUR = indexFrom+9*4;
-    const int FDL_FIVE = indexFrom+9*5;
-    const int FDL_SIX = indexFrom+9*6;
-    const int FDL_SEVEN = indexFrom+9*7;
+    if (pieceFrom != 'K' && pieceFrom != 'k') {
+        const int FDL_ONE = indexFrom+9*1;
+        const int FDL_TWO = indexFrom+9*2;
+        const int FDL_THREE = indexFrom+9*3;
+        const int FDL_FOUR = indexFrom+9*4;
+        const int FDL_FIVE = indexFrom+9*5;
+        const int FDL_SIX = indexFrom+9*6;
+        const int FDL_SEVEN = indexFrom+9*7;
 
-    const int FDR_ONE = indexFrom+7*1;
-    const int FDR_TWO = indexFrom+7*2;
-    const int FDR_THREE = indexFrom+7*3;
-    const int FDR_FOUR = indexFrom+7*4;
-    const int FDR_FIVE = indexFrom+7*5;
-    const int FDR_SIX = indexFrom+7*6;
-    const int FDR_SEVEN = indexFrom+7*7;
+        const int FDR_ONE = indexFrom+7*1;
+        const int FDR_TWO = indexFrom+7*2;
+        const int FDR_THREE = indexFrom+7*3;
+        const int FDR_FOUR = indexFrom+7*4;
+        const int FDR_FIVE = indexFrom+7*5;
+        const int FDR_SIX = indexFrom+7*6;
+        const int FDR_SEVEN = indexFrom+7*7;
 
-    const int BDL_ONE = indexFrom-7*1;
-    const int BDL_TWO = indexFrom-7*2;
-    const int BDL_THREE = indexFrom-7*3;
-    const int BDL_FOUR = indexFrom-7*4;
-    const int BDL_FIVE = indexFrom-7*5;
-    const int BDL_SIX = indexFrom-7*6;
-    const int BDL_SEVEN = indexFrom-7*7;
+        const int BDL_ONE = indexFrom-7*1;
+        const int BDL_TWO = indexFrom-7*2;
+        const int BDL_THREE = indexFrom-7*3;
+        const int BDL_FOUR = indexFrom-7*4;
+        const int BDL_FIVE = indexFrom-7*5;
+        const int BDL_SIX = indexFrom-7*6;
+        const int BDL_SEVEN = indexFrom-7*7;
 
-    const int BDR_ONE = indexFrom-9*1;
-    const int BDR_TWO = indexFrom-9*2;
-    const int BDR_THREE = indexFrom-9*3;
-    const int BDR_FOUR = indexFrom-9*4;
-    const int BDR_FIVE = indexFrom-9*5;
-    const int BDR_SIX = indexFrom-9*6;
-    const int BDR_SEVEN = indexFrom-9*7;
+        const int BDR_ONE = indexFrom-9*1;
+        const int BDR_TWO = indexFrom-9*2;
+        const int BDR_THREE = indexFrom-9*3;
+        const int BDR_FOUR = indexFrom-9*4;
+        const int BDR_FIVE = indexFrom-9*5;
+        const int BDR_SIX = indexFrom-9*6;
+        const int BDR_SEVEN = indexFrom-9*7;
 
-    int leftLimit;
-    int rightLimit;
-    char fileFrom;
-    int flag = 1;
-    int canMove = 1;
-    vector<int> result;
+        int leftLimit;
+        int rightLimit;
+        char fileFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
 
-    fileFrom = getFile(indexFrom);
-    leftLimit = fileFrom-'a';
-    rightLimit = 'h'-fileFrom;
+        fileFrom = getFile(indexFrom);
+        leftLimit = fileFrom-'a';
+        rightLimit = 'h'-fileFrom;
 
-    calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
-            {FDL_ONE, FDL_TWO, FDL_THREE, FDL_FOUR, FDL_FIVE, FDL_SIX, FDL_SEVEN}, leftLimit, board);
-    calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
-            {FDR_ONE, FDR_TWO, FDR_THREE, FDR_FOUR, FDR_FIVE, FDR_SIX, FDR_SEVEN}, rightLimit, board);
-    calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
-            {BDL_ONE, BDL_TWO, BDL_THREE, BDL_FOUR, BDL_FIVE, BDL_SIX, BDL_SEVEN}, leftLimit, board);
-    calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
-            {BDR_ONE, BDR_TWO, BDR_THREE, BDR_FOUR, BDR_FIVE, BDR_SIX, BDR_SEVEN}, rightLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+                {FDL_ONE, FDL_TWO, FDL_THREE, FDL_FOUR, FDL_FIVE, FDL_SIX, FDL_SEVEN}, leftLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+                {FDR_ONE, FDR_TWO, FDR_THREE, FDR_FOUR, FDR_FIVE, FDR_SIX, FDR_SEVEN}, rightLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+                {BDL_ONE, BDL_TWO, BDL_THREE, BDL_FOUR, BDL_FIVE, BDL_SIX, BDL_SEVEN}, leftLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+                {BDR_ONE, BDR_TWO, BDR_THREE, BDR_FOUR, BDR_FIVE, BDR_SIX, BDR_SEVEN}, rightLimit, board);
+    }
+
+    else {
+        const int FDL_ONE = indexFrom+9*1;
+        const int FDR_ONE = indexFrom+7*1;
+        const int BDL_ONE = indexFrom-7*1;
+        const int BDR_ONE = indexFrom-9*1;
+
+        int leftLimit;
+        int rightLimit;
+        char fileFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
+
+        fileFrom = getFile(indexFrom);
+        if (fileFrom-'a'>0) {
+            leftLimit = 1;
+        }
+        else {
+            leftLimit = 0;
+        }
+        if ('h'-fileFrom>0) {
+            rightLimit = 1;
+        }
+        else {
+            rightLimit = 0;
+        }
+
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {FDL_ONE}, leftLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {FDR_ONE}, rightLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDL_ONE}, leftLimit, board);
+        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDR_ONE}, rightLimit, board);
+    }
 }
 
 void calculateMovesDiagonalHelper

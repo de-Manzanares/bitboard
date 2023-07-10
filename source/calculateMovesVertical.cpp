@@ -31,36 +31,67 @@ void calculateMovesVerticalHelper
 
 void calculateMovesVertical(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
-    const int F_ONE = indexFrom+8*1;
-    const int F_TWO = indexFrom+8*2;
-    const int F_THREE = indexFrom+8*3;
-    const int F_FOUR = indexFrom+8*4;
-    const int F_FIVE = indexFrom+8*5;
-    const int F_SIX = indexFrom+8*6;
-    const int F_SEVEN = indexFrom+8*7;
-    const int B_ONE = indexFrom-8*1;
-    const int B_TWO = indexFrom-8*2;
-    const int B_THREE = indexFrom-8*3;
-    const int B_FOUR = indexFrom-8*4;
-    const int B_FIVE = indexFrom-8*5;
-    const int B_SIX = indexFrom-8*6;
-    const int B_SEVEN = indexFrom-8*7;
+    if (pieceFrom!='K' && pieceFrom!='k') {
+        const int F_ONE = indexFrom+8*1;
+        const int F_TWO = indexFrom+8*2;
+        const int F_THREE = indexFrom+8*3;
+        const int F_FOUR = indexFrom+8*4;
+        const int F_FIVE = indexFrom+8*5;
+        const int F_SIX = indexFrom+8*6;
+        const int F_SEVEN = indexFrom+8*7;
+        const int B_ONE = indexFrom-8*1;
+        const int B_TWO = indexFrom-8*2;
+        const int B_THREE = indexFrom-8*3;
+        const int B_FOUR = indexFrom-8*4;
+        const int B_FIVE = indexFrom-8*5;
+        const int B_SIX = indexFrom-8*6;
+        const int B_SEVEN = indexFrom-8*7;
 
-    int topLimit;
-    int bottomLimit;
-    int rankFrom;
-    int flag = 1;
-    int canMove = 1;
-    vector<int> result;
+        int topLimit;
+        int bottomLimit;
+        int rankFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
 
-    rankFrom = indexFrom/8+1;
-    topLimit = 8-rankFrom;
-    bottomLimit = rankFrom-1;
+        rankFrom = indexFrom/8+1;
+        topLimit = 8-rankFrom;
+        bottomLimit = rankFrom-1;
 
-    calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
-            {F_ONE, F_TWO, F_THREE, F_FOUR, F_FIVE, F_SIX, F_SEVEN}, topLimit, board);
-    calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
-            {B_ONE, B_TWO, B_THREE, B_FOUR, B_FIVE, B_SIX, B_SEVEN}, bottomLimit, board);
+        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
+                {F_ONE, F_TWO, F_THREE, F_FOUR, F_FIVE, F_SIX, F_SEVEN}, topLimit, board);
+        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
+                {B_ONE, B_TWO, B_THREE, B_FOUR, B_FIVE, B_SIX, B_SEVEN}, bottomLimit, board);
+    }
+
+    else {
+        const int F_ONE = indexFrom+8*1;
+        const int B_ONE = indexFrom-8*1;
+
+        int topLimit;
+        int bottomLimit;
+        int rankFrom;
+        int flag = 1;
+        int canMove = 1;
+        vector<int> result;
+
+        rankFrom = indexFrom/8+1;
+        if (8-rankFrom>0) {
+            topLimit = 1;
+        }
+        else {
+                topLimit = 0;
+            }
+        if (rankFrom-1>0) {
+            bottomLimit = 1;
+        }
+        else {
+            bottomLimit = 0;
+        }
+
+        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove, {F_ONE}, topLimit, board);
+        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove, {B_ONE}, bottomLimit, board);
+    }
 }
 
 void calculateMovesVerticalHelper
