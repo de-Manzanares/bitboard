@@ -9,7 +9,8 @@ organized representation of the chessboard state. This is my first ever structur
 * Created header file ``bitBoards.h`` to improve organization and readability. This is my first ever header file. 
 
 
-* Added command to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion. 
+* Added command to manually add a piece to the board. This is an intermediate step toward automatically prompting the 
+user to select a piece for pawn promotion. 
 
 
 * New function ``fenEncode`` encodes the state of the board into a FEN string. 
@@ -17,10 +18,15 @@ organized representation of the chessboard state. This is my first ever structur
   * These functions are incomplete - they do not consider side to move, castling ability, en passant, or move count.
 
 
-* New functions ``movePawn``, ``moveBishop``, ``moveRook``, ``moveQueen``, and ``moveKing`` calculate the range of valid moves for the given piece, then check whether
-the target square of the move command is an element of that range. 
+* New functions ``movePawn``, `moveKnight`, `moveBishop`, `moveRook`, `moveQueen`, and `moveKing` calculate the range 
+of valid moves for the given piece, then check whether the target square of the move command is an element of that range. 
   * these movement functions do not account for en passant, pawn promotion, castling, check, or checkmate. 
   
+
+* New functions `calculateMovesDiagonal`, `calculateMovesHorizontal`, `calculateMovesVertical` introduced to simplify 
+move generation. They use recursive logic to continue searching in a given direction for a predetermined number of 
+squares, or until `squareSearch` reports a collision or capture. 
+
 
 * New function ``squareSearch`` is a way to identify potential captures or collisions. It evaluates a square as 
 empty, occupied by friendly, or occupied by hostile.

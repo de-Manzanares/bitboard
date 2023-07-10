@@ -5,8 +5,8 @@ first step. So, here we go!
 
 Using the command line interface (CLI) we can interact with the bitboard to move pieces 
 and to display the state of the board. We can also import and export FEN strings. Currently, I am working on 
-implementing the rules of the game. There are movement rules for the king, queen, rook, bishop, and pawn; none yet 
-for the knight. The movement rules do not yet consider en passant, pawn promotion, castling, check, or checkmate. 
+implementing en passant, pawn promotion, castling, check, checkmate, turn, the 50 move rule, and the threefold 
+repetition rule. 
 
 
 If you'd like the program without any rules at all, checkout the Anarchist BitBoard release.
@@ -125,6 +125,9 @@ If you have an idea for a new feature, please open an issue on GitHub describing
   * en passant, pawn promotion
   * castling
   * check, checkmate 
+  * turn
+  * 50 move rule
+  * threefold repetition rule
 
 
 * Finish FEN implementation by adding:
@@ -145,7 +148,7 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Change move function so that moving a piece to the square it currently occupies does not count as a move.
  
 ### Specific Stuff
-* Simplify ``move<PIECE>`` functions
+* Simplify ``movePawn`` function. 
 
 ---
 
