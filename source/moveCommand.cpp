@@ -26,7 +26,8 @@
 #include <sstream>
 #include "bitBoards.h"
 
-void moveCommand(stringstream& ss, ChessBoard& board)
+
+void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& board)
 {
     string from;    // From square
     string to;      // To square
@@ -83,7 +84,7 @@ void moveCommand(stringstream& ss, ChessBoard& board)
     }
     // If the piece is a rook, call the moveRook function.
     if (pieceFrom=='R' || pieceFrom=='r') {
-        if (!moveRook(pieceFrom, indexFrom, indexTo, board)) {
+        if (!moveRook(pieceFrom, indexFrom, indexTo, castlingRights, board)) {
             cout << "Illegal move" << endl << endl;
             return;
         }
@@ -97,20 +98,39 @@ void moveCommand(stringstream& ss, ChessBoard& board)
     }
     // If the piece is a king, call the moveKing function.
     if (pieceFrom=='K' || pieceFrom=='k') {
-        if (!moveKing(pieceFrom, indexFrom, indexTo, board)) {
+        if (!moveKing(pieceFrom, indexFrom, indexTo, castlingRights, board)) {
             cout << "Illegal move" << endl << endl;
             return;
         }
     }
 
-    // If the move is legal, remove the piece to be moved from its original square
-    subtractPiece(pieceFrom, indexFrom, board);
 
     cout << "Moving " << from << " to " << to
          << endl << endl;
 
     // Search for a piece on the target square
-    pieceTo = pieceSearch(indexTo, board);
+    // pieceTo = pieceSearch(indexTo, board);
+
+    // // If the target square is empty, add the piece to be moved.
+    // if (pieceTo=='E') {
+    //     addPiece(pieceFrom, indexTo, board);
+    // }
+    //     // If the target square is occupied, remove the piece on the target square
+    //     // then add piece to be moved.
+    // else {
+    //     subtractPiece(pieceTo, indexTo, board);
+    //     addPiece(pieceFrom, indexTo, board);
+    // }
+
+    movePiece(pieceFrom, indexFrom, indexTo, board);
+}
+
+void movePiece(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
+{
+    char pieceTo = pieceSearch(indexTo, board);
+
+    // If the move is legal, remove the piece to be moved from its original square
+    subtractPiece(pieceFrom, indexFrom, board);
 
     // If the target square is empty, add the piece to be moved.
     if (pieceTo=='E') {

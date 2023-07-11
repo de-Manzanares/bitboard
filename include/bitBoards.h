@@ -51,6 +51,16 @@ struct ChessBoard {
     uint64_t white_King   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00001000;    
 };
 
+struct CastlingRights
+{
+  bool whiteKingMoved = false;
+  bool blackKingMoved = false;
+  bool whiteKingSideRookMoved = false;
+  bool whiteQueenSideRookMoved = false;
+  bool blackKingSideRookMoved = false;
+  bool blackQueenSideRookMoved = false;
+};
+
 // Functions
 void    addPiece                (char piece, int index, ChessBoard& board);
 void    addReplaceCommand       (stringstream& ss, ChessBoard& board);
@@ -75,13 +85,14 @@ bool    isInRank_1              (int indexFrom);
 bool    isInRank_2              (int indexFrom);
 bool    isInRank_7              (int indexFrom);
 bool    isInRank_8              (int indexFrom);
-void    moveCommand             (stringstream& ss, ChessBoard& board);
+void    moveCommand             (stringstream& ss, CastlingRights& castlingRights, ChessBoard& board);
 bool    movePawn                (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
-bool    moveBishop              (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
-bool    moveRook                (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
-bool    moveQueen               (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
-bool    moveKing                (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
 bool    moveKnight              (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveBishop              (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveRook                (char pieceFrom, int indexFrom, int indexTo, CastlingRights& castlingRights, ChessBoard& board);
+bool    moveQueen               (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
+bool    moveKing                (char pieceFrom, int indexFrom, int indexTo, CastlingRights& castlingRights, ChessBoard& board);
+void    movePiece               (char pieceFrom, int indexFrom, int indexTo, ChessBoard& board);
 char    pieceSearch             (int index, const ChessBoard& board);
 void    printBitBoard           (ChessBoard& board);
 void    printVector             (vector<int>& range);

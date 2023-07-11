@@ -34,6 +34,8 @@ int main()
 {
     string commandLine;
     ChessBoard board;
+    CastlingRights castlingRights;
+
 
     while (getline(cin, commandLine) && commandLine!="quit") {
         stringstream ss(commandLine);
@@ -49,7 +51,7 @@ int main()
         }
 
         if (command=="mv") {
-            moveCommand(ss, board);
+            moveCommand(ss, castlingRights, board);
         }
 
         if (command=="fen") {

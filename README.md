@@ -120,14 +120,16 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ## To-do
 
 ### Priority
+* castling
+  * castling through/into check
+  * castling out of check
 
-* Need to add rules for
-  * en passant, pawn promotion
-  * castling
-  * check, checkmate 
-  * turn
-  * 50 move rule
-  * threefold repetition rule
+
+* check detection, checkmate
+* en passant, pawn promotion
+* turn
+* 50 move rule
+* threefold repetition rule
 
 
 * Finish FEN implementation by adding:
@@ -149,6 +151,8 @@ If you have an idea for a new feature, please open an issue on GitHub describing
  
 ### Specific Stuff
 * Simplify ``movePawn`` function. 
+* Fix `calculateMovesDiagonal` - it is calculating indices outside (0,63)
+* Generalize `calculateMovesHelper`
 
 ---
 

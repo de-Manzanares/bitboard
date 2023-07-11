@@ -1,4 +1,15 @@
+## 23.28
+
+### Added
+
+* Partial implementation of castling. The program can enforce all castling rules except those that involve check:
+moving out of check, moving through check, or moving into check. 
+
+
+
 ## 23.27
+
+This week, I wrote my very first structures and my very first user defined functions in C++.
 
 ### Added
 

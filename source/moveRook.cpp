@@ -26,7 +26,9 @@
 
 #include "bitBoards.h"
 
-bool moveRook(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
+bool rangeValidationRook(char pieceFrom, int indexFrom, vector<int> range, int indexTo, CastlingRights& castlingRights);
+
+bool moveRook(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castlingRights, ChessBoard& board)
 {
     if (pieceFrom=='R' || pieceFrom=='r') {
 
@@ -37,9 +39,36 @@ bool moveRook(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
         printVector(range);
 
-        if (rangeValidation(range, indexTo))
+        if (rangeValidationRook(pieceFrom, indexFrom, range, indexTo, castlingRights))
             return true;
         return false;
     }
     return false;
+}
+
+bool rangeValidationRook(char pieceFrom, int indexFrom, vector<int> range, int indexTo, CastlingRights& castlingRights)
+{
+    if (find(range.begin(), range.end(), indexTo)!=range.end()) {
+        if (pieceFrom=='R') {
+            if (indexFrom==0) {
+                castlingRights.whiteKingSideRookMoved = true;
+            }
+            if (indexFrom==7) {
+                castlingRights.whiteQueenSideRookMoved = true;
+            }
+        }
+        else {
+            if (indexFrom==56) {
+                castlingRights.blackKingSideRookMoved = true;
+            }
+            if (indexFrom==63) {
+                castlingRights.blackQueenSideRookMoved = true;
+            }
+        }
+
+        return true;
+    }
+    else {
+        return false;
+    }
 }
