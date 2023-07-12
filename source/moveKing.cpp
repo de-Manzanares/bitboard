@@ -44,7 +44,7 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         calculateMovesVertical(pieceFrom, indexFrom, range, board);
 
         // Print the range
-        printVectorAlgebraic(range);
+        printCoordinates(range);
 
         // Check if the target square is in the range
         // If the king is initiating a castling move, move the rook.

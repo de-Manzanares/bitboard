@@ -30,6 +30,7 @@ void calculateMovesKnightHelper
         (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
                 ChessBoard& board);
 
+// Boolean function to check if the target square is in the range.
 bool moveKnight(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
     const int ForwardLeft = indexFrom+17;
@@ -92,7 +93,7 @@ bool moveKnight(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
     calculateMovesKnightHelper(pieceFrom, range, flag, canMove, moves, limit, board);
 
-    printVectorAlgebraic(range);
+    printCoordinates(range);
 
     if (rangeValidation(range, indexTo))
         return true;
@@ -114,6 +115,7 @@ void calculateMovesKnightHelper
     }
 }
 
+// Calculates all possible moves for a given knight.
 void calculateMoveKnight(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     const int ForwardLeft = indexFrom+17;

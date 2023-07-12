@@ -27,6 +27,7 @@
 
 void printAllMoves(ChessBoard& board)
 {
+    // For each square on the board, find the piece on it and print all possible moves for that piece.
     for (int i=0; i<=63; i++) {
         vector<int> range;
         char pieceFrom = pieceSearch(i, board);
@@ -34,37 +35,37 @@ void printAllMoves(ChessBoard& board)
         if (pieceFrom != 'E') {
             if (pieceFrom == 'P' || pieceFrom == 'p') {
                 calculateMovePawn(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
             if (pieceFrom == 'N' || pieceFrom == 'n') {
                 calculateMoveKnight(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
             if (pieceFrom == 'B' || pieceFrom == 'b') {
                 calculateMovesDiagonal(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
             if (pieceFrom == 'R' || pieceFrom == 'r') {
                 calculateMovesVertical(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
             if (pieceFrom == 'Q' || pieceFrom == 'q') {
                 calculateMovesDiagonal(pieceFrom, i, range, board);
                 calculateMovesHorizontal(pieceFrom, i, range, board);
                 calculateMovesVertical(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
             if (pieceFrom == 'K' || pieceFrom == 'k') {
                 calculateMovesDiagonal(pieceFrom, i, range, board);
                 calculateMovesHorizontal(pieceFrom, i, range, board);
                 calculateMovesVertical(pieceFrom, i, range, board);
-                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
-                printVectorAlgebraic(range);
+                cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
+                printCoordinates(range);
             }
         }
     }

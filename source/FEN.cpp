@@ -27,7 +27,9 @@
 #include <set>
 #include "bitBoards.h"
 
+//----------------------------------------------------------------------------------------------------------------------
 // This function handles the `fen` command
+//----------------------------------------------------------------------------------------------------------------------
 void fenCommand(stringstream& ss, ChessBoard& board)
 {
     string direction;   // Updating board from fen string or printing current fen string.
@@ -57,7 +59,9 @@ void fenCommand(stringstream& ss, ChessBoard& board)
     }
 }
 
-// This function decodes the board into a fen string.
+//----------------------------------------------------------------------------------------------------------------------
+// This function DECODES the board into a fen string.
+//----------------------------------------------------------------------------------------------------------------------
 void fenDecode(string& fenIn, ChessBoard& board)
 {
     int fenIndex = 0;       // The index of the fen string.
@@ -94,7 +98,9 @@ void fenDecode(string& fenIn, ChessBoard& board)
     }
 }
 
-// This function encodes the board into a fen string.
+//----------------------------------------------------------------------------------------------------------------------
+// This function ENCODES the board into a fen string.
+//----------------------------------------------------------------------------------------------------------------------
 void fenEncode(ChessBoard& board)
 {
     int countRank = 0;          // Every 8 squares, a new rank is started.

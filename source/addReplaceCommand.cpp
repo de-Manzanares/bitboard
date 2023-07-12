@@ -42,7 +42,7 @@ void addReplaceCommand(stringstream& ss, ChessBoard& board)
     }
 
     // Calculate the index of the square
-    int index = coordinateIndex(to);        // The index of the square
+    int index = coordinateToIndex(to);        // The index of the square
     string validPieces = "KQRBNPkqrbnp";    // Valid pieces
 
     // If the index is out of range or the piece is invalid, notify the user

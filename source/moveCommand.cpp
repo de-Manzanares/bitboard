@@ -41,8 +41,8 @@ void moveCommand(stringstream& ss, ChessBoard& board)
 
     char pieceFrom;     // The piece to move
     char pieceTo;       // The piece on the target square
-    int indexFrom = coordinateIndex(from);  // Index of the from square
-    int indexTo = coordinateIndex(to);      // Index of the to square
+    int indexFrom = coordinateToIndex(from);  // Index of the from square
+    int indexTo = coordinateToIndex(to);      // Index of the to square
 
     // If either of the squares are invalid, notify the user and return.
     if (indexFrom==333 || indexTo==333) {
@@ -107,23 +107,4 @@ void moveCommand(stringstream& ss, ChessBoard& board)
          << endl << endl;
 
     movePiece(pieceFrom, indexFrom, indexTo, board);
-}
-
-void movePiece(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
-{
-    char pieceTo = pieceSearch(indexTo, board);
-
-    // If the move is legal, remove the piece to be moved from its original square
-    subtractPiece(pieceFrom, indexFrom, board);
-
-    // If the target square is empty, add the piece to be moved.
-    if (pieceTo=='E') {
-        addPiece(pieceFrom, indexTo, board);
-    }
-        // If the target square is occupied, remove the piece on the target square
-        // then add piece to be moved.
-    else {
-        subtractPiece(pieceTo, indexTo, board);
-        addPiece(pieceFrom, indexTo, board);
-    }
 }

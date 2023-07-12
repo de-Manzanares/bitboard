@@ -26,6 +26,7 @@
 #include <vector>
 #include "bitBoards.h"
 
+// Boolean function that checks if the pawn can move to the target square.
 bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
 
@@ -53,7 +54,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                 && !(board.white_King & maskF_ONE));
 
         bool canMoveF_TWO = ((canMoveF_ONE)
-                && (isInRank_7(indexFrom))
+                && (getRank(indexFrom)==7)
                 && !(board.black_pawn & maskF_TWO)
                 && !(board.black_night & maskF_TWO)
                 && !(board.black_bishop & maskF_TWO)
@@ -67,21 +68,21 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                 && !(board.white_Queen & maskF_TWO)
                 && !(board.white_King & maskF_TWO));
 
-        bool canCaptureLeft = (!(isInFile_A(indexFrom))
+        bool canCaptureLeft = ((getFile(indexFrom)!= 'a'))
                 && ((board.white_Pawn & maskLeft)
                         || (board.white_Night & maskLeft)
                         || (board.white_Bishop & maskLeft)
                         || (board.white_Rook & maskLeft)
                         || (board.white_Queen & maskLeft)
-                        || (board.white_King & maskLeft)));
+                        || (board.white_King & maskLeft));
 
-        bool canCaptureRight = (!(isInFile_H(indexFrom))
+        bool canCaptureRight = (getFile(indexFrom)!= 'h')
                 && ((board.white_Pawn & maskRight)
                         || (board.white_Night & maskRight)
                         || (board.white_Bishop & maskRight)
                         || (board.white_Rook & maskRight)
                         || (board.white_Queen & maskRight)
-                        || (board.white_King & maskRight)));
+                        || (board.white_King & maskRight));
 
         std::vector<int> range = {};
 
@@ -91,7 +92,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         if (canCaptureRight) { range.push_back(D_RIGHT_ONE); }
 
         cleanRange(range);
-        printVectorAlgebraic(range);
+        printCoordinates(range);
 
         if (rangeValidation(range, indexTo))
             return true;
@@ -123,7 +124,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                 && !(board.white_King & maskF_ONE));
 
         bool canMoveF_TWO = ((canMoveF_ONE)
-                && (isInRank_2(indexFrom))
+                && (getRank(indexFrom)==2)
                 && !(board.black_pawn & maskF_TWO)
                 && !(board.black_night & maskF_TWO)
                 && !(board.black_bishop & maskF_TWO)
@@ -137,21 +138,21 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                 && !(board.white_Queen & maskF_TWO)
                 && !(board.white_King & maskF_TWO));
 
-        bool canCaptureLeft = (!(isInFile_A(indexFrom))
+        bool canCaptureLeft = (getFile(indexFrom)!= 'a')
                 && ((board.black_pawn & maskLeft)
                         || (board.black_night & maskLeft)
                         || (board.black_bishop & maskLeft)
                         || (board.black_rook & maskLeft)
                         || (board.black_queen & maskLeft)
-                        || (board.black_king & maskLeft)));
+                        || (board.black_king & maskLeft));
 
-        bool canCaptureRight = (!(isInFile_H(indexFrom))
+        bool canCaptureRight = (getFile(indexFrom)!= 'h')
                 && ((board.black_pawn & maskRight)
                         || (board.black_night & maskRight)
                         || (board.black_bishop & maskRight)
                         || (board.black_rook & maskRight)
                         || (board.black_queen & maskRight)
-                        || (board.black_king & maskRight)));
+                        || (board.black_king & maskRight));
 
         std::vector<int> range = {};
 
@@ -161,7 +162,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         if (canCaptureRight) { range.push_back(D_RIGHT_ONE); }
 
         cleanRange(range);
-        printVectorAlgebraic(range);
+        printCoordinates(range);
 
         if (rangeValidation(range, indexTo))
             return true;
@@ -171,6 +172,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
     return false;
 }
 
+// Calculates all possible moves for a given pawn.
 void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
 
@@ -198,7 +200,7 @@ void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessB
                 && !(board.white_King & maskF_ONE));
 
         bool canMoveF_TWO = ((canMoveF_ONE)
-                && (isInRank_7(indexFrom))
+                && (getRank(indexFrom)==7)
                 && !(board.black_pawn & maskF_TWO)
                 && !(board.black_night & maskF_TWO)
                 && !(board.black_bishop & maskF_TWO)
@@ -212,21 +214,21 @@ void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessB
                 && !(board.white_Queen & maskF_TWO)
                 && !(board.white_King & maskF_TWO));
 
-        bool canCaptureLeft = (!(isInFile_A(indexFrom))
+        bool canCaptureLeft = (getFile(indexFrom)!= 'a')
                 && ((board.white_Pawn & maskLeft)
                         || (board.white_Night & maskLeft)
                         || (board.white_Bishop & maskLeft)
                         || (board.white_Rook & maskLeft)
                         || (board.white_Queen & maskLeft)
-                        || (board.white_King & maskLeft)));
+                        || (board.white_King & maskLeft));
 
-        bool canCaptureRight = (!(isInFile_H(indexFrom))
+        bool canCaptureRight = (getFile(indexFrom)!= 'h')
                 && ((board.white_Pawn & maskRight)
                         || (board.white_Night & maskRight)
                         || (board.white_Bishop & maskRight)
                         || (board.white_Rook & maskRight)
                         || (board.white_Queen & maskRight)
-                        || (board.white_King & maskRight)));
+                        || (board.white_King & maskRight));
 
         if (canMoveF_ONE) { range.push_back(F_ONE); }
         if (canMoveF_TWO) { range.push_back(F_TWO); }
@@ -260,7 +262,7 @@ void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessB
                 && !(board.white_King & maskF_ONE));
 
         bool canMoveF_TWO = ((canMoveF_ONE)
-                && (isInRank_2(indexFrom))
+                && (getRank(indexFrom)==2)
                 && !(board.black_pawn & maskF_TWO)
                 && !(board.black_night & maskF_TWO)
                 && !(board.black_bishop & maskF_TWO)
@@ -274,21 +276,21 @@ void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessB
                 && !(board.white_Queen & maskF_TWO)
                 && !(board.white_King & maskF_TWO));
 
-        bool canCaptureLeft = (!(isInFile_A(indexFrom))
+        bool canCaptureLeft = (getFile(indexFrom)!= 'a')
                 && ((board.black_pawn & maskLeft)
                         || (board.black_night & maskLeft)
                         || (board.black_bishop & maskLeft)
                         || (board.black_rook & maskLeft)
                         || (board.black_queen & maskLeft)
-                        || (board.black_king & maskLeft)));
+                        || (board.black_king & maskLeft));
 
-        bool canCaptureRight = (!(isInFile_H(indexFrom))
+        bool canCaptureRight = (getFile(indexFrom)!= 'h')
                 && ((board.black_pawn & maskRight)
                         || (board.black_night & maskRight)
                         || (board.black_bishop & maskRight)
                         || (board.black_rook & maskRight)
                         || (board.black_queen & maskRight)
-                        || (board.black_king & maskRight)));
+                        || (board.black_king & maskRight));
 
         if (canMoveF_ONE) { range.push_back(F_ONE); }
         if (canMoveF_TWO) { range.push_back(F_TWO); }

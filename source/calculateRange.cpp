@@ -19,29 +19,23 @@
     you can reach me at <git.in.touch@dmanz.org>
 */
 
-/// @file   moveQueen.cpp
+/// @file   calculateRange.cpp
 /// @author de-Manzanares
-/// @brief  Calculates all possible moves for a given queen,
-///         and checks if the target square is in the range.
+/// @brief  Contains functions to create a vector of all possible moves for a given piece.
 
 #include "bitBoards.h"
 
-bool moveQueen(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
+//----------------------------------------------------------------------------------------------------------------------
+// Range vector
+//----------------------------------------------------------------------------------------------------------------------
+void calculateRange(char pieceFrom, int indexFrom, vector<int> range, ChessBoard& board)
 {
+    if (pieceFrom=='B' || pieceFrom=='b') {
+        calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
+    }
     if (pieceFrom=='Q' || pieceFrom=='q') {
-
-        vector<int> range;
-
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
         calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
         calculateMovesVertical(pieceFrom, indexFrom, range, board);
-
-        printCoordinates(range);
-
-        if (rangeValidation(range, indexTo))
-            return true;
-        return false;
     }
-
-    return false;
 }

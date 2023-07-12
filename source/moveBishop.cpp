@@ -34,7 +34,7 @@ bool moveBishop(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
 
-        printVectorAlgebraic(range);
+        printCoordinates(range);
 
         if (rangeValidation(range, indexTo))
             return true;

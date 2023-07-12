@@ -145,16 +145,11 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * Implement UCI compatability.
 
 ### Little things
-* Add an option to flip the board.
-* Add an option to undo moves.
-* Add an option to automatically display the board after each move.
-* Add an option to display rank and file labels 
 * Change move function so that moving a piece to the square it currently occupies does not count as a move.
  
 ### Specific Stuff
 * Simplify ``movePawn`` function. 
-* Generalize `calculateMovesHelper`
-* Clean up redundency in the code
+* Clean up redundancy in the code
 * Add comments to the code
 
 ---
