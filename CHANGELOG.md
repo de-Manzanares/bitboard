@@ -5,6 +5,12 @@
 * Partial implementation of castling. The program can enforce all castling rules except those that involve check:
 moving out of check, moving through check, or moving into check. 
 
+* Command `pam` to print, to a depth of 1, all moves for all pieces for both sides.
+
+
+### Fixed
+
+* Knight move generation - it was not properly accounting for collisions. 
 
 
 ## 23.27

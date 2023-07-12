@@ -105,9 +105,9 @@ void calculateMovesKnightHelper
 {
     std::vector<int> result;
     flag = 1;
+    canMove = 1;
     limit = moves.size();
     for (int i = 0; i<limit; i++) {
-        canMove = 1;
         result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
         if (result[1])
             range.push_back(moves[i]);
@@ -129,7 +129,7 @@ void calculateMoveKnight(char pieceFrom, int indexFrom, vector<int>& range, Ches
 
     int flag = 1;
     int canMove = 1;
-    int limit = 2;
+    int limit = 0;
     vector<int> moves;
 
     // For reference
