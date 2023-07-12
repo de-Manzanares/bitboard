@@ -11,9 +11,6 @@ add_executable(bitboard source/addPiece.cpp
                         source/calculateMovesHorizontal.cpp
                         source/calculateMovesVertical.cpp
                         source/coordinateIndex.cpp
-                        source/fenCommand.cpp
-                        source/fenDecode.cpp
-                        source/fenEncode.cpp
                         source/main.cpp
                         source/moveCommand.cpp
                         source/moveBishop.cpp
@@ -28,4 +25,6 @@ add_executable(bitboard source/addPiece.cpp
                         source/printVector.cpp
                         source/rank_and_file.cpp
                         source/subtractPiece.cpp
-                        source/squareSearch.cpp)
+                        source/squareSearch.cpp
+                        source/calculateMovesHelper.cpp
+                        source/FEN.cpp)

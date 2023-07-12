@@ -25,10 +25,6 @@
 
 #include "bitBoards.h"
 
-void calculateMovesHorizontalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board);
-
 void calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     if (pieceFrom!='K' && pieceFrom!='k') {
@@ -58,10 +54,12 @@ void calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range,
         leftLimit = fileFrom-'a';
         rightLimit = 'h'-fileFrom;
 
-        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {L_ONE, L_TWO, L_THREE, L_FOUR, L_FIVE, L_SIX, L_SEVEN}, leftLimit, board);
-        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {R_ONE, R_TWO, R_THREE, R_FOUR, R_FIVE, R_SIX, R_SEVEN}, rightLimit, board);
+
+        cleanRange(range);
     }
 
     else {
@@ -89,21 +87,9 @@ void calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range,
             rightLimit = 0;
         }
 
-        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove, {L_ONE}, leftLimit, board);
-        calculateMovesHorizontalHelper(pieceFrom, range, flag, canMove, {R_ONE}, rightLimit, board);
-    }
-}
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {L_ONE}, leftLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {R_ONE}, rightLimit, board);
 
-void calculateMovesHorizontalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board)
-{
-    std::vector<int> result;
-    flag = 1;
-    canMove = 1;
-    for (int i = 0; i<limit; i++) {
-        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
-        if (result[1])
-            range.push_back(moves[i]);
+        cleanRange(range);
     }
 }

@@ -92,7 +92,7 @@ bool moveKnight(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
     calculateMovesKnightHelper(pieceFrom, range, flag, canMove, moves, limit, board);
 
-    printVector(range);
+    printVectorAlgebraic(range);
 
     if (rangeValidation(range, indexTo))
         return true;

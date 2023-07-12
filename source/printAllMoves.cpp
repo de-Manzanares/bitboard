@@ -21,7 +21,7 @@
 
 /// @file   printAllMoves.cpp
 /// @author de-Manzanares
-/// @brief  Print a list of all possible moves for a given board.
+/// @brief  Print a list, to depth 1, of all possible moves for all pieces of both colors.
 
 #include "bitBoards.h"
 

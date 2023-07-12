@@ -25,9 +25,6 @@
 
 #include "bitBoards.h"
 
-string indexToAlgebraic(int index);
-
-
 void printVector(vector<int>& range)
 {
     int printIndex = 0;

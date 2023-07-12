@@ -131,6 +131,7 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * turn
 * 50 move rule
 * threefold repetition rule
+* Verify rule implementation. 
 
 
 * Finish FEN implementation by adding:
@@ -153,6 +154,8 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ### Specific Stuff
 * Simplify ``movePawn`` function. 
 * Generalize `calculateMovesHelper`
+* Clean up redundency in the code
+* Add comments to the code
 
 ---
 

@@ -25,10 +25,6 @@
 
 #include "bitBoards.h"
 
-void calculateMovesDiagonalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board);
-
 void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     if (pieceFrom!='K' && pieceFrom!='k') {
@@ -75,13 +71,13 @@ void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, C
         leftLimit = fileFrom-'a';
         rightLimit = 'h'-fileFrom;
 
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {FDL_ONE, FDL_TWO, FDL_THREE, FDL_FOUR, FDL_FIVE, FDL_SIX, FDL_SEVEN}, leftLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {FDR_ONE, FDR_TWO, FDR_THREE, FDR_FOUR, FDR_FIVE, FDR_SIX, FDR_SEVEN}, rightLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {BDL_ONE, BDL_TWO, BDL_THREE, BDL_FOUR, BDL_FIVE, BDL_SIX, BDL_SEVEN}, leftLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {BDR_ONE, BDR_TWO, BDR_THREE, BDR_FOUR, BDR_FIVE, BDR_SIX, BDR_SEVEN}, rightLimit, board);
 
         cleanRange(range);
@@ -114,25 +110,11 @@ void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, C
             rightLimit = 0;
         }
 
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {FDL_ONE}, leftLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {FDR_ONE}, rightLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDL_ONE}, leftLimit, board);
-        calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDR_ONE}, rightLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {FDL_ONE}, leftLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {FDR_ONE}, rightLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {BDL_ONE}, leftLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {BDR_ONE}, rightLimit, board);
 
         cleanRange(range);
-    }
-}
-
-void calculateMovesDiagonalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board)
-{
-    std::vector<int> result;
-    flag = 1;
-    canMove = 1;
-    for (int i = 0; i<limit; i++) {
-        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
-        if (result[1])
-            range.push_back(moves[i]);
     }
 }

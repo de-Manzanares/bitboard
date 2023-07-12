@@ -161,7 +161,6 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         if (canCaptureRight) { range.push_back(D_RIGHT_ONE); }
 
         cleanRange(range);
-        printVector(range);
         printVectorAlgebraic(range);
 
         if (rangeValidation(range, indexTo))

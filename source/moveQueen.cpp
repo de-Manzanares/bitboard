@@ -36,7 +36,6 @@ bool moveQueen(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
         calculateMovesVertical(pieceFrom, indexFrom, range, board);
 
-        cleanRange(range);
         printVector(range);
 
         if (rangeValidation(range, indexTo))

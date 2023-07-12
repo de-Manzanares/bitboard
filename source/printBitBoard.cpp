@@ -22,6 +22,7 @@
 /// @file   printBitBoard.cpp
 /// @author de-Manzanares
 /// @brief  Prints an ASCII representation of the chess board to the console.
+/// @note   Fun fact! This is the first C++ function I ever wrote :)
 
 #include <iostream>
 #include <string>

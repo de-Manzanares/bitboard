@@ -44,4 +44,3 @@ void subtractPiece(char piece, int index, ChessBoard& board)
     if (piece == 'Q') { board.white_Queen  = board.white_Queen  - mask; }
     if (piece == 'K') { board.white_King   = board.white_King   - mask; }
 }
-

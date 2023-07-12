@@ -21,7 +21,7 @@
 
 /// @file   addReplaceCommand.cpp
 /// @author de-Manzanares
-/// @brief  A step toward pawn promotion
+/// @brief  A way to manually add a piece to the board - a step toward pawn promotion
 
 #include <iostream>
 #include <string>

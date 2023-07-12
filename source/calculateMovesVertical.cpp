@@ -25,10 +25,6 @@
 
 #include "bitBoards.h"
 
-void calculateMovesVerticalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board);
-
 void calculateMovesVertical(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     if (pieceFrom!='K' && pieceFrom!='k') {
@@ -58,10 +54,12 @@ void calculateMovesVertical(char pieceFrom, int indexFrom, vector<int>& range, C
         topLimit = 8-rankFrom;
         bottomLimit = rankFrom-1;
 
-        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {F_ONE, F_TWO, F_THREE, F_FOUR, F_FIVE, F_SIX, F_SEVEN}, topLimit, board);
-        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove,
+        calculateMovesHelper(pieceFrom, range, flag, canMove,
                 {B_ONE, B_TWO, B_THREE, B_FOUR, B_FIVE, B_SIX, B_SEVEN}, bottomLimit, board);
+
+        cleanRange(range);
     }
 
     else {
@@ -89,21 +87,9 @@ void calculateMovesVertical(char pieceFrom, int indexFrom, vector<int>& range, C
             bottomLimit = 0;
         }
 
-        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove, {F_ONE}, topLimit, board);
-        calculateMovesVerticalHelper(pieceFrom, range, flag, canMove, {B_ONE}, bottomLimit, board);
-    }
-}
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {F_ONE}, topLimit, board);
+        calculateMovesHelper(pieceFrom, range, flag, canMove, {B_ONE}, bottomLimit, board);
 
-void calculateMovesVerticalHelper
-        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
-                ChessBoard& board)
-{
-    std::vector<int> result;
-    flag = 1;
-    canMove = 1;
-    for (int i = 0; i<limit; i++) {
-        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
-        if (result[1])
-            range.push_back(moves[i]);
+        cleanRange(range);
     }
 }

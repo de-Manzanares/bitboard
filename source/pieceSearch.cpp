@@ -28,6 +28,7 @@
 char pieceSearch(int index, const ChessBoard& board)
 {
     char piece = 'E';   // E for empty
+
     // The `mask` is used to check if the bit at the given index is set.
     uint64_t mask = static_cast<uint64_t>(1) << index;
 
