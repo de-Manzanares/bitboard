@@ -26,7 +26,7 @@
 #include <sstream>
 #include "bitBoards.h"
 
-void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& board)
+void moveCommand(stringstream& ss, ChessBoard& board)
 {
     string from;    // From square
     string to;      // To square
@@ -83,7 +83,7 @@ void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& b
     }
     // If the piece is a rook, call the moveRook function.
     if (pieceFrom=='R' || pieceFrom=='r') {
-        if (!moveRook(pieceFrom, indexFrom, indexTo, castlingRights, board)) {
+        if (!moveRook(pieceFrom, indexFrom, indexTo, board)) {
             cout << "Illegal move" << endl << endl;
             return;
         }
@@ -97,7 +97,7 @@ void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& b
     }
     // If the piece is a king, call the moveKing function.
     if (pieceFrom=='K' || pieceFrom=='k') {
-        if (!moveKing(pieceFrom, indexFrom, indexTo, castlingRights, board)) {
+        if (!moveKing(pieceFrom, indexFrom, indexTo, board)) {
             cout << "Illegal move" << endl << endl;
             return;
         }

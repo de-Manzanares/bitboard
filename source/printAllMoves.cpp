@@ -19,42 +19,13 @@
     you can reach me at <git.in.touch@dmanz.org>
 */
 
-/// @file   main.cpp
+/// @file   printAllMoves.cpp
 /// @author de-Manzanares
-/// @brief  Main file for the bitboard.
+/// @brief  Print a list of all possible moves for a given board.
 
-#include <iostream>
-#include <string>
-#include <sstream>
 #include "bitBoards.h"
 
-using namespace std;
-
-int main()
+void printAllMoves(ChessBoard& board)
 {
-    string commandLine;
-    ChessBoard board;
 
-    while (getline(cin, commandLine) && commandLine!="quit") {
-        stringstream ss(commandLine);
-        string command;
-        ss >> command;
-
-        if (command=="add") {
-            addReplaceCommand(ss, board);
-        }
-
-        if (command=="d") {
-            printBitBoard(board);
-        }
-
-        if (command=="mv") {
-            moveCommand(ss, board);
-        }
-
-        if (command=="fen") {
-            fenCommand(ss, board);
-        }
-    }
-    return 0;
 }

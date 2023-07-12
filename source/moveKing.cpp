@@ -27,13 +27,11 @@
 #include "bitBoards.h"
 
 void calculateMovesCastling
-        (char pieceFrom, int indexFrom, vector<int>& range, CastlingRights& castlingRights,
-                ChessBoard& board);
+        (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 bool squaresAreClear(vector<int> squares, ChessBoard& board);
-bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, CastlingRights& castlingRights,
-        ChessBoard& board);
+bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board);
 
-bool moveKing(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castlingRights, ChessBoard& board)
+bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
     if (pieceFrom=='K' || pieceFrom=='k') {
 
@@ -42,7 +40,7 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castli
         // Add available squares to the range
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
         calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
-        calculateMovesCastling(pieceFrom, indexFrom, range, castlingRights, board);     // must come after horizontal
+        calculateMovesCastling(pieceFrom, indexFrom, range, board);     // must come after horizontal
         calculateMovesVertical(pieceFrom, indexFrom, range, board);
 
         // Print the range
@@ -50,7 +48,7 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castli
 
         // Check if the target square is in the range
         // If the king is initiating a castling move, move the rook.
-        if (rangeValidationKing(pieceFrom, range, indexTo, castlingRights, board)) {
+        if (rangeValidationKing(pieceFrom, range, indexTo, board)) {
 
             return true;
         }
@@ -61,26 +59,25 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castli
 }
 
 void calculateMovesCastling
-        (char pieceFrom, int indexFrom, vector<int>& range, CastlingRights& castlingRights,
-                ChessBoard& board)
+        (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     // Castling squares
     const int QUEEN_SIDE = indexFrom+2;
     const int KING_SIDE = indexFrom-2;
 
-    if (pieceFrom=='K' && !castlingRights.whiteKingMoved && !castlingRights.whiteQueenSideRookMoved
+    if (pieceFrom=='K' && !board.whiteKingMoved && !board.whiteQueenSideRookMoved
             && squaresAreClear({indexFrom+1, QUEEN_SIDE}, board)) {
         range.push_back(QUEEN_SIDE);
     }
-    if (pieceFrom=='K' && !castlingRights.whiteKingMoved && !castlingRights.whiteKingSideRookMoved
+    if (pieceFrom=='K' && !board.whiteKingMoved && !board.whiteKingSideRookMoved
             && squaresAreClear({indexFrom-1, KING_SIDE}, board)) {
         range.push_back(KING_SIDE);
     }
-    if (pieceFrom=='k' && !castlingRights.blackKingMoved && !castlingRights.blackQueenSideRookMoved
+    if (pieceFrom=='k' && !board.blackKingMoved && !board.blackQueenSideRookMoved
             && squaresAreClear({indexFrom+1, QUEEN_SIDE}, board)) {
         range.push_back(QUEEN_SIDE);
     }
-    if (pieceFrom=='k' && !castlingRights.blackKingMoved && !castlingRights.blackKingSideRookMoved
+    if (pieceFrom=='k' && !board.blackKingMoved && !board.blackKingSideRookMoved
             && squaresAreClear({indexFrom-1, KING_SIDE}, board)) {
         range.push_back(KING_SIDE);
     }
@@ -96,8 +93,7 @@ bool squaresAreClear(vector<int> squares, ChessBoard& board)
     return true;
 }
 
-bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, CastlingRights& castlingRights,
-        ChessBoard& board)
+bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board)
 {
     if (find(range.begin(), range.end(), indexTo)!=range.end()) {
 
@@ -107,27 +103,27 @@ bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, Castlin
         bool blackCastlingQueenSide = (pieceFrom=='k' && (indexTo==61));
 
         if (pieceFrom=='K') {
-            castlingRights.whiteKingMoved = true;
+            board.whiteKingMoved = true;
             cout << "White king moved" << endl;
         }
         if (pieceFrom=='k') {
-            castlingRights.blackKingMoved = true;
+            board.blackKingMoved = true;
         }
         if (whiteCastlingKingSide) {
             movePiece('R', 0, 2, board);
-            castlingRights.whiteKingSideRookMoved = true;
+            board.whiteKingSideRookMoved = true;
         }
         if (whiteCastlingQueenSide) {
             movePiece('R', 7, 4, board);
-            castlingRights.whiteQueenSideRookMoved = true;
+            board.whiteQueenSideRookMoved = true;
         }
         if (blackCastlingKingSide) {
             movePiece('r', 56, 58, board);
-            castlingRights.blackKingSideRookMoved = true;
+            board.blackKingSideRookMoved = true;
         }
         if (blackCastlingQueenSide) {
             movePiece('r', 63, 60, board);
-            castlingRights.blackQueenSideRookMoved = true;
+            board.blackQueenSideRookMoved = true;
         }
         return true;
     }
