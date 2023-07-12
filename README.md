@@ -58,6 +58,7 @@ g++ -I include source/*.cpp -o bitboard
 | ``add <PIECE> <TO>``<sup>1</sup>   | **add** a piece to the board   |
 | ``fen in <FEN>``<sup>2, 3, 4</sup> | set the state of the board     |
 | ``fen out``<sup>2, 3</sup>         | display the state of the board |
+| `pam`                              | **p**rint **a**ll **m**oves    |
 | ``quit``                           | **quit** the program           |
 <br>
 

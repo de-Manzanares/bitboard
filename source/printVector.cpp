@@ -25,6 +25,9 @@
 
 #include "bitBoards.h"
 
+string indexToAlgebraic(int index);
+
+
 void printVector(vector<int>& range)
 {
     int printIndex = 0;
@@ -33,4 +36,62 @@ void printVector(vector<int>& range)
         printIndex++;
     }
     cout << endl;
+}
+
+void printVectorAlgebraic(vector<int>& range)
+{
+    int printIndex = 0;
+    while (printIndex<range.size()) {
+        cout << indexToAlgebraic(range[printIndex]) << " ";
+        printIndex++;
+    }
+    cout << endl;
+}
+
+string indexToAlgebraic(int index)
+{
+    string algebraic;
+
+    int row = index/8 + 1;
+    int column = index%8;
+
+    switch (column) {
+    case 0:algebraic += "h";
+        break;
+    case 1:algebraic += "g";
+        break;
+    case 2:algebraic += "f";
+        break;
+    case 3:algebraic += "e";
+        break;
+    case 4:algebraic += "d";
+        break;
+    case 5:algebraic += "c";
+        break;
+    case 6:algebraic += "b";
+        break;
+    case 7:algebraic += "a";
+        break;
+    }
+
+    switch (row) {
+    case 1:algebraic += "1";
+        break;
+    case 2:algebraic += "2";
+        break;
+    case 3:algebraic += "3";
+        break;
+    case 4:algebraic += "4";
+        break;
+    case 5:algebraic += "5";
+        break;
+    case 6:algebraic += "6";
+        break;
+    case 7:algebraic += "7";
+        break;
+    case 8:algebraic += "8";
+        break;
+    }
+
+    return algebraic;
 }

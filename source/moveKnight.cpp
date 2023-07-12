@@ -113,3 +113,65 @@ void calculateMovesKnightHelper
             range.push_back(moves[i]);
     }
 }
+
+void calculateMoveKnight(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
+{
+    const int ForwardLeft = indexFrom+17;
+    const int ForwardRight = indexFrom+15;
+    const int LeftForward = indexFrom+10;
+    const int RightForward = indexFrom+6;
+    const int LeftBack = indexFrom-6;
+    const int RightBack = indexFrom-10;
+    const int BackLeft = indexFrom-15;
+    const int BackRight = indexFrom-17;
+
+    std::vector<int> result;
+
+    int flag = 1;
+    int canMove = 1;
+    int limit = 2;
+    vector<int> moves;
+
+    // For reference
+    // a8 through h1 is 63 through 0
+    // {a8, b8, g8, h8, a7, b7, g7, h7, a2, b2, g2, h2, a1, b1, g1, h1}
+    // {63, 62, 57, 56, 55, 54, 49, 48, 15, 14,  9,  8,  7,  6,  1,  0}
+
+    switch (indexFrom) {
+    case 63:moves = {BackRight, RightBack};
+        break;
+    case 62:moves = {BackRight, RightBack, BackLeft};
+        break;
+    case 57:moves = {BackRight, BackLeft, LeftBack};
+        break;
+    case 56:moves = {BackLeft, LeftBack};
+        break;
+    case 55:moves = {BackRight, RightBack, RightForward};
+        break;
+    case 54:moves = {BackRight, RightBack, RightForward, BackLeft};
+        break;
+    case 49:moves = {BackRight, BackLeft, LeftBack, LeftForward};
+        break;
+    case 48:moves = {BackLeft, LeftBack, LeftForward};
+        break;
+    case 15:moves = {RightBack, RightForward, ForwardRight};
+        break;
+    case 14:moves = {RightBack, RightForward, ForwardRight, ForwardLeft};
+        break;
+    case 9:moves = {LeftBack, LeftForward, ForwardLeft, ForwardRight};
+        break;
+    case 8:moves = {LeftBack, LeftForward, ForwardLeft};
+        break;
+    case 7:moves = {RightForward, ForwardRight};
+        break;
+    case 6:moves = {RightForward, ForwardRight, ForwardLeft};
+        break;
+    case 1:moves = {LeftForward, ForwardLeft, ForwardRight};
+        break;
+    case 0:moves = {LeftForward, ForwardLeft};
+        break;
+    default:moves = {BackRight, RightBack, BackLeft, LeftBack, RightForward, ForwardRight, LeftForward, ForwardLeft};
+    }
+
+    calculateMovesKnightHelper(pieceFrom, range, flag, canMove, moves, limit, board);
+}

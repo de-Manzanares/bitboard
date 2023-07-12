@@ -27,5 +27,46 @@
 
 void printAllMoves(ChessBoard& board)
 {
+    for (int i=0; i<=63; i++) {
+        vector<int> range;
+        char pieceFrom = pieceSearch(i, board);
 
+        if (pieceFrom != 'E') {
+            if (pieceFrom == 'P' || pieceFrom == 'p') {
+                calculateMovePawn(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+            if (pieceFrom == 'N' || pieceFrom == 'n') {
+                calculateMoveKnight(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+            if (pieceFrom == 'B' || pieceFrom == 'b') {
+                calculateMovesDiagonal(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+            if (pieceFrom == 'R' || pieceFrom == 'r') {
+                calculateMovesVertical(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+            if (pieceFrom == 'Q' || pieceFrom == 'q') {
+                calculateMovesDiagonal(pieceFrom, i, range, board);
+                calculateMovesHorizontal(pieceFrom, i, range, board);
+                calculateMovesVertical(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+            if (pieceFrom == 'K' || pieceFrom == 'k') {
+                calculateMovesDiagonal(pieceFrom, i, range, board);
+                calculateMovesHorizontal(pieceFrom, i, range, board);
+                calculateMovesVertical(pieceFrom, i, range, board);
+                cout << pieceFrom << " " << indexToAlgebraic(i) << " : ";
+                printVectorAlgebraic(range);
+            }
+        }
+    }
+    cout << endl;
 }

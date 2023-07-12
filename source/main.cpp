@@ -48,13 +48,17 @@ int main()
             printBitBoard(board);
         }
 
+        if (command=="fen") {
+            fenCommand(ss, board);
+        }
+
         if (command=="mv") {
             moveCommand(ss, board);
         }
 
-        if (command=="fen") {
-            fenCommand(ss, board);
-        }
+       if (command=="pam") {
+           printAllMoves(board);
+       }
     }
     return 0;
 }

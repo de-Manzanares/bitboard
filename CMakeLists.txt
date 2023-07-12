@@ -23,6 +23,7 @@ add_executable(bitboard source/addPiece.cpp
                         source/moveRook.cpp
                         source/moveQueen.cpp
                         source/pieceSearch.cpp
+                        source/printAllMoves.cpp
                         source/printBitBoard.cpp
                         source/printVector.cpp
                         source/rank_and_file.cpp

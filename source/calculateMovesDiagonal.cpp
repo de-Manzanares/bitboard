@@ -83,6 +83,8 @@ void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, C
                 {BDL_ONE, BDL_TWO, BDL_THREE, BDL_FOUR, BDL_FIVE, BDL_SIX, BDL_SEVEN}, leftLimit, board);
         calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove,
                 {BDR_ONE, BDR_TWO, BDR_THREE, BDR_FOUR, BDR_FIVE, BDR_SIX, BDR_SEVEN}, rightLimit, board);
+
+        cleanRange(range);
     }
 
     else {
@@ -116,6 +118,8 @@ void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, C
         calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {FDR_ONE}, rightLimit, board);
         calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDL_ONE}, leftLimit, board);
         calculateMovesDiagonalHelper(pieceFrom, range, flag, canMove, {BDR_ONE}, rightLimit, board);
+
+        cleanRange(range);
     }
 }
 
