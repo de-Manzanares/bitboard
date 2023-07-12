@@ -48,7 +48,7 @@ struct ChessBoard {
     uint64_t white_Bishop = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00100100;
     uint64_t white_Rook   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'10000001;
     uint64_t white_Queen  = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00010000;
-    uint64_t white_King   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00001000;    
+    uint64_t white_King   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00001000;
 };
 
 struct CastlingRights
@@ -67,6 +67,7 @@ void    addReplaceCommand       (stringstream& ss, ChessBoard& board);
 void    calculateMovesDiagonal  (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    calculateMovesVertical  (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+void    cleanRange              (vector<int>& range);
 int     coordinateIndex         (const string& coordinate);
 void    fenCommand              (stringstream& ss, ChessBoard& board);
 void    fenDecode               (string& fenIn, ChessBoard& board);

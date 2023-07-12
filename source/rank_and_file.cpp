@@ -38,6 +38,17 @@ bool rangeValidation(std::vector<int> range, int indexTo)
     }
 }
 
+void cleanRange(vector<int>& range)
+{
+    for (int i = 0; i<range.size(); i++) {
+        if (range[i]<0 || range[i]>63) {
+            range[i] = range.back();
+            range.pop_back();
+            i--;
+        }
+    }
+}
+
 bool isInFile(char file, int index)
 {
     vector<int> indicesInFile;    // List of indexes in the file.

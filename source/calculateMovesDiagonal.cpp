@@ -31,7 +31,7 @@ void calculateMovesDiagonalHelper
 
 void calculateMovesDiagonal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
-    if (pieceFrom != 'K' && pieceFrom != 'k') {
+    if (pieceFrom!='K' && pieceFrom!='k') {
         const int FDL_ONE = indexFrom+9*1;
         const int FDL_TWO = indexFrom+9*2;
         const int FDL_THREE = indexFrom+9*3;

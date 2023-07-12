@@ -90,6 +90,9 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board) {
         if (canCaptureLeft) {range.push_back(D_LEFT_ONE);}
         if (canCaptureRight) {range.push_back(D_RIGHT_ONE);}
 
+        //cleanRange(range);
+        printVector(range);
+
         if (rangeValidation(range, indexTo))
             return true;
 
