@@ -108,7 +108,7 @@ void calculateMovesKnightHelper
     canMove = 1;
     limit = moves.size();
     for (int i = 0; i<limit; i++) {
-        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
+        result = squareSearchKnight(pieceFrom, flag, canMove, moves[i], board);
         if (result[1])
             range.push_back(moves[i]);
     }

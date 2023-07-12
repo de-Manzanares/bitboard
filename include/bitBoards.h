@@ -64,7 +64,7 @@ void    calculateMovesDiagonal  (char pieceFrom, int indexFrom, vector<int>& ran
 void    calculateMovesHorizontal(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    calculateMovesVertical  (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    calculateMovePawn       (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
-void    calculateMoveKnight    (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+void    calculateMoveKnight     (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    cleanRange              (vector<int>& range);
 int     coordinateIndex         (const string& coordinate);
 void    fenCommand              (stringstream& ss, ChessBoard& board);
@@ -100,6 +100,8 @@ void    printVector             (vector<int>& range);
 void    printVectorAlgebraic    (vector<int>& range);
 bool    rangeValidation         (std::vector<int> range, int indexTo);
 std::vector<int> squareSearch   (char pieceFrom, int& flag, int& canMove , int indexTo, ChessBoard& board);
+std::vector<int> squareSearchKnight
+                                (char pieceFrom, int& flag, int& canMove, int indexTo, ChessBoard& board);
 void    subtractPiece           (char piece, int index, ChessBoard& board);
 
 #endif // BITBOARDS_H

@@ -10,7 +10,7 @@ moving out of check, moving through check, or moving into check.
 
 ### Fixed
 
-* Knight move generation - it was not properly accounting for collisions. 
+* Knight move generation - it was not properly accounting for captures or collisions. 
 
 
 ## 23.27
