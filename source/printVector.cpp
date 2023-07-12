@@ -28,7 +28,7 @@
 void printVector(vector<int>& range)
 {
     int printIndex = 0;
-    while(printIndex<range.size()) {
+    while (printIndex<range.size()) {
         cout << range[printIndex] << " ";
         printIndex++;
     }

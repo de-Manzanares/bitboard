@@ -37,7 +37,6 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, CastlingRights& castli
 {
     if (pieceFrom=='K' || pieceFrom=='k') {
 
-
         vector<int> range;
 
         // Add available squares to the range

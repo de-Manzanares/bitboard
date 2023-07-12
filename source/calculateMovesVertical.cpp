@@ -80,8 +80,8 @@ void calculateMovesVertical(char pieceFrom, int indexFrom, vector<int>& range, C
             topLimit = 1;
         }
         else {
-                topLimit = 0;
-            }
+            topLimit = 0;
+        }
         if (rankFrom-1>0) {
             bottomLimit = 1;
         }

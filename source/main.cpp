@@ -36,7 +36,6 @@ int main()
     ChessBoard board;
     CastlingRights castlingRights;
 
-
     while (getline(cin, commandLine) && commandLine!="quit") {
         stringstream ss(commandLine);
         string command;

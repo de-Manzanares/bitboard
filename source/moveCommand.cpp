@@ -26,7 +26,6 @@
 #include <sstream>
 #include "bitBoards.h"
 
-
 void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& board)
 {
     string from;    // From square
@@ -104,23 +103,8 @@ void moveCommand(stringstream& ss, CastlingRights& castlingRights, ChessBoard& b
         }
     }
 
-
     cout << "Moving " << from << " to " << to
          << endl << endl;
-
-    // Search for a piece on the target square
-    // pieceTo = pieceSearch(indexTo, board);
-
-    // // If the target square is empty, add the piece to be moved.
-    // if (pieceTo=='E') {
-    //     addPiece(pieceFrom, indexTo, board);
-    // }
-    //     // If the target square is occupied, remove the piece on the target square
-    //     // then add piece to be moved.
-    // else {
-    //     subtractPiece(pieceTo, indexTo, board);
-    //     addPiece(pieceFrom, indexTo, board);
-    // }
 
     movePiece(pieceFrom, indexFrom, indexTo, board);
 }

@@ -151,7 +151,6 @@ If you have an idea for a new feature, please open an issue on GitHub describing
  
 ### Specific Stuff
 * Simplify ``movePawn`` function. 
-* Fix `calculateMovesDiagonal` - it is calculating indices outside (0,63)
 * Generalize `calculateMovesHelper`
 
 ---
