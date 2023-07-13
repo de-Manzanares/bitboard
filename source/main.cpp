@@ -59,6 +59,12 @@ int main()
        if (command=="pam") {
            printAllMoves(board);
        }
+       if (command=="infw") {
+           sideInfluence('w', board);
+       }
+       if (command=="infb") {
+           sideInfluence('b', board);
+       }
     }
     return 0;
 }

@@ -46,6 +46,8 @@ void addPiece(char piece, int index, ChessBoard &board)
     if (piece == 'R') { board.white_Rook   = board.white_Rook   + mask; }
     if (piece == 'Q') { board.white_Queen  = board.white_Queen  + mask; }
     if (piece == 'K') { board.white_King   = board.white_King   + mask; }
+
+    updateBoard(board);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -69,6 +71,8 @@ void subtractPiece(char piece, int index, ChessBoard& board)
     if (piece == 'R') { board.white_Rook   = board.white_Rook   - mask; }
     if (piece == 'Q') { board.white_Queen  = board.white_Queen  - mask; }
     if (piece == 'K') { board.white_King   = board.white_King   - mask; }
+
+    updateBoard(board);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -116,4 +120,14 @@ void movePiece(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         subtractPiece(pieceTo, indexTo, board);
         addPiece(pieceFrom, indexTo, board);
     }
+}
+//----------------------------------------------------------------------------------------------------------------------
+// Update the board.
+//----------------------------------------------------------------------------------------------------------------------
+void updateBoard(ChessBoard& board)
+{
+    board.black_pieces = board.black_pawn | board.black_night | board.black_bishop
+            | board.black_rook | board.black_queen | board.black_king;
+    board.white_pieces = board.white_Pawn | board.white_Night | board.white_Bishop
+            | board.white_Rook | board.white_Queen | board.white_King;
 }

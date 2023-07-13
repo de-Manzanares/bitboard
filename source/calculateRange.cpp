@@ -28,12 +28,21 @@
 //----------------------------------------------------------------------------------------------------------------------
 // Range vector
 //----------------------------------------------------------------------------------------------------------------------
-void calculateRange(char pieceFrom, int indexFrom, vector<int> range, ChessBoard& board)
+void calculateRange(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
     if (pieceFrom=='B' || pieceFrom=='b') {
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
     }
-    if (pieceFrom=='Q' || pieceFrom=='q') {
+    else if (pieceFrom=='Q' || pieceFrom=='q') {
+        calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
+        calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
+        calculateMovesVertical(pieceFrom, indexFrom, range, board);
+    }
+    else if (pieceFrom=='R' || pieceFrom=='r') {
+        calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
+        calculateMovesVertical(pieceFrom, indexFrom, range, board);
+    }
+    else if (pieceFrom=='K' || pieceFrom=='k') {
         calculateMovesDiagonal(pieceFrom, indexFrom, range, board);
         calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
         calculateMovesVertical(pieceFrom, indexFrom, range, board);

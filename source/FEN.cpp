@@ -96,6 +96,8 @@ void fenDecode(string& fenIn, ChessBoard& board)
         // Move to the next character in the fen string.
         fenIndex++;
     }
+
+    updateBoard(board);
 }
 
 //----------------------------------------------------------------------------------------------------------------------
