@@ -84,9 +84,9 @@ bool moveKnight(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         break;
     case 6:moves = {RightForward, ForwardRight, ForwardLeft};
         break;
-    case 1:moves = {LeftForward, ForwardLeft};
+    case 1:moves = {LeftForward, ForwardLeft, ForwardRight};
         break;
-    case 0:moves = {LeftForward, ForwardLeft, ForwardRight};
+    case 0:moves = {LeftForward, ForwardLeft};
         break;
     default:moves = {BackRight, RightBack, BackLeft, LeftBack, RightForward, ForwardRight, LeftForward, ForwardLeft};
     }
@@ -105,11 +105,12 @@ void calculateMovesKnightHelper
                 ChessBoard& board)
 {
     std::vector<int> result;
-    flag = 1;
-    canMove = 1;
+
     limit = moves.size();
     for (int i = 0; i<limit; i++) {
-        result = squareSearchKnight(pieceFrom, flag, canMove, moves[i], board);
+        flag = 1;
+        canMove = 1;
+        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
         if (result[1])
             range.push_back(moves[i]);
     }
