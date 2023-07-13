@@ -7,6 +7,8 @@ moving out of check, moving through check, or moving into check.
 
 * Command `pam` to print, to a depth of 1, all moves for all pieces for both sides.
 
+* Commands `infb` and `infw` to display a list of squares under the influence of all black and white pieces, respectively.
+
 
 ### Fixed
 
