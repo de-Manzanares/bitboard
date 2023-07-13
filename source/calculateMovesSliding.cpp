@@ -21,7 +21,7 @@
 
 /// @file   calculateMovesSliding.cpp
 /// @author de-Manzanares
-/// @brief  Contains functions to calculate possible moves for sliding pieces (queen, rook, bishop).
+/// @brief  Contains functions to help calculate possible moves for sliding pieces.
 
 #include "bitBoards.h"
 

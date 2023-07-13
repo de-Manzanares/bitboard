@@ -68,7 +68,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                 && !(board.white_Queen & maskF_TWO)
                 && !(board.white_King & maskF_TWO));
 
-        bool canCaptureLeft = ((getFile(indexFrom)!= 'a'))
+        bool canCaptureLeft = ((getFile(indexFrom)!= 'h'))
                 && ((board.white_Pawn & maskLeft)
                         || (board.white_Night & maskLeft)
                         || (board.white_Bishop & maskLeft)
@@ -76,7 +76,7 @@ bool movePawn(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
                         || (board.white_Queen & maskLeft)
                         || (board.white_King & maskLeft));
 
-        bool canCaptureRight = (getFile(indexFrom)!= 'h')
+        bool canCaptureRight = (getFile(indexFrom)!= 'a')
                 && ((board.white_Pawn & maskRight)
                         || (board.white_Night & maskRight)
                         || (board.white_Bishop & maskRight)
@@ -181,6 +181,7 @@ void calculateMovePawn(char pieceFrom, int indexFrom, vector<int>& range, ChessB
         const int F_TWO = indexFrom-16;
         const int D_LEFT_ONE = indexFrom-9;
         const int D_RIGHT_ONE = indexFrom-7;
+
         uint64_t maskLeft = static_cast<uint64_t>(1) << D_LEFT_ONE;
         uint64_t maskRight = static_cast<uint64_t>(1) << D_RIGHT_ONE;
         uint64_t maskF_ONE = static_cast<uint64_t>(1) << F_ONE;
