@@ -26,7 +26,7 @@
 #include "bitBoards.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-// Range vector
+// Range for King, Queen, Rook, Bishop
 //----------------------------------------------------------------------------------------------------------------------
 void calculateRange(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
 {
