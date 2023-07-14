@@ -51,8 +51,7 @@ struct ChessBoard {
     uint64_t white_King   = 0b00000000'00000000'00000000'00000000'00000000'00000000'00000000'00001000;
     uint64_t black_pieces = black_pawn | black_night | black_bishop | black_rook | black_queen | black_king;
     uint64_t white_pieces = white_Pawn | white_Night | white_Bishop | white_Rook | white_Queen | white_King;
-    string whitePieces = "KQRBNP";
-    string blackPieces = "kqrbnp";
+    bool whiteToMove = true;
     bool whiteKingMoved = false;
     bool blackKingMoved = false;
     bool whiteKingSideRookMoved  = false;

@@ -26,10 +26,13 @@
 #include <sstream>
 #include "bitBoards.h"
 
+bool isWhite(char pieceFrom);
+
 void moveCommand(stringstream& ss, ChessBoard& board)
 {
     string from;    // From square
     string to;      // To square
+    bool CONTINUE;  // If true, continue with the move
 
     // If there is an input error, notify the user and return.
     if (!(ss >> from >> to)) {
@@ -59,51 +62,75 @@ void moveCommand(stringstream& ss, ChessBoard& board)
         return;
     }
 
-    // If the piece is a pawn, call the movePawn function.
-    if (pieceFrom=='P' || pieceFrom=='p') {
-        if (!movePawn(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
+    if (board.whiteToMove && isWhite(pieceFrom)) {
+        CONTINUE = true;
     }
-    // If the piece is a knight, call the moveKnight function.
-    if (pieceFrom=='N' || pieceFrom=='n') {
-        if (!moveKnight(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
+    if (!board.whiteToMove && !isWhite(pieceFrom)) {
+        CONTINUE = true;
     }
-    // If the piece is a bishop, call the moveBishop function.
-    if (pieceFrom=='B' || pieceFrom=='b') {
-        if (!moveBishop(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
+    if (board.whiteToMove && !isWhite(pieceFrom)) {
+        CONTINUE = false;
+        cout << "It is white's turn" << endl << endl;
     }
-    // If the piece is a rook, call the moveRook function.
-    if (pieceFrom=='R' || pieceFrom=='r') {
-        if (!moveRook(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
-    }
-    // If the piece is a queen, call the moveQueen function.
-    if (pieceFrom=='Q' || pieceFrom=='q') {
-        if (!moveQueen(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
-    }
-    // If the piece is a king, call the moveKing function.
-    if (pieceFrom=='K' || pieceFrom=='k') {
-        if (!moveKing(pieceFrom, indexFrom, indexTo, board)) {
-            cout << "Illegal move" << endl << endl;
-            return;
-        }
+    if (!board.whiteToMove && isWhite(pieceFrom)) {
+        CONTINUE = false;
+        cout << "It is black's turn" << endl << endl;
     }
 
-    cout << "Moving " << from << " to " << to
-         << endl << endl;
+    if (CONTINUE) {
+        // If the piece is a pawn, call the movePawn function.
+        if (pieceFrom=='P' || pieceFrom=='p') {
+            if (!movePawn(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
+        // If the piece is a knight, call the moveKnight function.
+        if (pieceFrom=='N' || pieceFrom=='n') {
+            if (!moveKnight(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
+        // If the piece is a bishop, call the moveBishop function.
+        if (pieceFrom=='B' || pieceFrom=='b') {
+            if (!moveBishop(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
+        // If the piece is a rook, call the moveRook function.
+        if (pieceFrom=='R' || pieceFrom=='r') {
+            if (!moveRook(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
+        // If the piece is a queen, call the moveQueen function.
+        if (pieceFrom=='Q' || pieceFrom=='q') {
+            if (!moveQueen(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
+        // If the piece is a king, call the moveKing function.
+        if (pieceFrom=='K' || pieceFrom=='k') {
+            if (!moveKing(pieceFrom, indexFrom, indexTo, board)) {
+                cout << "Illegal move" << endl << endl;
+                return;
+            }
+        }
 
-    movePiece(pieceFrom, indexFrom, indexTo, board);
+        cout << "Moving " << from << " to " << to
+             << endl << endl;
+
+        movePiece(pieceFrom, indexFrom, indexTo, board);
+    }
 }
+
+bool isWhite(char pieceFrom)
+{
+    return pieceFrom=='P' || pieceFrom=='N' || pieceFrom=='B' ||
+            pieceFrom=='R' || pieceFrom=='Q' || pieceFrom=='K';
+}
+

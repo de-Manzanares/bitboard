@@ -10,6 +10,8 @@
 * Commands `infb` and `infw` to display a list of squares under the influence of all black and white pieces,
   respectively.
 
+* Turn rule: black and white alternate turns.
+
 ### Fixed
 
 * Knight move generation - it was not properly accounting for captures or collisions.
