@@ -95,6 +95,7 @@ void    printBitBoard               (ChessBoard& board);
 void    printCoordinates            (vector<int>& range);
 bool    rangeValidation             (std::vector<int> range, int indexTo);
 vector<int> sideInfluence           (char side, ChessBoard& board);
+vector<int> sideInfluenceVerbose    (char side, ChessBoard& board);
 vector<int> squareSearch            (char pieceFrom, int& flag, int& canMove, int indexTo, ChessBoard& board);
 void    subtractPiece               (char piece, int index, ChessBoard& board);
 

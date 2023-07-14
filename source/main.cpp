@@ -60,10 +60,10 @@ int main()
            printAllMoves(board);
        }
        if (command=="infw") {
-           sideInfluence('w', board);
+           sideInfluenceVerbose('w', board);
        }
        if (command=="infb") {
-           sideInfluence('b', board);
+           sideInfluenceVerbose('b', board);
        }
     }
     return 0;

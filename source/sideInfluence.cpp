@@ -51,8 +51,41 @@ vector<int> sideInfluence(char side, ChessBoard& board)
             }
         }
     }
-    // printCoordinates(range);
-    // cout << endl;
+    return range;
+}
+
+vector<int> sideInfluenceVerbose(char side, ChessBoard& board)
+{
+    char pieceFrom;
+    vector<int> range;
+
+    for (int i = 63; i>=0; i--) {
+        uint64_t mask = static_cast<uint64_t>(1) << i;
+        if (side=='b') {
+            if (board.black_pieces & mask) {
+                pieceFrom = pieceSearch(i, board);
+                pawnInfluence(pieceFrom, i, range);
+                calculateMoveKnight(pieceFrom, i, range, board);
+                calculateRange(pieceFrom, i, range, board);         // Queen, Rook, Bishop, King
+            }
+        }
+        if (side=='w') {
+            if (board.white_pieces & mask) {
+                pieceFrom = pieceSearch(i, board);
+                pawnInfluence(pieceFrom, i, range);
+                calculateMoveKnight(pieceFrom, i, range, board);
+                calculateRange(pieceFrom, i, range, board);         // Queen, Rook, Bishop, King
+            }
+        }
+    }
+    if (side == 'b') {
+        cout << "Black side influence: ";
+    }
+    else if (side == 'w') {
+        cout << "White side influence: ";
+    }
+    printCoordinates(range);
+    cout << endl;
     return range;
 }
 
