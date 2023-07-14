@@ -40,7 +40,6 @@ void moveCommand(stringstream& ss, ChessBoard& board)
     }
 
     char pieceFrom;     // The piece to move
-    char pieceTo;       // The piece on the target square
     int indexFrom = coordinateToIndex(from);  // Index of the from square
     int indexTo = coordinateToIndex(to);      // Index of the to square
 

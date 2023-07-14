@@ -168,6 +168,7 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ### Specific Stuff
 
 * Simplify ``movePawn`` function.
+* Simplify move functions - change to return vector instead of boolean. Do range validation externally. 
 * Simplify check detection - truncate existing range calculation functions.
 
 ### Should-Be-Obvious Stuff

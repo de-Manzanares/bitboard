@@ -44,9 +44,6 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
         calculateMovesCastling(pieceFrom, indexFrom, range, board);     // must come after horizontal
         calculateMovesVertical(pieceFrom, indexFrom, range, board);
 
-        // Print the range
-        printCoordinates(range);
-
         // Check if the target square is in the range
         // If the king is initiating a castling move, move the rook.
         if (rangeValidationKing(pieceFrom, range, indexTo, board)) {
@@ -109,7 +106,6 @@ bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBo
 
         if (pieceFrom=='K') {
             board.whiteKingMoved = true;
-            cout << "White king moved" << endl;
         }
         if (pieceFrom=='k') {
             board.blackKingMoved = true;

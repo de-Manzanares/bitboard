@@ -51,8 +51,8 @@ vector<int> sideInfluence(char side, ChessBoard& board)
             }
         }
     }
-    printCoordinates(range);
-    cout << endl;
+    // printCoordinates(range);
+    // cout << endl;
     return range;
 }
 
