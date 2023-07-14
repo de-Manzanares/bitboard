@@ -25,6 +25,12 @@
 
 #include "bitBoards.h"
 
+void calculateMovesCastling
+        (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+bool squaresAreClear(vector<int> squares, ChessBoard& board);
+bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board);
+bool castlingCheckCheck(char pieceFrom, vector<int> moves, ChessBoard& board);
+
 void printAllMoves(ChessBoard& board)
 {
     // For each square on the board, find the piece on it and print all possible moves for that piece.
@@ -63,6 +69,7 @@ void printAllMoves(ChessBoard& board)
             if (pieceFrom == 'K' || pieceFrom == 'k') {
                 calculateMovesDiagonal(pieceFrom, i, range, board);
                 calculateMovesHorizontal(pieceFrom, i, range, board);
+                calculateMovesCastling(pieceFrom, i, range, board);
                 calculateMovesVertical(pieceFrom, i, range, board);
                 cout << pieceFrom << " " << indexToCoordinate(i) << " : ";
                 printCoordinates(range);

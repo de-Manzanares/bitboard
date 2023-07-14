@@ -5,12 +5,17 @@ first step. So, here we go!
 
 Using the command line interface (CLI) we can interact with the bitboard to move pieces
 and to display the state of the board. We can also import and export FEN strings. Currently, I am working on
-implementing en passant, pawn promotion, castling, check, checkmate, turn, the 50 move rule, and the threefold
+implementing en passant, pawn promotion, check, checkmate, turn, the 50 move rule, and the threefold
 repetition rule.
 
 If you'd like the program without any rules at all, checkout the Anarchist BitBoard release.
 
 ![overview.gif](gif%2Foverview.gif)
+
+### Rules implemented thus far
+
+* Basic piece movement.
+* Castling.
 
 ---
 
@@ -129,18 +134,13 @@ If you've found a bug, please open an issue on GitHub describing the problem.
 
 If you have an idea for a new feature, please open an issue on GitHub describing your idea.
 
-###  
+###    
 
 ---
 
 ## To-do
 
 ### Priority
-
-* castling
-    * castling through/into check
-    * castling out of check
-
 
 * check detection, checkmate
 * en passant, pawn promotion
@@ -168,6 +168,10 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ### Specific Stuff
 
 * Simplify ``movePawn`` function.
+* Simplify check detection - truncate existing range calculation functions.
+
+### Should-Be-Obvious Stuff
+
 * Clean up redundancy in the code
 * Add comments to the code
 

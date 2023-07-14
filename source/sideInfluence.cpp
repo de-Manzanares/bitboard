@@ -25,9 +25,9 @@
 
 #include "bitBoards.h"
 
-void pawnInfluence(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+void pawnInfluence(char pieceFrom, int indexFrom, vector<int>& range);
 
-void sideInfluence(char side, ChessBoard& board)
+vector<int> sideInfluence(char side, ChessBoard& board)
 {
     char pieceFrom;
     vector<int> range;
@@ -37,7 +37,7 @@ void sideInfluence(char side, ChessBoard& board)
         if (side=='b') {
             if (board.black_pieces & mask) {
                 pieceFrom = pieceSearch(i, board);
-                pawnInfluence(pieceFrom, i, range, board);
+                pawnInfluence(pieceFrom, i, range);
                 calculateMoveKnight(pieceFrom, i, range, board);
                 calculateRange(pieceFrom, i, range, board);         // Queen, Rook, Bishop, King
             }
@@ -45,7 +45,7 @@ void sideInfluence(char side, ChessBoard& board)
         if (side=='w') {
             if (board.white_pieces & mask) {
                 pieceFrom = pieceSearch(i, board);
-                pawnInfluence(pieceFrom, i, range, board);
+                pawnInfluence(pieceFrom, i, range);
                 calculateMoveKnight(pieceFrom, i, range, board);
                 calculateRange(pieceFrom, i, range, board);         // Queen, Rook, Bishop, King
             }
@@ -53,9 +53,10 @@ void sideInfluence(char side, ChessBoard& board)
     }
     printCoordinates(range);
     cout << endl;
+    return range;
 }
 
-void pawnInfluence(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
+void pawnInfluence(char pieceFrom, int indexFrom, vector<int>& range)
 {
     if (pieceFrom=='p') {
         const int D_LEFT_ONE = indexFrom-9;

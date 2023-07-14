@@ -30,6 +30,7 @@ void calculateMovesCastling
         (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 bool squaresAreClear(vector<int> squares, ChessBoard& board);
 bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board);
+bool castlingCheckCheck(char pieceFrom, vector<int> moves, ChessBoard& board);
 
 bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
@@ -66,19 +67,23 @@ void calculateMovesCastling
     const int KING_SIDE = indexFrom-2;
 
     if (pieceFrom=='K' && !board.whiteKingMoved && !board.whiteQueenSideRookMoved
-            && squaresAreClear({indexFrom+1, QUEEN_SIDE}, board)) {
+            && (squaresAreClear({indexFrom+1, QUEEN_SIDE}, board))
+            && (castlingCheckCheck(pieceFrom, {indexFrom, indexFrom+1, QUEEN_SIDE}, board))) {
         range.push_back(QUEEN_SIDE);
     }
     if (pieceFrom=='K' && !board.whiteKingMoved && !board.whiteKingSideRookMoved
-            && squaresAreClear({indexFrom-1, KING_SIDE}, board)) {
+            && (squaresAreClear({indexFrom-1, KING_SIDE}, board))
+            && (castlingCheckCheck(pieceFrom, {indexFrom, indexFrom-1, KING_SIDE}, board))) {
         range.push_back(KING_SIDE);
     }
     if (pieceFrom=='k' && !board.blackKingMoved && !board.blackQueenSideRookMoved
-            && squaresAreClear({indexFrom+1, QUEEN_SIDE}, board)) {
+            && (squaresAreClear({indexFrom+1, QUEEN_SIDE}, board))
+            && (castlingCheckCheck(pieceFrom, {indexFrom, indexFrom+1, QUEEN_SIDE}, board))) {
         range.push_back(QUEEN_SIDE);
     }
     if (pieceFrom=='k' && !board.blackKingMoved && !board.blackKingSideRookMoved
-            && squaresAreClear({indexFrom-1, KING_SIDE}, board)) {
+            && (squaresAreClear({indexFrom-1, KING_SIDE}, board))
+            && (castlingCheckCheck(pieceFrom, {indexFrom, indexFrom-1, KING_SIDE}, board))) {
         range.push_back(KING_SIDE);
     }
 
@@ -130,4 +135,23 @@ bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBo
     else {
         return false;
     }
+}
+
+bool castlingCheckCheck(char pieceFrom, vector<int> moves, ChessBoard& board)
+{
+    vector<int> enemyRange;
+
+    if (pieceFrom=='K') {
+        enemyRange = sideInfluence('b', board);
+        if (find_first_of(moves.begin(), moves.end(), enemyRange.begin(), enemyRange.end())!=moves.end()) {
+            return false;
+        }
+    }
+    if (pieceFrom=='k') {
+        enemyRange = sideInfluence('w', board);
+        if (find_first_of(moves.begin(), moves.end(), enemyRange.begin(), enemyRange.end())!=moves.end()) {
+            return false;
+        }
+    }
+    return true;
 }
