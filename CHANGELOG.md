@@ -10,7 +10,7 @@
 * Commands `infb` and `infw` to display a list of squares under the influence of all black and white pieces,
   respectively.
 
-* Turn rule: black and white alternate turns.
+* Command `turn` to display the turn number and side to move.
 
 ### Fixed
 

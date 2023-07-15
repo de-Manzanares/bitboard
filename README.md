@@ -70,6 +70,7 @@ g++ -I include source/*.cpp -o bitboard
 | ``add <PIECE> <TO>``<sup>1</sup>   | **add** a piece to the board                  |
 | ``fen in <FEN>``<sup>2, 3, 4</sup> | set the state of the board                    |
 | ``fen out``<sup>2, 3</sup>         | display the state of the board                |
+| `turn`                             | display turn number and side to move          |
 | `pam`                              | **p**rint **a**ll **m**oves                   |
 | `infb`                             | display the **influence** of all black pieces |
 | `infw`                             | display the **influence** of all white pieces |
@@ -134,7 +135,7 @@ If you've found a bug, please open an issue on GitHub describing the problem.
 
 If you have an idea for a new feature, please open an issue on GitHub describing your idea.
 
-###    
+###      
 
 ---
 
@@ -144,7 +145,6 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 
 * check detection, checkmate
 * en passant, pawn promotion
-* turn
 * 50 move rule
 * threefold repetition rule
 * Verify rule implementation.
@@ -168,7 +168,7 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ### Specific Stuff
 
 * Simplify ``movePawn`` function.
-* Simplify move functions - change to return vector instead of boolean. Do range validation externally. 
+* Simplify move functions - change to return vector instead of boolean. Do range validation externally.
 * Simplify check detection - truncate existing range calculation functions.
 
 ### Should-Be-Obvious Stuff

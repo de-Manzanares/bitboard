@@ -125,6 +125,9 @@ void moveCommand(stringstream& ss, ChessBoard& board)
              << endl << endl;
 
         movePiece(pieceFrom, indexFrom, indexTo, board);
+
+        board.whiteToMove = !board.whiteToMove;
+        board.halfMoveCount++;
     }
 }
 
@@ -133,4 +136,3 @@ bool isWhite(char pieceFrom)
     return pieceFrom=='P' || pieceFrom=='N' || pieceFrom=='B' ||
             pieceFrom=='R' || pieceFrom=='Q' || pieceFrom=='K';
 }
-

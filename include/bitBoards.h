@@ -52,6 +52,7 @@ struct ChessBoard {
     uint64_t black_pieces = black_pawn | black_night | black_bishop | black_rook | black_queen | black_king;
     uint64_t white_pieces = white_Pawn | white_Night | white_Bishop | white_Rook | white_Queen | white_King;
     bool whiteToMove = true;
+    int  halfMoveCount = 0;
     bool whiteKingMoved = false;
     bool blackKingMoved = false;
     bool whiteKingSideRookMoved  = false;

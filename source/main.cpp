@@ -30,6 +30,8 @@
 
 using namespace std;
 
+void sideToMove(ChessBoard& board);
+
 int main()
 {
     string commandLine;
@@ -43,28 +45,39 @@ int main()
         if (command=="add") {
             addReplaceCommand(ss, board);
         }
-
         if (command=="d") {
             printBitBoard(board);
         }
-
         if (command=="fen") {
             fenCommand(ss, board);
         }
-
         if (command=="mv") {
             moveCommand(ss, board);
         }
-
-       if (command=="pam") {
-           printAllMoves(board);
-       }
-       if (command=="infw") {
-           sideInfluenceVerbose('w', board);
-       }
-       if (command=="infb") {
-           sideInfluenceVerbose('b', board);
-       }
+        if (command=="pam") {
+            printAllMoves(board);
+        }
+        if (command=="infw") {
+            sideInfluenceVerbose('w', board);
+        }
+        if (command=="infb") {
+            sideInfluenceVerbose('b', board);
+        }
+        if (command=="turn") {
+            cout << "Turn: " << board.halfMoveCount/2+1
+                 << endl;
+            sideToMove(board);
+        }
     }
     return 0;
+}
+
+void sideToMove(ChessBoard& board)
+{
+    if (board.whiteToMove) {
+        cout << "White to move" << endl << endl;
+    }
+    else {
+        cout << "Black to move" << endl << endl;
+    }
 }
