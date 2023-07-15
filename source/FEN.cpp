@@ -139,5 +139,17 @@ void fenEncode(ChessBoard& board)
     }
     // If there were empty squares at the end of the board, print the number of empty squares.
     if (countEmptySquares>0) { cout << countEmptySquares; }
+
+    if (board.whiteToMove) { cout << " w "; }
+    else { cout << " b "; }
+
+    if (!board.whiteKingMoved) {
+        if (!board.whiteKingSideRookMoved) { cout << "K"; }
+        if (!board.whiteQueenSideRookMoved) { cout << "Q"; }
+    }
+    if (!board.blackKingMoved) {
+        if (!board.blackKingSideRookMoved) { cout << "k"; }
+        if (!board.blackQueenSideRookMoved) { cout << "q"; }
+    }
     cout << endl << endl;
 }

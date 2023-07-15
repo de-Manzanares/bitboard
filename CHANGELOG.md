@@ -12,6 +12,8 @@
 
 * Command `turn` to display the turn number and side to move.
 
+* FEN encoding now considers side to move and castling ability.
+
 ### Fixed
 
 * Knight move generation - it was not properly accounting for captures or collisions.

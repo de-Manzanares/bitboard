@@ -147,11 +147,20 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 * en passant, pawn promotion
 * 50 move rule
 * threefold repetition rule
-* Verify rule implementation.
 
 
-* Finish FEN implementation by adding:
-    * side to move, move counter, castling ability, en passant targets
+* FEN encoding:
+  * en passant targets
+  * half move clock
+  * full move number
+
+  
+* FEN decoding:
+     * side to move
+     * castling ability
+     * en passant targets
+     * half move clock 
+     * full move number 
 
 
 * Implement portable game notation (PGN).
@@ -159,7 +168,7 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 ### Looking ahead
 
 * Implement basic evaluation and decision-making.
-* Implement UCI compatability.
+* UCI compatability.
 
 ### Little things
 
