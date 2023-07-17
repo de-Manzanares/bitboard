@@ -1,3 +1,5 @@
+## Changelog
+
 ## 23.28
 
 ### Added
@@ -18,6 +20,8 @@
 
 * Knight move generation - it was not properly accounting for captures or collisions.
 
+---
+
 ## 23.27
 
 This week, I wrote my very first structures and my very first user defined functions in C++.
@@ -35,23 +39,23 @@ This week, I wrote my very first structures and my very first user defined funct
   user to select a piece for pawn promotion.
 
 
-* New function ``fenEncode`` encodes the state of the board into a FEN string.
-* New function ``fenDecode`` decodes FEN string to set the state of the board.
+* New function ``fenEncode()`` encodes the state of the board into a FEN string.
+* New function ``fenDecode()`` decodes FEN string to set the state of the board.
     * These functions are incomplete - they do not consider side to move, castling ability, en passant, or move count.
 
 
-* New functions ``movePawn``, `moveKnight`, `moveBishop`, `moveRook`, `moveQueen`, and `moveKing` calculate the range
+* New functions ``movePawn()``, `moveKnight()`, `moveBishop()`, `moveRook()`, `moveQueen()`, and `moveKing()` calculate the range
   of valid moves for the given piece, then check whether the target square of the move command is an element of that
   range.
     * these movement functions do not account for en passant, pawn promotion, castling, check, or checkmate.
 
 
-* New functions `calculateMovesDiagonal`, `calculateMovesHorizontal`, `calculateMovesVertical` introduced to simplify
+* New functions `calculateMovesDiagonal()`, `calculateMovesHorizontal()`, `calculateMovesVertical()` introduced to simplify
   move generation. They use recursive logic to continue searching in a given direction for a predetermined number of
   squares, or until `squareSearch` reports a collision or capture.
 
 
-* New function ``squareSearch`` is a way to identify potential captures or collisions. It evaluates a square as
+* New function ``squareSearch()`` is a way to identify potential captures or collisions. It evaluates a square as
   empty, occupied by friendly, or occupied by hostile.
 
 ### Changed
