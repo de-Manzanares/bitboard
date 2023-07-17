@@ -25,13 +25,13 @@ If you'd like the program without any rules at all, checkout the Anarchist BitBo
 
 Clone the repository
 
-```angular2html
+```
 git clone https://github.com/de-Manzanares/bitboard.git
 ```
 
 Move into the bitboard directory, then create and move into the build directory
 
-```angular2html
+```
 cd bitboard
 mkdir build
 cd build
@@ -39,7 +39,7 @@ cd build
 
 Run CMake, then compile
 
-```angular2html
+```
 cmake ..
 make
 ```
@@ -48,13 +48,13 @@ make
 
 Clone the repository
 
-```angular2html
+```
 git clone https://github.com/de-Manzanares/bitboard.git
 ```
 
 Move into the directory, then compile
 
-```angular2html
+```
 cd bitboard
 g++ -I include source/*.cpp -o bitboard
 ```
@@ -135,8 +135,6 @@ If you've found a bug, please open an issue on GitHub describing the problem.
 
 If you have an idea for a new feature, please open an issue on GitHub describing your idea.
 
-###      
-
 ---
 
 ## To-do
@@ -150,17 +148,17 @@ If you have an idea for a new feature, please open an issue on GitHub describing
 
 
 * FEN encoding:
-  * en passant targets
-  * half move clock
-  * full move number
+    * en passant targets
+    * half move clock
+    * full move number
 
-  
+
 * FEN decoding:
-     * side to move
-     * castling ability
-     * en passant targets
-     * half move clock 
-     * full move number 
+    * side to move
+    * castling ability
+    * en passant targets
+    * half move clock
+    * full move number
 
 
 * Implement portable game notation (PGN).
