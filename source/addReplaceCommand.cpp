@@ -23,15 +23,21 @@
 /// @author de-Manzanares
 /// @brief  A way to manually add a piece to the board - a step toward pawn promotion
 
-#include <iostream>
-#include <string>
 #include <sstream>
 #include "bitBoards.h"
+
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief User initiated command to manually add a piece to the board.
+///
+/// @post `board` is modified.
+///
+/// @param ss The string-stream containing the command.
+/// @param board The chess board.
 
 void addReplaceCommand(stringstream& ss, ChessBoard& board)
 {
     char pieceAdd;  // The piece to add
-    string to;      // The square to add the piece to
+    string to;      // The square place the piece
 
     // If there is an input error, notify the user and return
     if (!(ss >> pieceAdd >> to)) {
@@ -42,7 +48,7 @@ void addReplaceCommand(stringstream& ss, ChessBoard& board)
     }
 
     // Calculate the index of the square
-    int index = coordinateToIndex(to);        // The index of the square
+    int index = coordinateToIndex(to);      // The index of the square
     string validPieces = "KQRBNPkqrbnp";    // Valid pieces
 
     // If the index is out of range or the piece is invalid, notify the user
