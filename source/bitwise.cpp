@@ -20,7 +20,7 @@
 */
 
 /// @file   bitwise.cpp
-/// @brief  Functions for fundamental operations on bitboards:
+/// @brief  Fundamental operations on bitboards.
 ///         - add a piece to the board
 ///         - subtract a piece from the board
 ///         - search a square on the board

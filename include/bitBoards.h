@@ -67,11 +67,12 @@ void    addPiece                    (char piece, int index, ChessBoard& board);
 void    addReplaceCommand           (stringstream& ss, ChessBoard& board);
 void    calculateMoveKnight         (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    calculateMovePawn           (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
-void    calculateMovesDiagonal      (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+void    calculateMovesDiagonal      (char pieceFrom, int indexFrom, vector<int>& range, const ChessBoard& board);
+void    calculateMovesHorizontal    (char pieceFrom, int indexFrom, vector<int>& range, const ChessBoard& board);
+void    calculateMovesVertical      (char pieceFrom, int indexFrom, vector<int>& range, const ChessBoard& board);
 void    calculateMovesHelper        (char pieceFrom, vector<int>& range, int& flag, int& canMove,
-                                        const vector<int>& moves, int limit, ChessBoard& board);
-void    calculateMovesHorizontal    (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
-void    calculateMovesVertical      (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
+                                        const vector<int>& moves, int limit, const ChessBoard& board);
+vector<int> squareSearch            (char pieceFrom, int& flag, int& canMove, int indexTo, const ChessBoard& board);
 void    calculateRange              (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board);
 void    cleanRange                  (vector<int>& range);
 int     coordinateToIndex             (const string& coordinate);
@@ -96,7 +97,6 @@ void    printCoordinates            (vector<int>& range);
 bool    rangeValidation             (std::vector<int> range, int indexTo);
 vector<int> sideInfluence           (char side, ChessBoard& board);
 vector<int> sideInfluenceVerbose    (char side, ChessBoard& board);
-vector<int> squareSearch            (char pieceFrom, int& flag, int& canMove, int indexTo, ChessBoard& board);
 void    subtractPiece               (char piece, int index, ChessBoard& board);
 
 #endif // BITBOARDS_H

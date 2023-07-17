@@ -20,6 +20,5 @@ add_executable(bitboard source/addReplaceCommand.cpp
                         source/moveRook.cpp
                         source/printAllMoves.cpp
                         source/printBitBoard.cpp
-                        source/squareSearch.cpp
                         source/calculateRange.cpp
                         source/sideInfluence.cpp)
