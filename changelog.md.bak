@@ -1,5 +1,0 @@
-### 2023.07.01
-* coordinate input limited to ``<a-h><1-8>``
-* started writing funciton ``couldGo``
-    * to find the range of a given piece
-* added partial rules for pawns

@@ -6,5 +6,6 @@ var searchData=
   ['calculatemovessliding_2ecpp_3',['calculateMovesSliding.cpp',['../calculateMovesSliding_8cpp.html',1,'']]],
   ['calculatemovesvertical_4',['calculateMovesVertical',['../calculateMovesSliding_8cpp.html#a60f475292e43d334356c717591fe4cdd',1,'calculateMovesVertical(const char pieceFrom, const int indexFrom, vector&lt; int &gt; &amp;range, const ChessBoard &amp;board):&#160;calculateMovesSliding.cpp'],['../bitBoards_8h.html#a9bc43018d62bb5eeba5ef66818763a59',1,'calculateMovesVertical(char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, const ChessBoard &amp;board):&#160;calculateMovesSliding.cpp']]],
   ['calculaterange_2ecpp_5',['calculateRange.cpp',['../calculateRange_8cpp.html',1,'']]],
-  ['chessboard_6',['ChessBoard',['../structChessBoard.html',1,'']]]
+  ['changelog_6',['Changelog',['../md__2home_2deman_2cpp_2cs135_2bitboard_2CHANGELOG.html',1,'']]],
+  ['chessboard_7',['ChessBoard',['../structChessBoard.html',1,'']]]
 ];

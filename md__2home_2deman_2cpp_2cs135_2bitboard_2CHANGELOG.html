@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: 23.28</title>
+<title>Bitboard: Changelog</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">Bitboard
    </div>
   </td>
  </tr>
@@ -69,11 +69,13 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">23.28</div></div>
+  <div class="headertitle"><div class="title">Changelog</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
-<h2><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md26"></a> </p>
+<h1><a class="anchor" id="autotoc_md27"></a>
+23.28</h1>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Added</h2>
 <ul>
 <li>Complete set of castling rules: the squares must be unoccupied, the king and rook must not have moved, the king must not be in check or move through/into check.</li>
@@ -82,43 +84,44 @@ Added</h2>
 <li>Command <code>turn</code> to display the turn number and side to move.</li>
 <li>FEN encoding now considers side to move and castling ability.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 Fixed</h2>
 <ul>
 <li>Knight move generation - it was not properly accounting for captures or collisions.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<hr  />
+<h1><a class="anchor" id="autotoc_md31"></a>
 23.27</h1>
 <p>This week, I wrote my very first structures and my very first user defined functions in C++.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Added</h2>
 <ul>
-<li>Introduced new structure <code>ChessBoard</code> which includes all twelve bitboards. This allows for a more efficient and organized representation of the chessboard state. This is my first ever structure.</li>
-<li>Created header file <code>bitBoards.h</code> to improve organization and readability. This is my first ever header file.</li>
+<li>Introduced new structure <code><a class="el" href="structChessBoard.html">ChessBoard</a></code> which includes all twelve bitboards. This allows for a more efficient and organized representation of the chessboard state. This is my first ever structure.</li>
+<li>Created header file <code><a class="el" href="bitBoards_8h.html" title="Header file for bitboard.">bitBoards.h</a></code> to improve organization and readability. This is my first ever header file.</li>
 <li>Added command to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion.</li>
-<li>New function <code>fenEncode</code> encodes the state of the board into a FEN string.</li>
-<li>New function <code>fenDecode</code> decodes FEN string to set the state of the board.<ul>
+<li>New function <code>fenEncode()</code> encodes the state of the board into a FEN string.</li>
+<li>New function <code>fenDecode()</code> decodes FEN string to set the state of the board.<ul>
 <li>These functions are incomplete - they do not consider side to move, castling ability, en passant, or move count.</li>
 </ul>
 </li>
-<li>New functions <code>movePawn</code>, <code>moveKnight</code>, <code>moveBishop</code>, <code>moveRook</code>, <code>moveQueen</code>, and <code>moveKing</code> calculate the range of valid moves for the given piece, then check whether the target square of the move command is an element of that range.<ul>
+<li>New functions <code>movePawn()</code>, <code>moveKnight()</code>, <code>moveBishop()</code>, <code>moveRook()</code>, <code>moveQueen()</code>, and <code>moveKing()</code> calculate the range of valid moves for the given piece, then check whether the target square of the move command is an element of that range.<ul>
 <li>these movement functions do not account for en passant, pawn promotion, castling, check, or checkmate.</li>
 </ul>
 </li>
-<li>New functions <code>calculateMovesDiagonal</code>, <code>calculateMovesHorizontal</code>, <code>calculateMovesVertical</code> introduced to simplify move generation. They use recursive logic to continue searching in a given direction for a predetermined number of squares, or until <code>squareSearch</code> reports a collision or capture.</li>
-<li>New function <code>squareSearch</code> is a way to identify potential captures or collisions. It evaluates a square as empty, occupied by friendly, or occupied by hostile.</li>
+<li>New functions <code><a class="el" href="calculateMovesSliding_8cpp.html#a2b6ba1ce656996b21125ad904a0cbe86" title="Calculates diagonal range.">calculateMovesDiagonal()</a></code>, <code><a class="el" href="calculateMovesSliding_8cpp.html#ace587769943474b1cbef3538ac64df9a" title="Calculates horizontal range.">calculateMovesHorizontal()</a></code>, <code><a class="el" href="calculateMovesSliding_8cpp.html#a60f475292e43d334356c717591fe4cdd" title="Calculates vertical range.">calculateMovesVertical()</a></code> introduced to simplify move generation. They use recursive logic to continue searching in a given direction for a predetermined number of squares, or until <code>squareSearch</code> reports a collision or capture.</li>
+<li>New function <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> is a way to identify potential captures or collisions. It evaluates a square as empty, occupied by friendly, or occupied by hostile.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Changed</h2>
 <ul>
-<li>Refactored all pre-existing functions to utilize the new <code>ChessBoard</code> structure. This change has significantly improved the organization and readability of the code.</li>
+<li>Refactored all pre-existing functions to utilize the new <code><a class="el" href="structChessBoard.html">ChessBoard</a></code> structure. This change has significantly improved the organization and readability of the code.</li>
 <li>Rewrote <code>coordinateIndex()</code> to fix issue with invalid input handling. The function now verifies the input string length, limiting valid input to two characters.</li>
 <li>Refactored main by writing command functions that include the pre-existing helper functions.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 23.26</h1>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Added</h2>
 <ul>
 <li>Validation for coordinate inputs - limited to the format <code>&lt;a-h&gt;&lt;1-8&gt;</code>. </li>
