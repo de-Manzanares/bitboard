@@ -16,6 +16,7 @@ If you'd like the program without any rules at all, checkout the Anarchist BitBo
 
 * Basic piece movement.
 * Castling.
+* Turn
 
 ---
 
@@ -63,18 +64,18 @@ g++ -I include source/*.cpp -o bitboard
 
 ## Commands
 
-| Syntax                             | Description                                   |
-|------------------------------------|-----------------------------------------------|
-| ``d``                              | **d**isplay the board                         |
-| ``mv <FROM> <TO>``<sup>1</sup>     | **m**o**v**e a piece                          |
-| ``add <PIECE> <TO>``<sup>1</sup>   | **add** a piece to the board                  |
-| ``fen in <FEN>``<sup>2, 3, 4</sup> | set the state of the board                    |
-| ``fen out``<sup>2, 3</sup>         | display the state of the board                |
-| `turn`                             | display turn number and side to move          |
-| `pam`                              | **p**rint **a**ll **m**oves                   |
-| `infb`                             | display the **influence** of all black pieces |
-| `infw`                             | display the **influence** of all white pieces |
-| ``quit``                           | **quit** the program                          |
+| Syntax                             | Description                               |
+|------------------------------------|-------------------------------------------|
+| ``d``                              | display the board                         |
+| ``mv <FROM> <TO>``<sup>1</sup>     | move a piece                              |
+| ``add <PIECE> <TO>``<sup>1</sup>   | add a piece to the board                  |
+| ``fen in <FEN>``<sup>2, 3, 4</sup> | set the state of the board                |
+| ``fen out``<sup>2, 3</sup>         | display the state of the board            |
+| `turn`                             | display turn number and side to move      |
+| `pam`                              | print all moves                           |
+| `infb`                             | display the influence of all black pieces |
+| `infw`                             | display the influence of all white pieces |
+| ``quit``                           | quit the program                          |
 
 <br>
 
