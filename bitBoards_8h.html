@@ -98,7 +98,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a3023bde5984e70b78c157c5c7f8593d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a3023bde5984e70b78c157c5c7f8593d1">updateBoard</a> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="memdesc:a3023bde5984e70b78c157c5c7f8593d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the board.  <br /></td></tr>
+<tr class="memdesc:a3023bde5984e70b78c157c5c7f8593d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update expressions within the <a class="el" href="structChessBoard.html">ChessBoard</a> struct.  <br /></td></tr>
 <tr class="separator:a3023bde5984e70b78c157c5c7f8593d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bc77380e18ef88fb7d6e7b55aa531bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a6bc77380e18ef88fb7d6e7b55aa531bf">addPiece</a> (char piece, int index, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="memdesc:a6bc77380e18ef88fb7d6e7b55aa531bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a piece to the board.  <br /></td></tr>
@@ -122,19 +122,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovePawn</b>
 <tr class="memdesc:a9bc43018d62bb5eeba5ef66818763a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates vertical range.  <br /></td></tr>
 <tr class="separator:a9bc43018d62bb5eeba5ef66818763a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a188a9b95edcc952adffd5f44c4904cac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a188a9b95edcc952adffd5f44c4904cac">calculateMovesHelper</a> (char pieceFrom, vector&lt; int &gt; &amp;range, int &amp;flag, int &amp;canMove, const vector&lt; int &gt; &amp;moves, int limit, const <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="memdesc:a188a9b95edcc952adffd5f44c4904cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds a list of moves to <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves.  <br /></td></tr>
+<tr class="memdesc:a188a9b95edcc952adffd5f44c4904cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves.  <br /></td></tr>
 <tr class="separator:a188a9b95edcc952adffd5f44c4904cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf0582d888bf53a6bfb2da653562f81"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a9bf0582d888bf53a6bfb2da653562f81">squareSearch</a> (char pieceFrom, int &amp;flag, int &amp;canMove, int indexTo, const <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="memdesc:a9bf0582d888bf53a6bfb2da653562f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag a square as empty, occupied by an enemy, or occupied by an ally.  <br /></td></tr>
 <tr class="separator:a9bf0582d888bf53a6bfb2da653562f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8537f0483536cfd22a56ed293e42a846"><td class="memItemLeft" align="right" valign="top"><a id="a8537f0483536cfd22a56ed293e42a846" name="a8537f0483536cfd22a56ed293e42a846"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateRange</b> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a8537f0483536cfd22a56ed293e42a846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a8537f0483536cfd22a56ed293e42a846">calculateRange</a> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a8537f0483536cfd22a56ed293e42a846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a list of all possible moves for a given piece.  <br /></td></tr>
 <tr class="separator:a8537f0483536cfd22a56ed293e42a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eadd41a994209c12c409413fdf00e0b"><td class="memItemLeft" align="right" valign="top"><a id="a3eadd41a994209c12c409413fdf00e0b" name="a3eadd41a994209c12c409413fdf00e0b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>cleanRange</b> (vector&lt; int &gt; &amp;range)</td></tr>
+<tr class="memitem:a3eadd41a994209c12c409413fdf00e0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a3eadd41a994209c12c409413fdf00e0b">cleanRange</a> (vector&lt; int &gt; &amp;range)</td></tr>
+<tr class="memdesc:a3eadd41a994209c12c409413fdf00e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
 <tr class="separator:a3eadd41a994209c12c409413fdf00e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec3b1a196311e503dac1006d57403378"><td class="memItemLeft" align="right" valign="top"><a id="aec3b1a196311e503dac1006d57403378" name="aec3b1a196311e503dac1006d57403378"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>coordinateToIndex</b> (const string &amp;coordinate)</td></tr>
+<tr class="memitem:aec3b1a196311e503dac1006d57403378"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#aec3b1a196311e503dac1006d57403378">coordinateToIndex</a> (const string &amp;coordinate)</td></tr>
+<tr class="memdesc:aec3b1a196311e503dac1006d57403378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts chess algebraic notation to index notation. To coincide with the bitboards in the <code><a class="el" href="structChessBoard.html">ChessBoard</a></code>, the index of the square is defined as it's position in the 64 bit bitboard. <br  />
+ The index of the square is defined as <code>[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]</code>. <br  />
+ Starting from <code>0</code> at <code>h1</code>, each rank increases the index by <code>8</code>, and each file increases the index by <code>1</code>.  <br /></td></tr>
 <tr class="separator:aec3b1a196311e503dac1006d57403378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59106976770a6593010067ae60fad13b"><td class="memItemLeft" align="right" valign="top"><a id="a59106976770a6593010067ae60fad13b" name="a59106976770a6593010067ae60fad13b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>fenCommand</b> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
@@ -145,14 +147,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>fenDecode</b> (string
 <tr class="memitem:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memItemLeft" align="right" valign="top"><a id="a455ff4438053c3e025dc0d49c2dec7a2" name="a455ff4438053c3e025dc0d49c2dec7a2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>fenEncode</b> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="separator:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60ed2571c70f28ad936e745c1a0c9496"><td class="memItemLeft" align="right" valign="top"><a id="a60ed2571c70f28ad936e745c1a0c9496" name="a60ed2571c70f28ad936e745c1a0c9496"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>getFile</b> (int index)</td></tr>
+<tr class="memitem:a60ed2571c70f28ad936e745c1a0c9496"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a60ed2571c70f28ad936e745c1a0c9496">getFile</a> (int index)</td></tr>
+<tr class="memdesc:a60ed2571c70f28ad936e745c1a0c9496"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
 <tr class="separator:a60ed2571c70f28ad936e745c1a0c9496"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20594ae193470cb491c8c70256356b32"><td class="memItemLeft" align="right" valign="top"><a id="a20594ae193470cb491c8c70256356b32" name="a20594ae193470cb491c8c70256356b32"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getRank</b> (int index)</td></tr>
+<tr class="memitem:a20594ae193470cb491c8c70256356b32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a20594ae193470cb491c8c70256356b32">getRank</a> (int index)</td></tr>
+<tr class="memdesc:a20594ae193470cb491c8c70256356b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
 <tr class="separator:a20594ae193470cb491c8c70256356b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="memItemLeft" align="right" valign="top"><a id="a98e8e24cf60ff8bc1196fe1d8894a732" name="a98e8e24cf60ff8bc1196fe1d8894a732"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>indexToCoordinate</b> (int index)</td></tr>
+<tr class="memitem:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a98e8e24cf60ff8bc1196fe1d8894a732">indexToCoordinate</a> (int index)</td></tr>
+<tr class="memdesc:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts index notation to chess algebraic notation.  <br /></td></tr>
 <tr class="separator:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73d806f0cd7417c103f6ce236e65e03"><td class="memItemLeft" align="right" valign="top"><a id="aa73d806f0cd7417c103f6ce236e65e03" name="aa73d806f0cd7417c103f6ce236e65e03"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveBishop</b> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
@@ -179,7 +181,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveQueen</b> (char p
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveRook</b> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="separator:ac56c35af7772afdaf936ea7b0d179099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a760f18273357a0522a679571326f0725"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a760f18273357a0522a679571326f0725">pieceSearch</a> (int index, const <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="memdesc:a760f18273357a0522a679571326f0725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a piece on the board.  <br /></td></tr>
+<tr class="memdesc:a760f18273357a0522a679571326f0725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a square is occupied.  <br /></td></tr>
 <tr class="separator:a760f18273357a0522a679571326f0725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a544ea056275ef4b1a1268fb3f37b5b50"><td class="memItemLeft" align="right" valign="top"><a id="a544ea056275ef4b1a1268fb3f37b5b50" name="a544ea056275ef4b1a1268fb3f37b5b50"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printAllMoves</b> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
@@ -187,11 +189,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printAllMoves</b> (<a
 <tr class="memitem:af8eef2176b438c41b15b0c3e26b91ec3"><td class="memItemLeft" align="right" valign="top"><a id="af8eef2176b438c41b15b0c3e26b91ec3" name="af8eef2176b438c41b15b0c3e26b91ec3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>printBitBoard</b> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="separator:af8eef2176b438c41b15b0c3e26b91ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb7c289eb135cac0b654dfe01527c59e"><td class="memItemLeft" align="right" valign="top"><a id="acb7c289eb135cac0b654dfe01527c59e" name="acb7c289eb135cac0b654dfe01527c59e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printCoordinates</b> (vector&lt; int &gt; &amp;range)</td></tr>
-<tr class="separator:acb7c289eb135cac0b654dfe01527c59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d103c4f6a7c35ce89233021340ebc5d"><td class="memItemLeft" align="right" valign="top"><a id="a8d103c4f6a7c35ce89233021340ebc5d" name="a8d103c4f6a7c35ce89233021340ebc5d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>rangeValidation</b> (std::vector&lt; int &gt; range, int indexTo)</td></tr>
+<tr class="memitem:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a129ca6f7d9f0161dbc118fdce4e4a6bf">printCoordinates</a> (const vector&lt; int &gt; &amp;range)</td></tr>
+<tr class="memdesc:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a vector of indices in algebraic notation.  <br /></td></tr>
+<tr class="separator:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d103c4f6a7c35ce89233021340ebc5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a8d103c4f6a7c35ce89233021340ebc5d">rangeValidation</a> (std::vector&lt; int &gt; range, int indexTo)</td></tr>
+<tr class="memdesc:a8d103c4f6a7c35ce89233021340ebc5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
 <tr class="separator:a8d103c4f6a7c35ce89233021340ebc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6548d9263e418aea29531933456afd2a"><td class="memItemLeft" align="right" valign="top"><a id="a6548d9263e418aea29531933456afd2a" name="a6548d9263e418aea29531933456afd2a"></a>
 vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideInfluence</b> (char side, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
@@ -333,7 +335,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 
 <p>Calculates diagonal range. </p>
 <hr  />
- <dl class="section post"><dt>Postcondition</dt><dd><code>range</code> is populated with all possible diagonal moves.</dd></dl>
+ <dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is populated with all possible diagonal moves.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pieceFrom</td><td>The piece to calculate the moves for - the king follows different calculations. </td></tr>
@@ -402,15 +404,15 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>Feeds a list of moves to <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves. </p>
+<p>Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves. </p>
 <hr  />
- <p><code><a class="el" href="calculateMovesSliding_8cpp.html#a7c0b319c5aad5526d41cc2566f3f3558" title="Feeds a list of moves to squareSearch() and uses the feedback to create a list of legal moves.">calculateMovesHelper()</a></code> feeds <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> a list of indices to be searched. If the square is flagged as empty, that move is added to <code>range</code>, and the next index is passed to <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code>. If the square is occupied by an enemy, that move is added to <code>range</code> because a capture is possible, but the search stops because the piece cannot continue moving after a capture. If the square is occupied by an ally, that move is not added to <code>range</code> because the piece cannot move to a square occupied by an ally, and the search stops because the piece cannot continue moving after collision.</p>
+ <p><code><a class="el" href="calculateRange_8cpp.html#a7c0b319c5aad5526d41cc2566f3f3558" title="Feeds a list of moves to squareSearch() and uses the feedback to create a list of legal moves.">calculateMovesHelper()</a></code> feeds <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> a list of indices to be searched. If the square is flagged as empty, that move is added to <code>range</code>, and the next index is passed to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code>. If the square is occupied by an enemy, that move is added to <code>range</code> because a capture is possible, but the search stops because the piece cannot continue moving after a capture. If the square is occupied by an ally, that move is not added to <code>range</code> because the piece cannot move to a square occupied by an ally, and the search stops because the piece cannot continue moving after collision.</p>
 <dl class="section post"><dt>Postcondition</dt><dd><code>{flag, canMove}</code> is modified </dd>
 <dd>
 <code>range</code> is populated with all possible moves.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pieceFrom</td><td>To tell <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> which pieces cause capture or collision. </td></tr>
+    <tr><td class="paramname">pieceFrom</td><td>To tell <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> which pieces cause capture or collision. </td></tr>
     <tr><td class="paramname">range</td><td>A list to be populated with all possible moves. </td></tr>
     <tr><td class="paramname">flag</td><td>Flags a square as empty, occupied by an enemy, or occupied by an ally. </td></tr>
     <tr><td class="paramname">canMove</td><td>Flags a square as a valid move. </td></tr>
@@ -463,7 +465,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 
 <p>Calculates horizontal range. </p>
 <hr  />
- <dl class="section post"><dt>Postcondition</dt><dd><code>range</code> is populated with all possible horizontal moves.</dd></dl>
+ <dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is populated with all possible horizontal moves.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pieceFrom</td><td>The piece to calculate the moves for - the king follows different calculations. </td></tr>
@@ -516,7 +518,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 
 <p>Calculates vertical range. </p>
 <hr  />
- <dl class="section post"><dt>Postcondition</dt><dd><code>range</code> is populated with all possible horizontal moves.</dd></dl>
+ <dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is populated with all possible vertical moves.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pieceFrom</td><td>The piece to calculate the moves for - the king follows different calculations. </td></tr>
@@ -526,6 +528,221 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8537f0483536cfd22a56ed293e42a846" name="a8537f0483536cfd22a56ed293e42a846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8537f0483536cfd22a56ed293e42a846">&#9670;&#160;</a></span>calculateRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateRange </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a list of all possible moves for a given piece. </p>
+<hr  />
+ <p>Uses <code><a class="el" href="calculateRange_8cpp.html#a2b6ba1ce656996b21125ad904a0cbe86" title="Calculates diagonal range.">calculateMovesDiagonal()</a></code>, <code><a class="el" href="calculateRange_8cpp.html#ace587769943474b1cbef3538ac64df9a" title="Calculates horizontal range.">calculateMovesHorizontal()</a></code>, and <code><a class="el" href="calculateRange_8cpp.html#a60f475292e43d334356c717591fe4cdd" title="Calculates vertical range.">calculateMovesVertical()</a></code> to populate vector <code>range</code> with all possible moves for the given piece.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is populated with all possible moves for the given piece.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>The piece to move. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The index of the piece to move. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector to populate with all possible moves for the given piece. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3eadd41a994209c12c409413fdf00e0b" name="a3eadd41a994209c12c409413fdf00e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eadd41a994209c12c409413fdf00e0b">&#9670;&#160;</a></span>cleanRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cleanRange </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function's purpose. </p>
+<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
+    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+
+</div>
+</div>
+<a id="aec3b1a196311e503dac1006d57403378" name="aec3b1a196311e503dac1006d57403378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3b1a196311e503dac1006d57403378">&#9670;&#160;</a></span>coordinateToIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int coordinateToIndex </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>coordinate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts chess algebraic notation to index notation. To coincide with the bitboards in the <code><a class="el" href="structChessBoard.html">ChessBoard</a></code>, the index of the square is defined as it's position in the 64 bit bitboard. <br  />
+ The index of the square is defined as <code>[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]</code>. <br  />
+ Starting from <code>0</code> at <code>h1</code>, each rank increases the index by <code>8</code>, and each file increases the index by <code>1</code>. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coordinate</td><td>The algebraic notation of the square. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the square as defined by it's position in the 64 bit bitboard. </dd></dl>
+
+</div>
+</div>
+<a id="a60ed2571c70f28ad936e745c1a0c9496" name="a60ed2571c70f28ad936e745c1a0c9496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ed2571c70f28ad936e745c1a0c9496">&#9670;&#160;</a></span>getFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char getFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function's purpose. </p>
+<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
+    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+
+</div>
+</div>
+<a id="a20594ae193470cb491c8c70256356b32" name="a20594ae193470cb491c8c70256356b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20594ae193470cb491c8c70256356b32">&#9670;&#160;</a></span>getRank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getRank </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function's purpose. </p>
+<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
+    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+
+</div>
+</div>
+<a id="a98e8e24cf60ff8bc1196fe1d8894a732" name="a98e8e24cf60ff8bc1196fe1d8894a732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e8e24cf60ff8bc1196fe1d8894a732">&#9670;&#160;</a></span>indexToCoordinate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string indexToCoordinate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts index notation to chess algebraic notation. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The position of the square in the 64 bit bitboard. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The algebraic notation of the square, e.g., <code>a1</code>, <code>h8</code>, etc. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>For further information on the index notation, see <code><a class="el" href="indices_8cpp.html#aec3b1a196311e503dac1006d57403378" title="Converts chess algebraic notation to index notation. To coincide with the bitboards in the ChessBoard...">coordinateToIndex()</a></code> </dd></dl>
 
 </div>
 </div>
@@ -608,7 +825,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>Search for a piece on the board. </p>
+<p>Check if a square is occupied. </p>
 <hr  />
  <p>Searches each bitboard at the specified index. The search is in no meaningful order.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -619,6 +836,80 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The symbol of the piece found at the given index, or <code>E</code> for empty. </dd></dl>
+
+</div>
+</div>
+<a id="a129ca6f7d9f0161dbc118fdce4e4a6bf" name="a129ca6f7d9f0161dbc118fdce4e4a6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129ca6f7d9f0161dbc118fdce4e4a6bf">&#9670;&#160;</a></span>printCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints a vector of indices in algebraic notation. </p>
+<hr  />
+ <p>The function takes each element of the vector one at a time, converts it to algebraic notation using <code><a class="el" href="indices_8cpp.html#a98e8e24cf60ff8bc1196fe1d8894a732" title="Converts index notation to chess algebraic notation.">indexToCoordinate()</a></code>, and prints it to the console. <br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">range</td><td>The vector of indices to be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8d103c4f6a7c35ce89233021340ebc5d" name="a8d103c4f6a7c35ce89233021340ebc5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d103c4f6a7c35ce89233021340ebc5d">&#9670;&#160;</a></span>rangeValidation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rangeValidation </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexTo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function's purpose. </p>
+<hr  />
+ <p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
+    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
 
 </div>
 </div>
@@ -673,7 +964,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 <li>Occupied by an enemy &mdash; the piece can move to the square but cannot move further.</li>
 <li>Occupied by an ally &mdash; the piece cannot move to the square and cannot move further.</li>
 </ul>
-<p>The vector <code>{flag, canMove}</code> tells us what happened in the previous square thereby determining the treatment of the next square. <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> only searches one square at a time. To "slide across the board", so to speak, <code><a class="el" href="calculateMovesSliding_8cpp.html#a7c0b319c5aad5526d41cc2566f3f3558" title="Feeds a list of moves to squareSearch() and uses the feedback to create a list of legal moves.">calculateMovesHelper()</a></code> feeds this function a list of squares to search, stopping when <code><a class="el" href="calculateMovesSliding_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> indicates a capture or collision, or when the edge of the board is reached.</p>
+<p>The vector <code>{flag, canMove}</code> tells us what happened in the previous square thereby determining the treatment of the next square. <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> only searches one square at a time. To "slide across the board", so to speak, <code><a class="el" href="calculateRange_8cpp.html#a7c0b319c5aad5526d41cc2566f3f3558" title="Feeds a list of moves to squareSearch() and uses the feedback to create a list of legal moves.">calculateMovesHelper()</a></code> feeds this function a list of squares to search, stopping when <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> indicates a capture or collision, or when the edge of the board is reached.</p>
 <dl class="section post"><dt>Postcondition</dt><dd>vector <code>{flag, canMove}</code> is modified.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -751,7 +1042,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>Update the board. </p>
+<p>Update expressions within the <a class="el" href="structChessBoard.html">ChessBoard</a> struct. </p>
 <hr  />
  <p>Expressions that need to be updated each time the board is modified: <br  />
 </p><ul>

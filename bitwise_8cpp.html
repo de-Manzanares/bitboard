@@ -92,13 +92,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a458ae72bbf8f0279829fe1ccc7b6a066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract a piece from the board.  <br /></td></tr>
 <tr class="separator:a458ae72bbf8f0279829fe1ccc7b6a066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a760f18273357a0522a679571326f0725"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitwise_8cpp.html#a760f18273357a0522a679571326f0725">pieceSearch</a> (int index, const <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="memdesc:a760f18273357a0522a679571326f0725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a piece on the board.  <br /></td></tr>
+<tr class="memdesc:a760f18273357a0522a679571326f0725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a square is occupied.  <br /></td></tr>
 <tr class="separator:a760f18273357a0522a679571326f0725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a732950df15ee1618207817a5da299ccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitwise_8cpp.html#a732950df15ee1618207817a5da299ccd">movePiece</a> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="memdesc:a732950df15ee1618207817a5da299ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move a piece on the board.  <br /></td></tr>
 <tr class="separator:a732950df15ee1618207817a5da299ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3023bde5984e70b78c157c5c7f8593d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitwise_8cpp.html#a3023bde5984e70b78c157c5c7f8593d1">updateBoard</a> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="memdesc:a3023bde5984e70b78c157c5c7f8593d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the board.  <br /></td></tr>
+<tr class="memdesc:a3023bde5984e70b78c157c5c7f8593d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update expressions within the <a class="el" href="structChessBoard.html">ChessBoard</a> struct.  <br /></td></tr>
 <tr class="separator:a3023bde5984e70b78c157c5c7f8593d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -106,7 +106,7 @@ Functions</h2></td></tr>
 <ul>
 <li>add a piece to the board</li>
 <li>subtract a piece from the board</li>
-<li>search a square on the board</li>
+<li>check if a square is occupied</li>
 <li>move a piece on the board </li>
 </ul>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -236,7 +236,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Search for a piece on the board. </p>
+<p>Check if a square is occupied. </p>
 <hr  />
  <p>Searches each bitboard at the specified index. The search is in no meaningful order.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -313,7 +313,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Update the board. </p>
+<p>Update expressions within the <a class="el" href="structChessBoard.html">ChessBoard</a> struct. </p>
 <hr  />
  <p>Expressions that need to be updated each time the board is modified: <br  />
 </p><ul>
