@@ -21,13 +21,21 @@
 
 /// @file   indices.cpp
 /// @author de-Manzanares
-/// @brief  Contains helper functions related to coordinates and indices.
+/// @brief  Miscellaneous functions related to coordinates and indices.
 
 #include "bitBoards.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-// Converts a coordinate to an integer. h1 --> a8 == 0 --> 63.
-//----------------------------------------------------------------------------------------------------------------------
+// Converts chess algebraic notation to index notation.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Converts chess algebraic notation to index notation.
+/// To coincide with the bitboards in the `ChessBoard`, the index of the square is defined as it's position in the 64
+/// bit bitboard. <br>
+/// The index of the square is defined as `[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]`. <br>
+/// Starting from `0` at `h1`, each rank increases the index by `8`, and each file increases the index by `1`.
+/// @param coordinate The algebraic notation of the square.
+/// @return The index of the square as defined by it's position in the 64 bit bitboard.
+
 int coordinateToIndex(const string& coordinate)
 {
     int index;  // The index of the square.
@@ -49,8 +57,13 @@ int coordinateToIndex(const string& coordinate)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Converts an index to a coordinate. h1 --> a8 == 0 --> 63.
-//----------------------------------------------------------------------------------------------------------------------
+// Converts index notation to chess algebraic notation.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Converts index notation to chess algebraic notation.
+/// @param index The position of the square in the 64 bit bitboard.
+/// @return The algebraic notation of the square, e.g., `a1`, `h8`, etc.
+/// @see For further information on the index notation, see `coordinateToIndex()`
+
 string indexToCoordinate(int index)
 {
     string algebraic;
@@ -75,6 +88,8 @@ string indexToCoordinate(int index)
         break;
     case 7:algebraic += "a";
         break;
+    default:algebraic += "x";
+        break;
     }
 
     switch (row) {
@@ -94,15 +109,24 @@ string indexToCoordinate(int index)
         break;
     case 8:algebraic += "8";
         break;
+    default:algebraic += "x";
+        break;
     }
 
     return algebraic;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Prints a vector of coordinates
-//----------------------------------------------------------------------------------------------------------------------
-void printCoordinates(vector<int>& range)
+// Prints a vector of indices in algebraic notation.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Prints a vector of indices in algebraic notation.
+///
+/// The function takes each element of the vector one at a time, converts it to algebraic notation using
+/// `indexToCoordinate()`, and prints it to the console. <br>
+///
+/// @param range The vector of indices to be printed.
+
+void printCoordinates(const vector<int>& range)
 {
     int printIndex = 0;
     while (printIndex<range.size()) {
@@ -114,7 +138,25 @@ void printCoordinates(vector<int>& range)
 
 //----------------------------------------------------------------------------------------------------------------------
 // Checks to see if a given index is in a given range.
-//----------------------------------------------------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief The function's purpose
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @pre  precondition for function to work if needed
+/// @post postcondition if the function changes argument data
+///
+/// @param param1 Description of the first parameter of the function.
+/// @param param2 The second parameter, which follows @p param1.
+///
+/// @return Describe what the function returns. 
+///         [a void function has no return]
+///
+/// @see place any citations here, such as http://website/
+/// @note did anyone besides your instructor help you?
+/// @warning Any Warnings relating to the use of this function
+//------------------------------------------------------------------------------
 bool rangeValidation(std::vector<int> range, int indexTo)
 {
     if (find(range.begin(), range.end(), indexTo)!=range.end()) {
@@ -128,6 +170,26 @@ bool rangeValidation(std::vector<int> range, int indexTo)
 //----------------------------------------------------------------------------------------------------------------------
 // Removes any out of bounds indices from a range.
 //----------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------  
+/// @brief The function's purpose
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @pre  precondition for function to work if needed
+/// @post postcondition if the function changes argument data
+///
+/// @param param1 Description of the first parameter of the function.
+/// @param param2 The second parameter, which follows @p param1.
+///
+/// @return Describe what the function returns. 
+///         [a void function has no return]
+///
+/// @see place any citations here, such as http://website/
+/// @note did anyone besides your instructor help you?
+/// @warning Any Warnings relating to the use of this function
+//------------------------------------------------------------------------------
 void cleanRange(vector<int>& range)
 {
     for (int i = 0; i<range.size(); i++) {
@@ -142,6 +204,26 @@ void cleanRange(vector<int>& range)
 //----------------------------------------------------------------------------------------------------------------------
 // Returns the file of a given index.
 //----------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------  
+/// @brief The function's purpose
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @pre  precondition for function to work if needed
+/// @post postcondition if the function changes argument data
+///
+/// @param param1 Description of the first parameter of the function.
+/// @param param2 The second parameter, which follows @p param1.
+///
+/// @return Describe what the function returns. 
+///         [a void function has no return]
+///
+/// @see place any citations here, such as http://website/
+/// @note did anyone besides your instructor help you?
+/// @warning Any Warnings relating to the use of this function
+//------------------------------------------------------------------------------
 char getFile(int index)
 {
     int modulo = index%8;
@@ -161,6 +243,26 @@ char getFile(int index)
 //----------------------------------------------------------------------------------------------------------------------
 // Returns the rank of a given index.
 //----------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------  
+/// @brief The function's purpose
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @pre  precondition for function to work if needed
+/// @post postcondition if the function changes argument data
+///
+/// @param param1 Description of the first parameter of the function.
+/// @param param2 The second parameter, which follows @p param1.
+///
+/// @return Describe what the function returns. 
+///         [a void function has no return]
+///
+/// @see place any citations here, such as http://website/
+/// @note did anyone besides your instructor help you?
+/// @warning Any Warnings relating to the use of this function
+//------------------------------------------------------------------------------
 int getRank(int index)
 {
     return index/8 + 1;

@@ -93,7 +93,7 @@ bool    moveRook                    (char pieceFrom, int indexFrom, int indexTo,
 char    pieceSearch                 (int index, const ChessBoard& board);
 void    printAllMoves               (ChessBoard& board);
 void    printBitBoard               (ChessBoard& board);
-void    printCoordinates            (vector<int>& range);
+void    printCoordinates            (const vector<int>& range);
 bool    rangeValidation             (std::vector<int> range, int indexTo);
 vector<int> sideInfluence           (char side, ChessBoard& board);
 vector<int> sideInfluenceVerbose    (char side, ChessBoard& board);
