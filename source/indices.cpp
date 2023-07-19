@@ -29,12 +29,15 @@
 // Converts chess algebraic notation to index notation.
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Converts chess algebraic notation to index notation.
+///
 /// To coincide with the bitboards in the `ChessBoard`, the index of the square is defined as it's position in the 64
 /// bit bitboard. <br>
 /// The index of the square is defined as `[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]`. <br>
 /// Starting from `0` at `h1`, each rank increases the index by `8`, and each file increases the index by `1`.
+///
 /// @param coordinate The algebraic notation of the square.
-/// @return The index of the square as defined by it's position in the 64 bit bitboard.
+/// @return Integer in the range [0,63] <br>
+///         If the input is invalid, the function returns `333`.
 
 int coordinateToIndex(const string& coordinate)
 {
@@ -68,7 +71,7 @@ string indexToCoordinate(int index)
 {
     string algebraic;
 
-    int row = index/8 + 1;
+    int row = index/8+1;
     int column = index%8;
 
     switch (column) {
@@ -121,8 +124,8 @@ string indexToCoordinate(int index)
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Prints a vector of indices in algebraic notation.
 ///
-/// The function takes each element of the vector one at a time, converts it to algebraic notation using
-/// `indexToCoordinate()`, and prints it to the console. <br>
+/// Supplied with a vector of indices, the function uses `indexToCoordinate()` to convert the notation, then
+/// prints the algebraic notation to the console. <br>
 ///
 /// @param range The vector of indices to be printed.
 
@@ -139,25 +142,15 @@ void printCoordinates(const vector<int>& range)
 //----------------------------------------------------------------------------------------------------------------------
 // Checks to see if a given index is in a given range.
 ///---------------------------------------------------------------------------------------------------------------------
-/// @brief The function's purpose
+/// @brief Checks to see if a given index is in a given range.
 ///
-/// Description of what the function does. This part may refer to the
-/// parameters of the function, like @p param1 or @p param2.
+/// @param range   The list of indices to search.
+/// @param indexTo The index to search for.
 ///
-/// @pre  precondition for function to work if needed
-/// @post postcondition if the function changes argument data
-///
-/// @param param1 Description of the first parameter of the function.
-/// @param param2 The second parameter, which follows @p param1.
-///
-/// @return Describe what the function returns. 
-///         [a void function has no return]
-///
-/// @see place any citations here, such as http://website/
-/// @note did anyone besides your instructor help you?
-/// @warning Any Warnings relating to the use of this function
-//------------------------------------------------------------------------------
-bool rangeValidation(std::vector<int> range, int indexTo)
+/// @return True - the index is in the range. <br>
+///         False - the index is not in the range.
+
+bool rangeValidation(const vector<int>& range, const int indexTo)
 {
     if (find(range.begin(), range.end(), indexTo)!=range.end()) {
         return true;
@@ -169,27 +162,15 @@ bool rangeValidation(std::vector<int> range, int indexTo)
 
 //----------------------------------------------------------------------------------------------------------------------
 // Removes any out of bounds indices from a range.
-//----------------------------------------------------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Removes any out of bounds indices from a range.
+///
+/// I was having issues with the diagonal range calculation supplying indices that were out of bounds
+/// , so this is my quick fix.
+///
+/// @post vector `range` is modified to remove any out of bounds indices.
+/// @param range The vector of indices to be cleaned.
 
-//------------------------------------------------------------------------------  
-/// @brief The function's purpose
-///
-/// Description of what the function does. This part may refer to the
-/// parameters of the function, like @p param1 or @p param2.
-///
-/// @pre  precondition for function to work if needed
-/// @post postcondition if the function changes argument data
-///
-/// @param param1 Description of the first parameter of the function.
-/// @param param2 The second parameter, which follows @p param1.
-///
-/// @return Describe what the function returns. 
-///         [a void function has no return]
-///
-/// @see place any citations here, such as http://website/
-/// @note did anyone besides your instructor help you?
-/// @warning Any Warnings relating to the use of this function
-//------------------------------------------------------------------------------
 void cleanRange(vector<int>& range)
 {
     for (int i = 0; i<range.size(); i++) {
@@ -203,67 +184,50 @@ void cleanRange(vector<int>& range)
 
 //----------------------------------------------------------------------------------------------------------------------
 // Returns the file of a given index.
-//----------------------------------------------------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Returns the file of a given index.
+///
+/// @param index The index of the square.
+/// @return `[a, b, c, d, e, f, g, h]` <br>
+///         If the index supplied is out of bounds, the function returns `X`.
 
-//------------------------------------------------------------------------------  
-/// @brief The function's purpose
-///
-/// Description of what the function does. This part may refer to the
-/// parameters of the function, like @p param1 or @p param2.
-///
-/// @pre  precondition for function to work if needed
-/// @post postcondition if the function changes argument data
-///
-/// @param param1 Description of the first parameter of the function.
-/// @param param2 The second parameter, which follows @p param1.
-///
-/// @return Describe what the function returns. 
-///         [a void function has no return]
-///
-/// @see place any citations here, such as http://website/
-/// @note did anyone besides your instructor help you?
-/// @warning Any Warnings relating to the use of this function
-//------------------------------------------------------------------------------
-char getFile(int index)
+char getFile(const int index)
 {
     int modulo = index%8;
-    switch (modulo) {
-    case 0:return 'h';
-    case 1:return 'g';
-    case 2:return 'f';
-    case 3:return 'e';
-    case 4:return 'd';
-    case 5:return 'c';
-    case 6:return 'b';
-    case 7:return 'a';
-    default:return 'x';
+    if (63>=index && index>=0) {
+        switch (modulo) {
+        case 0:return 'h';
+        case 1:return 'g';
+        case 2:return 'f';
+        case 3:return 'e';
+        case 4:return 'd';
+        case 5:return 'c';
+        case 6:return 'b';
+        case 7:return 'a';
+        default:return 'X';
+        }
+    }
+    else {
+        return 'X';
     }
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 // Returns the rank of a given index.
-//----------------------------------------------------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Returns the rank of a given index.
+///
+/// @param index The index of the square.
 
-//------------------------------------------------------------------------------  
-/// @brief The function's purpose
-///
-/// Description of what the function does. This part may refer to the
-/// parameters of the function, like @p param1 or @p param2.
-///
-/// @pre  precondition for function to work if needed
-/// @post postcondition if the function changes argument data
-///
-/// @param param1 Description of the first parameter of the function.
-/// @param param2 The second parameter, which follows @p param1.
-///
-/// @return Describe what the function returns. 
-///         [a void function has no return]
-///
-/// @see place any citations here, such as http://website/
-/// @note did anyone besides your instructor help you?
-/// @warning Any Warnings relating to the use of this function
-//------------------------------------------------------------------------------
+/// @return [1, 2, 3, 4, 5, 6, 7, 8] <br>
+///         If the index supplied is out of bounds, the function returns `333`.
+
 int getRank(int index)
 {
-    return index/8 + 1;
+    if (63>=index && index>=0) {
+        return index/8+1;
+    }
+    else {
+        return 333;
+    }
 }
