@@ -69,54 +69,7 @@ int coordinateToIndex(const string& coordinate)
 
 string indexToCoordinate(int index)
 {
-    string algebraic;
-
-    int row = index/8+1;
-    int column = index%8;
-
-    switch (column) {
-    case 0:algebraic += "h";
-        break;
-    case 1:algebraic += "g";
-        break;
-    case 2:algebraic += "f";
-        break;
-    case 3:algebraic += "e";
-        break;
-    case 4:algebraic += "d";
-        break;
-    case 5:algebraic += "c";
-        break;
-    case 6:algebraic += "b";
-        break;
-    case 7:algebraic += "a";
-        break;
-    default:algebraic += "x";
-        break;
-    }
-
-    switch (row) {
-    case 1:algebraic += "1";
-        break;
-    case 2:algebraic += "2";
-        break;
-    case 3:algebraic += "3";
-        break;
-    case 4:algebraic += "4";
-        break;
-    case 5:algebraic += "5";
-        break;
-    case 6:algebraic += "6";
-        break;
-    case 7:algebraic += "7";
-        break;
-    case 8:algebraic += "8";
-        break;
-    default:algebraic += "x";
-        break;
-    }
-
-    return algebraic;
+    return getFile(index)+to_string(getRank(index));
 }
 
 //----------------------------------------------------------------------------------------------------------------------
