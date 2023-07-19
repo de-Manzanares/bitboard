@@ -23,7 +23,7 @@
 /// @brief  Fundamental operations on bitboards.
 ///         - add a piece to the board
 ///         - subtract a piece from the board
-///         - search a square on the board
+///         - check if a square is occupied
 ///         - move a piece on the board
 
 
@@ -103,9 +103,9 @@ void subtractPiece(char piece, int index, ChessBoard& board)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// Search for a piece on the board.
+// Check if a square is occupied.
 ///---------------------------------------------------------------------------------------------------------------------
-/// @brief Search for a piece on the board.
+/// @brief Check if a square is occupied.
 ///
 /// Searches each bitboard at the specified index. The search is in no meaningful order.
 ///
@@ -168,9 +168,9 @@ void movePiece(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
     }
 }
 //----------------------------------------------------------------------------------------------------------------------
-// Update the board.
+// Update expressions within the ChessBoard struct.
 ///---------------------------------------------------------------------------------------------------------------------
-/// @brief Update the board.
+/// @brief Update expressions within the ChessBoard struct.
 ///
 /// Expressions that need to be updated each time the board is modified: <br>
 /// * `board.black_pieces` --- a bitboard of all black pieces.
