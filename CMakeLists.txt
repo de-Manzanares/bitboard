@@ -7,7 +7,6 @@ include_directories(include)
 
 add_executable(bitboard source/addReplaceCommand.cpp
                         source/bitwise.cpp
-                        source/calculateMovesSliding.cpp
                         source/FEN.cpp
                         source/indices.cpp
                         source/main.cpp
