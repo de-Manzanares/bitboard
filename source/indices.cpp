@@ -99,7 +99,6 @@ void printCoordinates(const vector<int>& range)
 ///
 /// @param range   The list of indices to search.
 /// @param indexTo The index to search for.
-///
 /// @return True - the index is in the range. <br>
 ///         False - the index is not in the range.
 
@@ -139,7 +138,6 @@ void cleanRange(vector<int>& range)
 // Returns the file of a given index.
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the file of a given index.
-///
 /// @param index The index of the square.
 /// @return `[a, b, c, d, e, f, g, h]` <br>
 ///         If the index supplied is out of bounds, the function returns `X`.
@@ -169,9 +167,7 @@ char getFile(const int index)
 // Returns the rank of a given index.
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the rank of a given index.
-///
 /// @param index The index of the square.
-
 /// @return [1, 2, 3, 4, 5, 6, 7, 8] <br>
 ///         If the index supplied is out of bounds, the function returns `333`.
 
