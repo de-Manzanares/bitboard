@@ -22,6 +22,8 @@
 /// @file   main.cpp
 /// @author de-Manzanares
 /// @brief  Main file for the bitboard.
+/// @details Listens for commands from the user and executes them.
+///           For a table of commands, see the [README](md__2home_2deman_2cpp_2cs135_2bitboard_2README.html)
 
 #include <iostream>
 #include <string>
