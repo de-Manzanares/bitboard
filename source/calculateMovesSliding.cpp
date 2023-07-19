@@ -20,10 +20,10 @@
 */
 
 /// @file   calculateMovesSliding.cpp
-/// @brief  Calculate range for sliding pieces.
-///         - calculate diagonal moves
-///         - calculate horizontal moves
-///         - calculate vertical moves
+/// @brief  How far can this piece slide in each direction before a capture, collision, or end of the board?
+///         - calculate diagonal range
+///         - calculate horizontal range
+///         - calculate vertical range
 
 #include "bitBoards.h"
 
@@ -32,7 +32,7 @@
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Calculates diagonal range
 ///
-/// @post `range` is populated with all possible diagonal moves.
+/// @post vector `range` is populated with all possible diagonal moves.
 ///
 /// @param pieceFrom The piece to calculate the moves for - the king follows different calculations.
 /// @param indexFrom The starting position of the piece.
@@ -153,7 +153,7 @@ void calculateMovesDiagonal(const char pieceFrom, const int indexFrom, vector<in
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Calculates horizontal range
 ///
-/// @post `range` is populated with all possible horizontal moves.
+/// @post vector `range` is populated with all possible horizontal moves.
 ///
 /// @param pieceFrom The piece to calculate the moves for - the king follows different calculations.
 /// @param indexFrom The starting position of the piece.
@@ -251,7 +251,7 @@ void calculateMovesHorizontal(const char pieceFrom, const int indexFrom, vector<
 ///---------------------------------------------------------------------------------------------------------------------
 /// @brief Calculates vertical range
 ///
-/// @post `range` is populated with all possible horizontal moves.
+/// @post vector `range` is populated with all possible vertical moves.
 ///
 /// @param pieceFrom The piece to calculate the moves for - the king follows different calculations.
 /// @param indexFrom The starting position of the piece.
@@ -380,6 +380,7 @@ void calculateMovesHelper
     // e.g. we don't need to search left if the piece is on the left edge of the board.
     // Search each square in the given direction until a collision, capture, or the edge of the board.
     // If the square is a valid move, add it to the range.
+
     for (int i = 0; i<limit; i++) {
         result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
         if (result[1])
