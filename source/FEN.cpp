@@ -19,7 +19,7 @@
     you can reach me at <git.in.touch@dmanz.org>
 */
 
-/// @file   fen.cpp
+/// @file   FEN.cpp
 /// @author de-Manzanares
 /// @brief  For all things FEN
 
