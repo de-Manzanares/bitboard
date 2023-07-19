@@ -87,20 +87,137 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a59106976770a6593010067ae60fad13b"><td class="memItemLeft" align="right" valign="top"><a id="a59106976770a6593010067ae60fad13b" name="a59106976770a6593010067ae60fad13b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenCommand</b> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a59106976770a6593010067ae60fad13b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FEN_8cpp.html#a59106976770a6593010067ae60fad13b">fenCommand</a> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a59106976770a6593010067ae60fad13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the <code>fen</code> command.  <br /></td></tr>
 <tr class="separator:a59106976770a6593010067ae60fad13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add762e3ccbfe75e3588211ec3051b28e"><td class="memItemLeft" align="right" valign="top"><a id="add762e3ccbfe75e3588211ec3051b28e" name="add762e3ccbfe75e3588211ec3051b28e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenDecode</b> (string &amp;fenIn, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:add762e3ccbfe75e3588211ec3051b28e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FEN_8cpp.html#add762e3ccbfe75e3588211ec3051b28e">fenDecode</a> (string &amp;fenIn, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:add762e3ccbfe75e3588211ec3051b28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a FEN string to set the state of the board.  <br /></td></tr>
 <tr class="separator:add762e3ccbfe75e3588211ec3051b28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memItemLeft" align="right" valign="top"><a id="a455ff4438053c3e025dc0d49c2dec7a2" name="a455ff4438053c3e025dc0d49c2dec7a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenEncode</b> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="FEN_8cpp.html#a455ff4438053c3e025dc0d49c2dec7a2">fenEncode</a> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a455ff4438053c3e025dc0d49c2dec7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode the board's state into a FEN string.  <br /></td></tr>
 <tr class="separator:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>For all things FEN. </p>
 <dl class="section author"><dt>Author</dt><dd>de-Manzanares </dd></dl>
-</div></div><!-- contents -->
+<dl class="section note"><dt>Note</dt><dd>FEN implementation is incomplete. I need to add side to move, castling rights, en passant, and half move clock, full move number, and error checking for FEN input. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>To understand what a FEN string is and how it works, see:<ul>
+<li><a href="https://www.chess.com/terms/fen-chess">Forsyth-Edwards Notation - Chess.com</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation">Forsyth-Edwards Notation - Wikipedia</a></li>
+<li><a href="https://www.chessprogramming.org/Forsyth-Edwards_Notation">Forsyth-Edwards Notation - Chessprogramming wiki</a> </li>
+</ul>
+</dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a59106976770a6593010067ae60fad13b" name="a59106976770a6593010067ae60fad13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59106976770a6593010067ae60fad13b">&#9670;&#160;</a></span>fenCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenCommand </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the <code>fen</code> command. </p>
+<hr  />
+ <p>Command &mdash; <code>fen in</code> &mdash; calls the function <code><a class="el" href="FEN_8cpp.html#add762e3ccbfe75e3588211ec3051b28e" title="Decode a FEN string to set the state of the board.">fenDecode()</a></code> which updates the board from a FEN string. <br  />
+ Command &mdash; <code>fen out</code> &mdash; calls the function <code><a class="el" href="FEN_8cpp.html#a455ff4438053c3e025dc0d49c2dec7a2" title="Encode the board&#39;s state into a FEN string.">fenEncode()</a></code> which prints a FEN string of the current board.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>In the case of &mdash; <code>fen in</code> &mdash; , the board is updated.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ss</td><td>The stringstream containing the command. </td></tr>
+    <tr><td class="paramname">board</td><td>The board to be updated or read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add762e3ccbfe75e3588211ec3051b28e" name="add762e3ccbfe75e3588211ec3051b28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add762e3ccbfe75e3588211ec3051b28e">&#9670;&#160;</a></span>fenDecode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenDecode </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>fenIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode a FEN string to set the state of the board. </p>
+<hr  />
+ <dl class="section pre"><dt>Precondition</dt><dd>input must be a valid FEN string </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>There is no error checking for the FEN string. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>the <code>board</code> is updated</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fenIn</td><td>The FEN string to set the state of the board. </td></tr>
+    <tr><td class="paramname">board</td><td>The board to be modified. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a455ff4438053c3e025dc0d49c2dec7a2" name="a455ff4438053c3e025dc0d49c2dec7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455ff4438053c3e025dc0d49c2dec7a2">&#9670;&#160;</a></span>fenEncode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenEncode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode the board's state into a FEN string. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The board to be read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

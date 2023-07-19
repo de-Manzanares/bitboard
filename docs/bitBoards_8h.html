@@ -131,27 +131,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovePawn</b>
 <tr class="memdesc:a8537f0483536cfd22a56ed293e42a846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a list of all possible moves for a given piece.  <br /></td></tr>
 <tr class="separator:a8537f0483536cfd22a56ed293e42a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eadd41a994209c12c409413fdf00e0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a3eadd41a994209c12c409413fdf00e0b">cleanRange</a> (vector&lt; int &gt; &amp;range)</td></tr>
-<tr class="memdesc:a3eadd41a994209c12c409413fdf00e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
+<tr class="memdesc:a3eadd41a994209c12c409413fdf00e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes any out of bounds indices from a range.  <br /></td></tr>
 <tr class="separator:a3eadd41a994209c12c409413fdf00e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3b1a196311e503dac1006d57403378"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#aec3b1a196311e503dac1006d57403378">coordinateToIndex</a> (const string &amp;coordinate)</td></tr>
-<tr class="memdesc:aec3b1a196311e503dac1006d57403378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts chess algebraic notation to index notation. To coincide with the bitboards in the <code><a class="el" href="structChessBoard.html">ChessBoard</a></code>, the index of the square is defined as it's position in the 64 bit bitboard. <br  />
- The index of the square is defined as <code>[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]</code>. <br  />
- Starting from <code>0</code> at <code>h1</code>, each rank increases the index by <code>8</code>, and each file increases the index by <code>1</code>.  <br /></td></tr>
+<tr class="memdesc:aec3b1a196311e503dac1006d57403378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts chess algebraic notation to index notation.  <br /></td></tr>
 <tr class="separator:aec3b1a196311e503dac1006d57403378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59106976770a6593010067ae60fad13b"><td class="memItemLeft" align="right" valign="top"><a id="a59106976770a6593010067ae60fad13b" name="a59106976770a6593010067ae60fad13b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenCommand</b> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a59106976770a6593010067ae60fad13b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a59106976770a6593010067ae60fad13b">fenCommand</a> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a59106976770a6593010067ae60fad13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the <code>fen</code> command.  <br /></td></tr>
 <tr class="separator:a59106976770a6593010067ae60fad13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add762e3ccbfe75e3588211ec3051b28e"><td class="memItemLeft" align="right" valign="top"><a id="add762e3ccbfe75e3588211ec3051b28e" name="add762e3ccbfe75e3588211ec3051b28e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenDecode</b> (string &amp;fenIn, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:add762e3ccbfe75e3588211ec3051b28e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#add762e3ccbfe75e3588211ec3051b28e">fenDecode</a> (string &amp;fenIn, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:add762e3ccbfe75e3588211ec3051b28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a FEN string to set the state of the board.  <br /></td></tr>
 <tr class="separator:add762e3ccbfe75e3588211ec3051b28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memItemLeft" align="right" valign="top"><a id="a455ff4438053c3e025dc0d49c2dec7a2" name="a455ff4438053c3e025dc0d49c2dec7a2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>fenEncode</b> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a455ff4438053c3e025dc0d49c2dec7a2">fenEncode</a> (<a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a455ff4438053c3e025dc0d49c2dec7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode the board's state into a FEN string.  <br /></td></tr>
 <tr class="separator:a455ff4438053c3e025dc0d49c2dec7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60ed2571c70f28ad936e745c1a0c9496"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a60ed2571c70f28ad936e745c1a0c9496">getFile</a> (int index)</td></tr>
-<tr class="memdesc:a60ed2571c70f28ad936e745c1a0c9496"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
+<tr class="memdesc:a60ed2571c70f28ad936e745c1a0c9496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the file of a given index.  <br /></td></tr>
 <tr class="separator:a60ed2571c70f28ad936e745c1a0c9496"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20594ae193470cb491c8c70256356b32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a20594ae193470cb491c8c70256356b32">getRank</a> (int index)</td></tr>
-<tr class="memdesc:a20594ae193470cb491c8c70256356b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
+<tr class="memdesc:a20594ae193470cb491c8c70256356b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the rank of a given index.  <br /></td></tr>
 <tr class="separator:a20594ae193470cb491c8c70256356b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a98e8e24cf60ff8bc1196fe1d8894a732">indexToCoordinate</a> (int index)</td></tr>
 <tr class="memdesc:a98e8e24cf60ff8bc1196fe1d8894a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts index notation to chess algebraic notation.  <br /></td></tr>
@@ -192,9 +190,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>printBitBoard</b> (<a
 <tr class="memitem:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a129ca6f7d9f0161dbc118fdce4e4a6bf">printCoordinates</a> (const vector&lt; int &gt; &amp;range)</td></tr>
 <tr class="memdesc:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a vector of indices in algebraic notation.  <br /></td></tr>
 <tr class="separator:a129ca6f7d9f0161dbc118fdce4e4a6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d103c4f6a7c35ce89233021340ebc5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a8d103c4f6a7c35ce89233021340ebc5d">rangeValidation</a> (std::vector&lt; int &gt; range, int indexTo)</td></tr>
-<tr class="memdesc:a8d103c4f6a7c35ce89233021340ebc5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function's purpose.  <br /></td></tr>
-<tr class="separator:a8d103c4f6a7c35ce89233021340ebc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d52ffe8c0a8c5ee2d26f0c560875d7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bitBoards_8h.html#a1d52ffe8c0a8c5ee2d26f0c560875d7f">rangeValidation</a> (const vector&lt; int &gt; &amp;range, int indexTo)</td></tr>
+<tr class="memdesc:a1d52ffe8c0a8c5ee2d26f0c560875d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if a given index is in a given range.  <br /></td></tr>
+<tr class="separator:a1d52ffe8c0a8c5ee2d26f0c560875d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6548d9263e418aea29531933456afd2a"><td class="memItemLeft" align="right" valign="top"><a id="a6548d9263e418aea29531933456afd2a" name="a6548d9263e418aea29531933456afd2a"></a>
 vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideInfluence</b> (char side, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="separator:a6548d9263e418aea29531933456afd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -601,21 +599,16 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>The function's purpose. </p>
-<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
+<p>Removes any out of bounds indices from a range. </p>
+<hr  />
+ <p>I was having issues with the diagonal range calculation supplying indices that were out of bounds , so this is my quick fix.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is modified to remove any out of bounds indices. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
-    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+    <tr><td class="paramname">range</td><td>The vector of indices to be cleaned. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
 
 </div>
 </div>
@@ -635,17 +628,128 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>Converts chess algebraic notation to index notation. To coincide with the bitboards in the <code><a class="el" href="structChessBoard.html">ChessBoard</a></code>, the index of the square is defined as it's position in the 64 bit bitboard. <br  />
- The index of the square is defined as <code>[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]</code>. <br  />
- Starting from <code>0</code> at <code>h1</code>, each rank increases the index by <code>8</code>, and each file increases the index by <code>1</code>. </p>
+<p>Converts chess algebraic notation to index notation. </p>
 <hr  />
- <dl class="params"><dt>Parameters</dt><dd>
+ <p>To coincide with the bitboards in the <code><a class="el" href="structChessBoard.html">ChessBoard</a></code>, the index of the square is defined as it's position in the 64 bit bitboard. <br  />
+ The index of the square is defined as <code>[0:7] = [h1:a1], [8:15] = [h2:a2] ... [56:63] = [h8:a8]</code>. <br  />
+ Starting from <code>0</code> at <code>h1</code>, each rank increases the index by <code>8</code>, and each file increases the index by <code>1</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coordinate</td><td>The algebraic notation of the square. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The index of the square as defined by it's position in the 64 bit bitboard. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Integer in the range [0,63] <br  />
+ If the input is invalid, the function returns <code>333</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a59106976770a6593010067ae60fad13b" name="a59106976770a6593010067ae60fad13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59106976770a6593010067ae60fad13b">&#9670;&#160;</a></span>fenCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenCommand </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the <code>fen</code> command. </p>
+<hr  />
+ <p>Command &mdash; <code>fen in</code> &mdash; calls the function <code><a class="el" href="FEN_8cpp.html#add762e3ccbfe75e3588211ec3051b28e" title="Decode a FEN string to set the state of the board.">fenDecode()</a></code> which updates the board from a FEN string. <br  />
+ Command &mdash; <code>fen out</code> &mdash; calls the function <code><a class="el" href="FEN_8cpp.html#a455ff4438053c3e025dc0d49c2dec7a2" title="Encode the board&#39;s state into a FEN string.">fenEncode()</a></code> which prints a FEN string of the current board.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>In the case of &mdash; <code>fen in</code> &mdash; , the board is updated.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ss</td><td>The stringstream containing the command. </td></tr>
+    <tr><td class="paramname">board</td><td>The board to be updated or read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add762e3ccbfe75e3588211ec3051b28e" name="add762e3ccbfe75e3588211ec3051b28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add762e3ccbfe75e3588211ec3051b28e">&#9670;&#160;</a></span>fenDecode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenDecode </td>
+          <td>(</td>
+          <td class="paramtype">string &amp;&#160;</td>
+          <td class="paramname"><em>fenIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode a FEN string to set the state of the board. </p>
+<hr  />
+ <dl class="section pre"><dt>Precondition</dt><dd>input must be a valid FEN string </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>There is no error checking for the FEN string. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>the <code>board</code> is updated</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fenIn</td><td>The FEN string to set the state of the board. </td></tr>
+    <tr><td class="paramname">board</td><td>The board to be modified. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a455ff4438053c3e025dc0d49c2dec7a2" name="a455ff4438053c3e025dc0d49c2dec7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455ff4438053c3e025dc0d49c2dec7a2">&#9670;&#160;</a></span>fenEncode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fenEncode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode the board's state into a FEN string. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">board</td><td>The board to be read from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -658,28 +762,23 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
         <tr>
           <td class="memname">char getFile </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The function's purpose. </p>
-<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the file of a given index. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
-    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+    <tr><td class="paramname">index</td><td>The index of the square. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>[a, b, c, d, e, f, g, h]</code> <br  />
+ If the index supplied is out of bounds, the function returns <code>X</code>. </dd></dl>
 
 </div>
 </div>
@@ -699,21 +798,16 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>The function's purpose. </p>
-<p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Returns the rank of a given index. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
-    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+    <tr><td class="paramname">index</td><td>The index of the square. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>[1, 2, 3, 4, 5, 6, 7, 8] <br  />
+ If the index supplied is out of bounds, the function returns <code>333</code>. </dd></dl>
 
 </div>
 </div>
@@ -742,7 +836,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The algebraic notation of the square, e.g., <code>a1</code>, <code>h8</code>, etc. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>For further information on the index notation, see <code><a class="el" href="indices_8cpp.html#aec3b1a196311e503dac1006d57403378" title="Converts chess algebraic notation to index notation. To coincide with the bitboards in the ChessBoard...">coordinateToIndex()</a></code> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>For further information on the index notation, see <code><a class="el" href="indices_8cpp.html#aec3b1a196311e503dac1006d57403378" title="Converts chess algebraic notation to index notation.">coordinateToIndex()</a></code> </dd></dl>
 
 </div>
 </div>
@@ -857,7 +951,7 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 
 <p>Prints a vector of indices in algebraic notation. </p>
 <hr  />
- <p>The function takes each element of the vector one at a time, converts it to algebraic notation using <code><a class="el" href="indices_8cpp.html#a98e8e24cf60ff8bc1196fe1d8894a732" title="Converts index notation to chess algebraic notation.">indexToCoordinate()</a></code>, and prints it to the console. <br  />
+ <p>Supplied with a vector of indices, the function uses <code><a class="el" href="indices_8cpp.html#a98e8e24cf60ff8bc1196fe1d8894a732" title="Converts index notation to chess algebraic notation.">indexToCoordinate()</a></code> to convert the notation, then prints the algebraic notation to the console. <br  />
 </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -868,8 +962,8 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
 
 </div>
 </div>
-<a id="a8d103c4f6a7c35ce89233021340ebc5d" name="a8d103c4f6a7c35ce89233021340ebc5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d103c4f6a7c35ce89233021340ebc5d">&#9670;&#160;</a></span>rangeValidation()</h2>
+<a id="a1d52ffe8c0a8c5ee2d26f0c560875d7f" name="a1d52ffe8c0a8c5ee2d26f0c560875d7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d52ffe8c0a8c5ee2d26f0c560875d7f">&#9670;&#160;</a></span>rangeValidation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -877,13 +971,13 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
         <tr>
           <td class="memname">bool rangeValidation </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>range</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>indexTo</em>&#160;</td>
         </tr>
         <tr>
@@ -894,22 +988,17 @@ vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sideIn
       </table>
 </div><div class="memdoc">
 
-<p>The function's purpose. </p>
+<p>Checks to see if a given index is in a given range. </p>
 <hr  />
- <p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
-<dl class="section pre"><dt>Precondition</dt><dd>precondition for function to work if needed </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>postcondition if the function changes argument data</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
-    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+    <tr><td class="paramname">range</td><td>The list of indices to search. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The index to search for. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return]</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>place any citations here, such as <a href="http://website/">http://website/</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>did anyone besides your instructor help you? </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Any Warnings relating to the use of this function </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the index is in the range. <br  />
+ False - the index is not in the range. </dd></dl>
 
 </div>
 </div>
