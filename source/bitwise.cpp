@@ -20,6 +20,7 @@
 */
 
 /// @file   bitwise.cpp
+/// @author de-Manzanares
 /// @brief  Fundamental operations on bitboards.
 ///         - add a piece to the board
 ///         - subtract a piece from the board

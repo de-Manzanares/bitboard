@@ -20,6 +20,7 @@
 */
 
 /// @file   calculateRange.cpp
+/// @author de-Manzanares
 /// @brief  Create a list of all possible moves for a given piece.
 
 #include "bitBoards.h"

@@ -22,14 +22,30 @@
 /// @file   FEN.cpp
 /// @author de-Manzanares
 /// @brief  For all things FEN
+/// @note   FEN implementation is incomplete. I need to add side to move, castling rights, en passant, and half move
+///         clock, full move number, and error checking for FEN input.
+/// @see To understand what a FEN string is and how it works, see:
+/// - [Forsyth-Edwards Notation - Chess.com](https://www.chess.com/terms/fen-chess)
+/// - [Forsyth-Edwards Notation - Wikipedia](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation)
+/// - [Forsyth-Edwards Notation - Chessprogramming wiki](https://www.chessprogramming.org/Forsyth-Edwards_Notation)
 
 #include <sstream>
 #include <set>
 #include "bitBoards.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-// This function handles the `fen` command
-//----------------------------------------------------------------------------------------------------------------------
+// Handles the `fen` command.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Handles the `fen` command.
+///
+/// Command --- `fen in` --- calls the function `fenDecode()` which updates the board from a FEN string. <br>
+/// Command --- `fen out` ---  calls the function `fenEncode()` which prints a FEN string of the current board.
+///
+/// @post In the case of --- `fen in` --- , the board is updated.
+///
+/// @param ss The stringstream containing the command.
+/// @param board The board to be updated or read from.
+
 void fenCommand(stringstream& ss, ChessBoard& board)
 {
     string direction;   // Updating board from fen string or printing current fen string.
@@ -60,8 +76,17 @@ void fenCommand(stringstream& ss, ChessBoard& board)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// This function DECODES the board into a fen string.
-//----------------------------------------------------------------------------------------------------------------------
+// DECODES the FEN string to set the state of the board.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Decode a FEN string to set the state of the board.
+///
+/// @pre  input must be a valid FEN string
+/// @warning There is no error checking for the FEN string.
+/// @post the `board` is updated
+///
+/// @param fenIn The FEN string to set the state of the board.
+/// @param board The board to be modified.
+
 void fenDecode(string& fenIn, ChessBoard& board)
 {
     int fenIndex = 0;       // The index of the fen string.
@@ -101,8 +126,12 @@ void fenDecode(string& fenIn, ChessBoard& board)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-// This function ENCODES the board into a fen string.
-//----------------------------------------------------------------------------------------------------------------------
+// ENCODES the board's state into a FEN string.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Encode the board's state into a FEN string.
+///
+/// @param board The board to be read from.
+
 void fenEncode(ChessBoard& board)
 {
     int countRank = 0;          // Every 8 squares, a new rank is started.
@@ -116,9 +145,8 @@ void fenEncode(ChessBoard& board)
         piece = pieceSearch(coordIndex, board);
 
         // If there was no piece, increment the number of empty squares.
-        if (piece=='E') { countEmptySquares++; }
-
         // Increment the rank and check if a new rank is started.
+        if (piece=='E') { countEmptySquares++; }
         countRank++;
         nextRank = (countRank%8==0);
 

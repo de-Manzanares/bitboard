@@ -20,6 +20,7 @@
 */
 
 /// @file   addReplaceCommand.cpp
+/// @author de-Manzanares
 /// @brief  User initiated command to manually add a piece to the board - a step toward pawn promotion.
 
 #include <sstream>
