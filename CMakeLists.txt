@@ -12,7 +12,6 @@ add_executable(bitboard source/addReplaceCommand.cpp
                         source/main.cpp
                         source/moveCommand.cpp
                         source/moveKing.cpp
-                        source/moveKnight.cpp
                         source/movePawn.cpp
                         source/moveRook.cpp
                         source/printAllMoves.cpp

@@ -505,3 +505,114 @@ vector<int> squareSearch(const char pieceFrom, int& flag, int& canMove, int inde
     }
     return {flag, canMove};
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+//  Helper function for calculating knight moves
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Feeds a list of moves to `squareSearch()` and uses the feedback to create a list of legal moves.
+///
+///
+/// \param pieceFrom To tell `squareSearch()` which pieces cause capture or collision.
+/// \param range The vector to populate with all possible moves.
+/// \param flag I'm not sure why this is here ... TODO why is flag here?
+/// \param canMove I'm not sure why this is here ... TODO why is canMove here?
+/// \param moves The list of squares to be searched.
+/// \param limit I'm not sure why this is here ... TODO why is limit here?
+/// \param board The chess board.
+
+void calculateMovesKnightHelper
+        (char pieceFrom, vector<int>& range, int& flag, int& canMove, const vector<int>& moves, int limit,
+                ChessBoard& board)
+{
+    std::vector<int> result;
+
+    limit = moves.size();
+    for (int i = 0; i<limit; i++) {
+        flag = 1;
+        canMove = 1;
+        result = squareSearch(pieceFrom, flag, canMove, moves[i], board);
+        if (result[1])
+            range.push_back(moves[i]);
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+//  Calculates all possible moves for a given knight.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Calculates all possible moves for a given knight.
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @post vector `range` is modified.
+///
+/// @param param1 Description of the first parameter of the function.
+/// @param param2 The second parameter, which follows @p param1.
+///
+/// @return Describe what the function returns. 
+///         [a void function has no return]
+
+void calculateMoveKnight(char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
+{
+    if (pieceFrom=='N' || pieceFrom=='n') {
+        const int ForwardLeft = indexFrom+17;
+        const int ForwardRight = indexFrom+15;
+        const int LeftForward = indexFrom+10;
+        const int RightForward = indexFrom+6;
+        const int LeftBack = indexFrom-6;
+        const int RightBack = indexFrom-10;
+        const int BackLeft = indexFrom-15;
+        const int BackRight = indexFrom-17;
+
+        std::vector<int> result;
+
+        int flag = 1;
+        int canMove = 1;
+        int limit = 0;
+        vector<int> moves;
+
+        // For reference
+        // a8 through h1 is 63 through 0
+        // {a8, b8, g8, h8, a7, b7, g7, h7, a2, b2, g2, h2, a1, b1, g1, h1}
+        // {63, 62, 57, 56, 55, 54, 49, 48, 15, 14,  9,  8,  7,  6,  1,  0}
+
+        switch (indexFrom) {
+        case 63:moves = {BackRight, RightBack};
+            break;
+        case 62:moves = {BackRight, RightBack, BackLeft};
+            break;
+        case 57:moves = {BackRight, BackLeft, LeftBack};
+            break;
+        case 56:moves = {BackLeft, LeftBack};
+            break;
+        case 55:moves = {BackRight, RightBack, RightForward};
+            break;
+        case 54:moves = {BackRight, RightBack, RightForward, BackLeft};
+            break;
+        case 49:moves = {BackRight, BackLeft, LeftBack, LeftForward};
+            break;
+        case 48:moves = {BackLeft, LeftBack, LeftForward};
+            break;
+        case 15:moves = {RightBack, RightForward, ForwardRight};
+            break;
+        case 14:moves = {RightBack, RightForward, ForwardRight, ForwardLeft};
+            break;
+        case 9:moves = {LeftBack, LeftForward, ForwardLeft, ForwardRight};
+            break;
+        case 8:moves = {LeftBack, LeftForward, ForwardLeft};
+            break;
+        case 7:moves = {RightForward, ForwardRight};
+            break;
+        case 6:moves = {RightForward, ForwardRight, ForwardLeft};
+            break;
+        case 1:moves = {LeftForward, ForwardLeft, ForwardRight};
+            break;
+        case 0:moves = {LeftForward, ForwardLeft};
+            break;
+        default:
+            moves = {BackRight, RightBack, BackLeft, LeftBack, RightForward, ForwardRight, LeftForward, ForwardLeft};
+        }
+
+        calculateMovesKnightHelper(pieceFrom, range, flag, canMove, moves, limit, board);
+    }
+}

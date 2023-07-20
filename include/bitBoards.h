@@ -21,7 +21,7 @@
 
 /// @file   bitBoards.h
 /// @author de-Manzanares
-/// @brief  Header file for bitboard
+/// @brief  `ChessBoard` struct and function prototypes.
 
 // include guard
 #ifndef BITBOARDS_H
