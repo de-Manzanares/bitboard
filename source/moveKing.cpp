@@ -32,6 +32,23 @@ bool squaresAreClear(vector<int> squares, ChessBoard& board);
 bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board);
 bool castlingCheckCheck(char pieceFrom, vector<int> moves, ChessBoard& board);
 
+//----------------------------------------------------------------------------------------------------------------------
+//  Checks if a given king move is legal.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Checks if a given king move is legal.
+///
+/// Use `calculateMovesDiagonal()`, `calculateMovesHorizontal()`, `calculateMovesCastling()`, and
+/// `calculateMovesVertical()` to populate a vector with all possible moves for the king, then check if the target
+/// square is in the range. `rangeValidationKing()` contains logic for castling.
+///
+/// @param pieceFrom To verify that the piece is a king.
+/// @param indexFrom The starting position of the king.
+/// @param indexTo The user supplied target square.
+/// @param board The chess board.
+///
+/// @return True - the move is legal. <br>
+///         False - the move is illegal.
+
 bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 {
     if (pieceFrom=='K' || pieceFrom=='k') {
@@ -55,6 +72,24 @@ bool moveKing(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
 
     return false;
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+//  Calculate castling moves for a given king.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Calculate castling moves for a given king.
+///
+/// Checks castling conditions for each king for each side:
+/// - Has the king or rook moved?
+/// - Are the squares between the king and rook unoccupied?
+/// - Is the king in check?
+/// - Would the king pass through or into check?
+///
+/// @post vector `range` is populated with castling moves.
+///
+/// @param pieceFrom To determine side; white or black.
+/// @param indexFrom The starting position of the king.
+/// @param range The vector to populate with legal moves.
+/// @param board The chess board.
 
 void calculateMovesCastling
         (char pieceFrom, int indexFrom, vector<int>& range, ChessBoard& board)
@@ -86,6 +121,20 @@ void calculateMovesCastling
 
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+//  Check if the squares between the king and rook are unoccupied.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Check if the squares between the king and rook are unoccupied.
+///
+/// Use `pieceSearch()` to check each square for occupancy.
+///
+///
+/// @param squares The squares between the king and rook.
+/// @param board The chess board.
+///
+/// @return True - the squares are unoccupied. <br>
+///        False - the squares are occupied.
+
 bool squaresAreClear(vector<int> squares, ChessBoard& board)
 {
     for (int i = 0; i<squares.size(); i++) {
@@ -94,6 +143,24 @@ bool squaresAreClear(vector<int> squares, ChessBoard& board)
     }
     return true;
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+//  Checks if the target square is in the range. Move the rook if the king is initiating a castling move.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Checks if the target square is in the range. Move the rook if the king is initiating a castling move.
+///
+/// Check if the target square is in the range. Flag the king as moved, and move and flag the rook as moved if the king
+/// is castling.
+///
+/// @post The `board` may be modified; if the king is initiating a castling move, move the rook.
+///
+/// @param pieceFrom Identify the king to check castling status.
+/// @param range The vector containing all possible moves for the king.
+/// @param indexTo The user supplied target square.
+/// @param board The chess board.
+///
+/// @return True - the target square is in the range. <br>
+///         False - the target square is not in the range.
 
 bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBoard& board)
 {
@@ -132,6 +199,21 @@ bool rangeValidationKing(char pieceFrom, vector<int> range, int indexTo, ChessBo
         return false;
     }
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+//  Check if the is in check, or would pass through or into check.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Check if the is in check, or would pass through or into check.
+///
+/// Description of what the function does. This part may refer to the
+/// parameters of the function, like @p param1 or @p param2.
+///
+/// @param pieceFrom To determine side; white or black.
+/// @param moves The list of squares to check for check.
+/// @param board The chess board.
+///
+/// @return True - the king is not in check, and would not pass through or into check. <br>
+///         False - the king is in check, or would pass through or into check.
 
 bool castlingCheckCheck(char pieceFrom, vector<int> moves, ChessBoard& board)
 {

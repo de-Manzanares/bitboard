@@ -21,7 +21,7 @@
 
 /// @file   moveCommand.cpp
 /// @author de-Manzanares
-/// @brief  Handles the user initiated move command.
+/// @brief  User initiated command to move a piece on the board.
 
 #include <sstream>
 #include "bitBoards.h"
