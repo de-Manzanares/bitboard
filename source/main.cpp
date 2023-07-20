@@ -74,6 +74,11 @@ int main()
     return 0;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+//  Prints a message indicating which side is to move.
+///---------------------------------------------------------------------------------------------------------------------
+/// @brief Prints a message indicating which side is to move.
+
 void sideToMove(ChessBoard& board)
 {
     if (board.whiteToMove) {

@@ -28,22 +28,6 @@
 
 bool rangeValidationRook(char pieceFrom, int indexFrom, vector<int> range, int indexTo, ChessBoard& board);
 
-bool moveRook(char pieceFrom, int indexFrom, int indexTo, ChessBoard& board)
-{
-    if (pieceFrom=='R' || pieceFrom=='r') {
-
-        vector<int> range;
-
-        calculateMovesHorizontal(pieceFrom, indexFrom, range, board);
-        calculateMovesVertical(pieceFrom, indexFrom, range, board);
-
-        if (rangeValidationRook(pieceFrom, indexFrom, range, indexTo, board))
-            return true;
-        return false;
-    }
-    return false;
-}
-
 bool rangeValidationRook(char pieceFrom, int indexFrom, vector<int> range, int indexTo, ChessBoard& board)
 {
     if (find(range.begin(), range.end(), indexTo)!=range.end()) {

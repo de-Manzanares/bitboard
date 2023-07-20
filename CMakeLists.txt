@@ -10,12 +10,10 @@ add_executable(bitboard source/addReplaceCommand.cpp
                         source/FEN.cpp
                         source/indices.cpp
                         source/main.cpp
-                        source/moveBishop.cpp
                         source/moveCommand.cpp
                         source/moveKing.cpp
                         source/moveKnight.cpp
                         source/movePawn.cpp
-                        source/moveQueen.cpp
                         source/moveRook.cpp
                         source/printAllMoves.cpp
                         source/printBitBoard.cpp
