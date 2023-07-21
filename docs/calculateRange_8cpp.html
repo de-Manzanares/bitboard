@@ -103,11 +103,70 @@ Functions</h2></td></tr>
 <tr class="memitem:af5256fd0371f441938720a86d0ef21bf"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf">squareSearch</a> (const char pieceFrom, int &amp;flag, int &amp;canMove, int indexTo, const <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
 <tr class="memdesc:af5256fd0371f441938720a86d0ef21bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag a square as empty, occupied by an enemy, or occupied by an ally.  <br /></td></tr>
 <tr class="separator:af5256fd0371f441938720a86d0ef21bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculateRange_8cpp.html#a0c5887d9ff49b4780a2a51aed4ca6198">calculateMovesKnightHelper</a> (char pieceFrom, vector&lt; int &gt; &amp;range, int &amp;flag, int &amp;canMove, const vector&lt; int &gt; &amp;moves, int limit, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves.  <br /></td></tr>
+<tr class="separator:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c82545752cfc8a5bed2212a49525d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculateRange_8cpp.html#a12c82545752cfc8a5bed2212a49525d8">calculateMoveKnight</a> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a12c82545752cfc8a5bed2212a49525d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates all possible moves for a given knight.  <br /></td></tr>
+<tr class="separator:a12c82545752cfc8a5bed2212a49525d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Create a list of all possible moves for a given piece. </p>
 <dl class="section author"><dt>Author</dt><dd>de-Manzanares </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a12c82545752cfc8a5bed2212a49525d8" name="a12c82545752cfc8a5bed2212a49525d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c82545752cfc8a5bed2212a49525d8">&#9670;&#160;</a></span>calculateMoveKnight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMoveKnight </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates all possible moves for a given knight. </p>
+<hr  />
+ <p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is modified.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param1</td><td>Description of the first parameter of the function. </td></tr>
+    <tr><td class="paramname">param2</td><td>The second parameter, which follows <code>param1</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Describe what the function returns. [a void function has no return] </dd></dl>
+
+</div>
+</div>
 <a id="a2b6ba1ce656996b21125ad904a0cbe86" name="a2b6ba1ce656996b21125ad904a0cbe86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b6ba1ce656996b21125ad904a0cbe86">&#9670;&#160;</a></span>calculateMovesDiagonal()</h2>
 
@@ -284,6 +343,79 @@ Functions</h2></td></tr>
     <tr><td class="paramname">pieceFrom</td><td>The piece to calculate the moves for - the king follows different calculations. </td></tr>
     <tr><td class="paramname">indexFrom</td><td>The starting position of the piece. </td></tr>
     <tr><td class="paramname">range</td><td>A vector of integers that will be populated with a given piece's range of horizontal moves. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c5887d9ff49b4780a2a51aed4ca6198" name="a0c5887d9ff49b4780a2a51aed4ca6198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5887d9ff49b4780a2a51aed4ca6198">&#9670;&#160;</a></span>calculateMovesKnightHelper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMovesKnightHelper </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>canMove</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>moves</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To tell <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> which pieces cause capture or collision. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector to populate with all possible moves. </td></tr>
+    <tr><td class="paramname">flag</td><td>I'm not sure why this is here ... TODO why is flag here? </td></tr>
+    <tr><td class="paramname">canMove</td><td>I'm not sure why this is here ... TODO why is canMove here? </td></tr>
+    <tr><td class="paramname">moves</td><td>The list of squares to be searched. </td></tr>
+    <tr><td class="paramname">limit</td><td>I'm not sure why this is here ... TODO why is limit here? </td></tr>
     <tr><td class="paramname">board</td><td>The chess board. </td></tr>
   </table>
   </dd>

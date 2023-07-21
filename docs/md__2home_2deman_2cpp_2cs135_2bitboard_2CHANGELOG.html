@@ -97,14 +97,14 @@ Fixed</h2>
 Added</h2>
 <ul>
 <li>Introduced new structure <code><a class="el" href="structChessBoard.html">ChessBoard</a></code> which includes all twelve bitboards. This allows for a more efficient and organized representation of the chessboard state. This is my first ever structure.</li>
-<li>Created header file <code><a class="el" href="bitBoards_8h.html" title="Header file for bitboard.">bitBoards.h</a></code> to improve organization and readability. This is my first ever header file.</li>
+<li>Created header file <code><a class="el" href="bitBoards_8h.html" title="ChessBoard struct and function prototypes.">bitBoards.h</a></code> to improve organization and readability. This is my first ever header file.</li>
 <li>Added command to manually add a piece to the board. This is an intermediate step toward automatically prompting the user to select a piece for pawn promotion.</li>
 <li>New function <code><a class="el" href="FEN_8cpp.html#a455ff4438053c3e025dc0d49c2dec7a2" title="Encode the board&#39;s state into a FEN string.">fenEncode()</a></code> encodes the state of the board into a FEN string.</li>
 <li>New function <code><a class="el" href="FEN_8cpp.html#add762e3ccbfe75e3588211ec3051b28e" title="Decode a FEN string to set the state of the board.">fenDecode()</a></code> decodes FEN string to set the state of the board.<ul>
 <li>These functions are incomplete - they do not consider side to move, castling ability, en passant, or move count.</li>
 </ul>
 </li>
-<li>New functions <code>movePawn()</code>, <code>moveKnight()</code>, <code>moveBishop()</code>, <code>moveRook()</code>, <code>moveQueen()</code>, and <code>moveKing()</code> calculate the range of valid moves for the given piece, then check whether the target square of the move command is an element of that range.<ul>
+<li>New functions <code>movePawn()</code>, <code><a class="el" href="moveCommand_8cpp.html#a99e95e3e8e2454036d12eb802304382c" title="Checks if a given knight move is legal.">moveKnight()</a></code>, <code><a class="el" href="moveCommand_8cpp.html#a3e5461438738655398956e9c8b6ffe07" title="Checks if a given bishop move is legal.">moveBishop()</a></code>, <code><a class="el" href="moveCommand_8cpp.html#aaf05b59110c21e092ff96272cc2df937" title="Checks if a given rook move is legal.">moveRook()</a></code>, <code><a class="el" href="moveCommand_8cpp.html#a6851bfae5a25676ed39c506b2d39b79d" title="Checks if a given queen move is legal.">moveQueen()</a></code>, and <code><a class="el" href="moveKing_8cpp.html#ab41fb769ff5eb44e0c6564a7f447933b" title="Checks if a given king move is legal.">moveKing()</a></code> calculate the range of valid moves for the given piece, then check whether the target square of the move command is an element of that range.<ul>
 <li>these movement functions do not account for en passant, pawn promotion, castling, check, or checkmate.</li>
 </ul>
 </li>

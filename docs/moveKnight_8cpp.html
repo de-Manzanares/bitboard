@@ -85,20 +85,88 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memItemLeft" align="right" valign="top"><a id="a0c5887d9ff49b4780a2a51aed4ca6198" name="a0c5887d9ff49b4780a2a51aed4ca6198"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovesKnightHelper</b> (char pieceFrom, vector&lt; int &gt; &amp;range, int &amp;flag, int &amp;canMove, const vector&lt; int &gt; &amp;moves, int limit, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKnight_8cpp.html#a0c5887d9ff49b4780a2a51aed4ca6198">calculateMovesKnightHelper</a> (char pieceFrom, vector&lt; int &gt; &amp;range, int &amp;flag, int &amp;canMove, const vector&lt; int &gt; &amp;moves, int limit, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves.  <br /></td></tr>
 <tr class="separator:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52a82a1d17a019484d98ed0a32101c0a"><td class="memItemLeft" align="right" valign="top"><a id="a52a82a1d17a019484d98ed0a32101c0a" name="a52a82a1d17a019484d98ed0a32101c0a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveKnight</b> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="separator:a52a82a1d17a019484d98ed0a32101c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c82545752cfc8a5bed2212a49525d8"><td class="memItemLeft" align="right" valign="top"><a id="a12c82545752cfc8a5bed2212a49525d8" name="a12c82545752cfc8a5bed2212a49525d8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMoveKnight</b> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
-<tr class="separator:a12c82545752cfc8a5bed2212a49525d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculates all possible moves for a given knight, and checks if the target square is in the range. </p>
 <dl class="section author"><dt>Author</dt><dd>de-Manzanares </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0c5887d9ff49b4780a2a51aed4ca6198" name="a0c5887d9ff49b4780a2a51aed4ca6198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5887d9ff49b4780a2a51aed4ca6198">&#9670;&#160;</a></span>calculateMovesKnightHelper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMovesKnightHelper </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>canMove</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>moves</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To tell <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> which pieces cause capture or collision. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector to populate with all possible moves. </td></tr>
+    <tr><td class="paramname">flag</td><td>I'm not sure why this is here ... TODO why is flag here? </td></tr>
+    <tr><td class="paramname">canMove</td><td>I'm not sure why this is here ... TODO why is canMove here? </td></tr>
+    <tr><td class="paramname">moves</td><td>The list of squares to be searched. </td></tr>
+    <tr><td class="paramname">limit</td><td>I'm not sure why this is here ... TODO why is limit here? </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

@@ -85,26 +85,286 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1eb98881772705b5af6a066365f62834"><td class="memItemLeft" align="right" valign="top"><a id="a1eb98881772705b5af6a066365f62834" name="a1eb98881772705b5af6a066365f62834"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMovesCastling</b> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a1eb98881772705b5af6a066365f62834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKing_8cpp.html#a1eb98881772705b5af6a066365f62834">calculateMovesCastling</a> (char pieceFrom, int indexFrom, vector&lt; int &gt; &amp;range, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a1eb98881772705b5af6a066365f62834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate castling moves for a given king.  <br /></td></tr>
 <tr class="separator:a1eb98881772705b5af6a066365f62834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d5c097440e79488703e51dfd1cd532d"><td class="memItemLeft" align="right" valign="top"><a id="a7d5c097440e79488703e51dfd1cd532d" name="a7d5c097440e79488703e51dfd1cd532d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>squaresAreClear</b> (vector&lt; int &gt; squares, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a7d5c097440e79488703e51dfd1cd532d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKing_8cpp.html#a7d5c097440e79488703e51dfd1cd532d">squaresAreClear</a> (vector&lt; int &gt; squares, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a7d5c097440e79488703e51dfd1cd532d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the squares between the king and rook are unoccupied.  <br /></td></tr>
 <tr class="separator:a7d5c097440e79488703e51dfd1cd532d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f7862c0f88e34594de8715c2957b93"><td class="memItemLeft" align="right" valign="top"><a id="a57f7862c0f88e34594de8715c2957b93" name="a57f7862c0f88e34594de8715c2957b93"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>rangeValidationKing</b> (char pieceFrom, vector&lt; int &gt; range, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a57f7862c0f88e34594de8715c2957b93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKing_8cpp.html#a57f7862c0f88e34594de8715c2957b93">rangeValidationKing</a> (char pieceFrom, vector&lt; int &gt; range, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a57f7862c0f88e34594de8715c2957b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the target square is in the range. Move the rook if the king is initiating a castling move.  <br /></td></tr>
 <tr class="separator:a57f7862c0f88e34594de8715c2957b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a478ca30cac1cfb7d2a4fa71b7abef915"><td class="memItemLeft" align="right" valign="top"><a id="a478ca30cac1cfb7d2a4fa71b7abef915" name="a478ca30cac1cfb7d2a4fa71b7abef915"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>castlingCheckCheck</b> (char pieceFrom, vector&lt; int &gt; moves, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:a478ca30cac1cfb7d2a4fa71b7abef915"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKing_8cpp.html#a478ca30cac1cfb7d2a4fa71b7abef915">castlingCheckCheck</a> (char pieceFrom, vector&lt; int &gt; moves, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a478ca30cac1cfb7d2a4fa71b7abef915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the is in check, or would pass through or into check.  <br /></td></tr>
 <tr class="separator:a478ca30cac1cfb7d2a4fa71b7abef915"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab41fb769ff5eb44e0c6564a7f447933b"><td class="memItemLeft" align="right" valign="top"><a id="ab41fb769ff5eb44e0c6564a7f447933b" name="ab41fb769ff5eb44e0c6564a7f447933b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveKing</b> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:ab41fb769ff5eb44e0c6564a7f447933b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveKing_8cpp.html#ab41fb769ff5eb44e0c6564a7f447933b">moveKing</a> (char pieceFrom, int indexFrom, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:ab41fb769ff5eb44e0c6564a7f447933b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given king move is legal.  <br /></td></tr>
 <tr class="separator:ab41fb769ff5eb44e0c6564a7f447933b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Calculates all possible moves for a given king and checks if the target square is in the range. </p>
 <dl class="section author"><dt>Author</dt><dd>de-Manzanares </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a1eb98881772705b5af6a066365f62834" name="a1eb98881772705b5af6a066365f62834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb98881772705b5af6a066365f62834">&#9670;&#160;</a></span>calculateMovesCastling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMovesCastling </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate castling moves for a given king. </p>
+<hr  />
+ <p>Checks castling conditions for each king for each side:</p><ul>
+<li>Has the king or rook moved?</li>
+<li>Are the squares between the king and rook unoccupied?</li>
+<li>Is the king in check?</li>
+<li>Would the king pass through or into check?</li>
+</ul>
+<dl class="section post"><dt>Postcondition</dt><dd>vector <code>range</code> is populated with castling moves.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To determine side; white or black. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the king. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector to populate with legal moves. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a478ca30cac1cfb7d2a4fa71b7abef915" name="a478ca30cac1cfb7d2a4fa71b7abef915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a478ca30cac1cfb7d2a4fa71b7abef915">&#9670;&#160;</a></span>castlingCheckCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool castlingCheckCheck </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>moves</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the is in check, or would pass through or into check. </p>
+<hr  />
+ <p>Description of what the function does. This part may refer to the parameters of the function, like <code>param1</code> or <code>param2</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To determine side; white or black. </td></tr>
+    <tr><td class="paramname">moves</td><td>The list of squares to check for check. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the king is not in check, and would not pass through or into check. <br  />
+ False - the king is in check, or would pass through or into check. </dd></dl>
+
+</div>
+</div>
+<a id="ab41fb769ff5eb44e0c6564a7f447933b" name="ab41fb769ff5eb44e0c6564a7f447933b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41fb769ff5eb44e0c6564a7f447933b">&#9670;&#160;</a></span>moveKing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveKing </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a given king move is legal. </p>
+<hr  />
+ <p>Use <code><a class="el" href="calculateRange_8cpp.html#a2b6ba1ce656996b21125ad904a0cbe86" title="Calculates diagonal range.">calculateMovesDiagonal()</a></code>, <code><a class="el" href="calculateRange_8cpp.html#ace587769943474b1cbef3538ac64df9a" title="Calculates horizontal range.">calculateMovesHorizontal()</a></code>, <code><a class="el" href="moveKing_8cpp.html#a1eb98881772705b5af6a066365f62834" title="Calculate castling moves for a given king.">calculateMovesCastling()</a></code>, and <code><a class="el" href="calculateRange_8cpp.html#a60f475292e43d334356c717591fe4cdd" title="Calculates vertical range.">calculateMovesVertical()</a></code> to populate a vector with all possible moves for the king, then check if the target square is in the range. <code><a class="el" href="moveKing_8cpp.html#a57f7862c0f88e34594de8715c2957b93" title="Checks if the target square is in the range. Move the rook if the king is initiating a castling move.">rangeValidationKing()</a></code> contains logic for castling.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To verify that the piece is a king. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the king. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the move is legal. <br  />
+ False - the move is illegal. </dd></dl>
+
+</div>
+</div>
+<a id="a57f7862c0f88e34594de8715c2957b93" name="a57f7862c0f88e34594de8715c2957b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f7862c0f88e34594de8715c2957b93">&#9670;&#160;</a></span>rangeValidationKing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rangeValidationKing </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the target square is in the range. Move the rook if the king is initiating a castling move. </p>
+<hr  />
+ <p>Check if the target square is in the range. Flag the king as moved, and move and flag the rook as moved if the king is castling.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>The <code>board</code> may be modified; if the king is initiating a castling move, move the rook.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>Identify the king to check castling status. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector containing all possible moves for the king. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the target square is in the range. <br  />
+ False - the target square is not in the range. </dd></dl>
+
+</div>
+</div>
+<a id="a7d5c097440e79488703e51dfd1cd532d" name="a7d5c097440e79488703e51dfd1cd532d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d5c097440e79488703e51dfd1cd532d">&#9670;&#160;</a></span>squaresAreClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool squaresAreClear </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>squares</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the squares between the king and rook are unoccupied. </p>
+<hr  />
+ <p>Use <code><a class="el" href="bitwise_8cpp.html#a760f18273357a0522a679571326f0725" title="Check if a square is occupied.">pieceSearch()</a></code> to check each square for occupancy.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">squares</td><td>The squares between the king and rook. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the squares are unoccupied. <br  />
+ False - the squares are occupied. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

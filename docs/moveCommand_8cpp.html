@@ -79,24 +79,405 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Handles the move command.  
+<p>User initiated command to move a piece on the board.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;sstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="bitBoards_8h_source.html">bitBoards.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac9a26995f5ae9ce2a7f29b996b2a0699"><td class="memItemLeft" align="right" valign="top"><a id="ac9a26995f5ae9ce2a7f29b996b2a0699" name="ac9a26995f5ae9ce2a7f29b996b2a0699"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isWhite</b> (char pieceFrom)</td></tr>
-<tr class="separator:ac9a26995f5ae9ce2a7f29b996b2a0699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af00060e5ff0cbe9c5e1ded3a280112e0"><td class="memItemLeft" align="right" valign="top"><a id="af00060e5ff0cbe9c5e1ded3a280112e0" name="af00060e5ff0cbe9c5e1ded3a280112e0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>moveCommand</b> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memitem:ab9260b8f14ea42c135127e937f3e9b60"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#ab9260b8f14ea42c135127e937f3e9b60">isWhite</a> (const char pieceFrom)</td></tr>
+<tr class="memdesc:ab9260b8f14ea42c135127e937f3e9b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the color of a piece.  <br /></td></tr>
+<tr class="separator:ab9260b8f14ea42c135127e937f3e9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#a0c5887d9ff49b4780a2a51aed4ca6198">calculateMovesKnightHelper</a> (char pieceFrom, vector&lt; int &gt; &amp;range, int &amp;flag, int &amp;canMove, const vector&lt; int &gt; &amp;moves, int limit, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves.  <br /></td></tr>
+<tr class="separator:a0c5887d9ff49b4780a2a51aed4ca6198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25044d6fe246774f3ef0ed9cd4755997"><td class="memItemLeft" align="right" valign="top"><a id="a25044d6fe246774f3ef0ed9cd4755997" name="a25044d6fe246774f3ef0ed9cd4755997"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>rangeValidationRook</b> (char pieceFrom, int indexFrom, vector&lt; int &gt; range, int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="separator:a25044d6fe246774f3ef0ed9cd4755997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00060e5ff0cbe9c5e1ded3a280112e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#af00060e5ff0cbe9c5e1ded3a280112e0">moveCommand</a> (stringstream &amp;ss, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:af00060e5ff0cbe9c5e1ded3a280112e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the user initiated move command.  <br /></td></tr>
 <tr class="separator:af00060e5ff0cbe9c5e1ded3a280112e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5461438738655398956e9c8b6ffe07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#a3e5461438738655398956e9c8b6ffe07">moveBishop</a> (const char pieceFrom, const int indexFrom, const int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a3e5461438738655398956e9c8b6ffe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given bishop move is legal.  <br /></td></tr>
+<tr class="separator:a3e5461438738655398956e9c8b6ffe07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e95e3e8e2454036d12eb802304382c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#a99e95e3e8e2454036d12eb802304382c">moveKnight</a> (const char pieceFrom, const int indexFrom, const int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a99e95e3e8e2454036d12eb802304382c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given knight move is legal.  <br /></td></tr>
+<tr class="separator:a99e95e3e8e2454036d12eb802304382c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6851bfae5a25676ed39c506b2d39b79d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#a6851bfae5a25676ed39c506b2d39b79d">moveQueen</a> (const char pieceFrom, const int indexFrom, const int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:a6851bfae5a25676ed39c506b2d39b79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given queen move is legal.  <br /></td></tr>
+<tr class="separator:a6851bfae5a25676ed39c506b2d39b79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf05b59110c21e092ff96272cc2df937"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="moveCommand_8cpp.html#aaf05b59110c21e092ff96272cc2df937">moveRook</a> (const char pieceFrom, const int indexFrom, const int indexTo, <a class="el" href="structChessBoard.html">ChessBoard</a> &amp;board)</td></tr>
+<tr class="memdesc:aaf05b59110c21e092ff96272cc2df937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a given rook move is legal.  <br /></td></tr>
+<tr class="separator:aaf05b59110c21e092ff96272cc2df937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles the move command. </p>
+<div class="textblock"><p>User initiated command to move a piece on the board. </p>
 <dl class="section author"><dt>Author</dt><dd>de-Manzanares </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0c5887d9ff49b4780a2a51aed4ca6198" name="a0c5887d9ff49b4780a2a51aed4ca6198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5887d9ff49b4780a2a51aed4ca6198">&#9670;&#160;</a></span>calculateMovesKnightHelper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMovesKnightHelper </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>canMove</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const vector&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>moves</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>limit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Feeds a list of moves to <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> and uses the feedback to create a list of legal moves. </p>
+<hr  />
+ <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To tell <code><a class="el" href="calculateRange_8cpp.html#af5256fd0371f441938720a86d0ef21bf" title="Flag a square as empty, occupied by an enemy, or occupied by an ally.">squareSearch()</a></code> which pieces cause capture or collision. </td></tr>
+    <tr><td class="paramname">range</td><td>The vector to populate with all possible moves. </td></tr>
+    <tr><td class="paramname">flag</td><td>I'm not sure why this is here ... TODO why is flag here? </td></tr>
+    <tr><td class="paramname">canMove</td><td>I'm not sure why this is here ... TODO why is canMove here? </td></tr>
+    <tr><td class="paramname">moves</td><td>The list of squares to be searched. </td></tr>
+    <tr><td class="paramname">limit</td><td>I'm not sure why this is here ... TODO why is limit here? </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab9260b8f14ea42c135127e937f3e9b60" name="ab9260b8f14ea42c135127e937f3e9b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9260b8f14ea42c135127e937f3e9b60">&#9670;&#160;</a></span>isWhite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isWhite </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check the color of a piece. </p>
+<hr  />
+ <p>Used within the <code><a class="el" href="moveCommand_8cpp.html#af00060e5ff0cbe9c5e1ded3a280112e0" title="Handles the user initiated move command.">moveCommand()</a></code> to enforce the turn order.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>The piece to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the piece is white. <br  />
+ False - the piece is black. </dd></dl>
+
+</div>
+</div>
+<a id="a3e5461438738655398956e9c8b6ffe07" name="a3e5461438738655398956e9c8b6ffe07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5461438738655398956e9c8b6ffe07">&#9670;&#160;</a></span>moveBishop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveBishop </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a given bishop move is legal. </p>
+<hr  />
+ <p>Use <code><a class="el" href="calculateRange_8cpp.html#a2b6ba1ce656996b21125ad904a0cbe86" title="Calculates diagonal range.">calculateMovesDiagonal()</a></code> to populate a vector with all possible moves for the bishop, then check if the target square is in the range.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To verify that the piece is a bishop. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the bishop. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the move is legal. <br  />
+ False - the move is illegal. </dd></dl>
+
+</div>
+</div>
+<a id="af00060e5ff0cbe9c5e1ded3a280112e0" name="af00060e5ff0cbe9c5e1ded3a280112e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00060e5ff0cbe9c5e1ded3a280112e0">&#9670;&#160;</a></span>moveCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void moveCommand </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles the user initiated move command. </p>
+<hr  />
+ <p>If the input is invalid, notify the user and return; otherwise, call the appropriate move function. The move function checks if the move is legal. If the move is legal, the board is modified. If the move is illegal, notify the user and return.</p>
+<dl class="section post"><dt>Postcondition</dt><dd>If the move is legal the <code>board</code> is modified.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ss</td><td>The stringstream containing the command. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99e95e3e8e2454036d12eb802304382c" name="a99e95e3e8e2454036d12eb802304382c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e95e3e8e2454036d12eb802304382c">&#9670;&#160;</a></span>moveKnight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveKnight </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a given knight move is legal. </p>
+<hr  />
+ <p>Based on the starting square, select 1 of 17 possible move sets and pass it to <code><a class="el" href="moveCommand_8cpp.html#a0c5887d9ff49b4780a2a51aed4ca6198" title="Feeds a list of moves to squareSearch() and uses the feedback to create a list of legal moves.">calculateMovesKnightHelper()</a></code> which then modifies the vector <code>range</code> to contain all legal moves from the given set. Finally, check if the target square is in the range.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>Serves no purpose currently. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the knight. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the move is legal. <br  />
+ False - the move is illegal. </dd></dl>
+
+</div>
+</div>
+<a id="a6851bfae5a25676ed39c506b2d39b79d" name="a6851bfae5a25676ed39c506b2d39b79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6851bfae5a25676ed39c506b2d39b79d">&#9670;&#160;</a></span>moveQueen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveQueen </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a given queen move is legal. </p>
+<hr  />
+ <p>Use <code><a class="el" href="calculateRange_8cpp.html#a2b6ba1ce656996b21125ad904a0cbe86" title="Calculates diagonal range.">calculateMovesDiagonal()</a></code>, <code><a class="el" href="calculateRange_8cpp.html#ace587769943474b1cbef3538ac64df9a" title="Calculates horizontal range.">calculateMovesHorizontal()</a></code>, and <code><a class="el" href="calculateRange_8cpp.html#a60f475292e43d334356c717591fe4cdd" title="Calculates vertical range.">calculateMovesVertical()</a></code> to populate a vector with all possible moves for the queen, then check if the target square is in the range.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To verify that the piece is a queen. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the queen. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the move is legal. <br  />
+ False - the move is illegal. </dd></dl>
+
+</div>
+</div>
+<a id="aaf05b59110c21e092ff96272cc2df937" name="aaf05b59110c21e092ff96272cc2df937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf05b59110c21e092ff96272cc2df937">&#9670;&#160;</a></span>moveRook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool moveRook </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>pieceFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>indexTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structChessBoard.html">ChessBoard</a> &amp;&#160;</td>
+          <td class="paramname"><em>board</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a given rook move is legal. </p>
+<p>Use <code><a class="el" href="calculateRange_8cpp.html#ace587769943474b1cbef3538ac64df9a" title="Calculates horizontal range.">calculateMovesHorizontal()</a></code> and <code><a class="el" href="calculateRange_8cpp.html#a60f475292e43d334356c717591fe4cdd" title="Calculates vertical range.">calculateMovesVertical()</a></code> to populate a vector with all possible moves for the rook, then check if the target square is in the range. Furthermore, <code>rangeValidationRook()</code> contains additional logic to enforce the castling rules - if the rook is moved, it is no longer eligible for castling.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pieceFrom</td><td>To verify that the piece is a rook. </td></tr>
+    <tr><td class="paramname">indexFrom</td><td>The starting position of the rook. </td></tr>
+    <tr><td class="paramname">indexTo</td><td>The user supplied target square. </td></tr>
+    <tr><td class="paramname">board</td><td>The chess board.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True - the move is legal. <br  />
+ False - the move is illegal. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
