@@ -1,3 +1,9 @@
+# Notice
+
+### This project has been restarted from scratch [over here](https://github.com/de-Manzanares/Raab-bot).
+
+### (Spoiler: I actually managed to get a working engine, :grin: lol.)
+
 ## Overview
 
 My goal, be it feasible or fantasy, is to write a chess engine from scratch. This bitboard is the
